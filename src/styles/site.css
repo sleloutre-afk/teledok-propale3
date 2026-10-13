@@ -1230,6 +1230,13 @@ select.fld {
   outline-color: var(--amber);
 }
 
+/* Juste au-dessus du seuil du menu déroulant : liens resserrés pour que la navigation tienne sur une ligne. */
+@media (min-width: 1100px) and (max-width: 1199.98px) {
+  .hdr-nav {
+    gap: 4px 18px;
+  }
+}
+
 /* Écrans étroits : la navigation passe dans un panneau déroulant (si le script est chargé). */
 @media (max-width: 1099.98px) {
   .js .burger {
@@ -1547,6 +1554,68 @@ select.fld {
   padding-block: clamp(80px, 10vw, 140px);
 }
 
+/* ---------- Notre mission : parole du président-directeur général ---------- */
+.pg-home .home-mission {
+  background: var(--blue);
+  color: #fff;
+}
+.pg-home .mission {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding-block: clamp(64px, 8vw, 104px);
+}
+.pg-home .mission-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.pg-home .mission-txt {
+  position: relative;
+}
+.pg-home .mission-t {
+  margin-bottom: 24px;
+}
+.pg-home .mission-fig,
+.pg-home .mission-quote {
+  margin: 0;
+}
+.pg-home .mission-quote p {
+  font-size: clamp(18px, 1.5vw, 20px);
+  line-height: 1.65;
+}
+.pg-home .mission-quote p + p {
+  margin-top: 16px;
+}
+.pg-home .mission-who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 28px;
+  padding-left: 18px;
+  border-left: 3px solid var(--amber);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.pg-home .mission-who strong {
+  font-size: 19px;
+}
+@media (max-width: 899.98px) {
+  .pg-home .mission {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pg-home .mission-photo {
+    width: 180px;
+    aspect-ratio: 1;
+  }
+}
+
 /* ---------- Araignée des valeurs ---------- */
 .pg-home .web {
   position: relative;
@@ -1581,27 +1650,42 @@ select.fld {
   position: absolute;
   inset: -16px;
   border-radius: 50%;
-  border: 2px solid var(--amber);
+  border: 2.5px solid var(--amber);
   opacity: 0;
   animation: ring 3.6s ease-out infinite;
 }
 .pg-home .web-ring2 {
   animation-delay: 1.8s;
-  border-color: var(--soft);
 }
 @keyframes ring {
   0% {
     transform: scale(0.92);
-    opacity: 0.5;
+    opacity: 0.8;
   }
   100% {
     transform: scale(1.2);
     opacity: 0;
   }
 }
+/* Perles ambre qui parcourent lentement les deux cercles de la toile, en sens opposés. */
+.pg-home .web-orbit {
+  fill: var(--amber);
+  transform-origin: 370px 326px;
+  animation: orbit 30s linear infinite;
+}
+.pg-home .web-orbit2 {
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Rayon de la valeur sélectionnée : tracé en ambre, du logo vers le picto. */
 .pg-home .sp {
-  stroke: var(--blue);
-  stroke-width: 3;
+  stroke: var(--amber);
+  stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -1717,8 +1801,10 @@ select.fld {
 }
 .pg-home .node.on .node-ic {
   transform: scale(1.12);
-  border-color: var(--blue);
-  box-shadow: 0 14px 30px rgba(13, 60, 90, 0.16);
+  border-color: var(--amber);
+  box-shadow:
+    0 0 0 7px rgba(245, 179, 53, 0.22),
+    0 14px 30px rgba(13, 60, 90, 0.16);
 }
 .pg-home .node.on .node-t {
   font-weight: 700;
@@ -1904,7 +1990,7 @@ select.fld {
   gap: 64px;
 }
 .pg-home .home-orient {
-  padding-bottom: clamp(80px, 10vw, 140px);
+  padding-block: clamp(80px, 10vw, 140px);
 }
 .pg-home .home-cta {
   gap: 20px;
@@ -1955,7 +2041,7 @@ select.fld {
   line-height: 1.5;
 }
 .pg-teledok .portrait {
-  padding: 20px 20px 30px;
+  padding: 16px 16px 26px;
   background: #fff;
 }
 .pg-teledok .portrait--pending {
@@ -1966,28 +2052,47 @@ select.fld {
   margin-bottom: 24px;
   border-radius: 18px;
 }
+/* Portrait carré, cadré sur le haut de l'image pour garder le visage. */
+.pg-teledok .portrait-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: 50% 0;
+}
 .pg-teledok .portrait h3 {
   margin: 0 0 6px 8px;
-  font-size: 22px;
+  font-size: 20px;
 }
 .pg-teledok .portrait p {
-  margin-left: 8px;
+  margin-inline: 8px;
   font-size: 16px;
+}
+.pg-teledok .portrait .portrait-role {
+  font-weight: 700;
+}
+.pg-teledok .portrait .portrait-detail {
+  margin-top: 8px;
+  line-height: 1.55;
 }
 
 /* ==========================================================================
    Notre méthode — .pg-methode
    ========================================================================== */
 
+.pg-methode .direction-band {
+  background: var(--blue);
+  color: #fff;
+}
 .pg-methode .direction {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 24px 40px;
-  border-radius: 28px;
-  padding: clamp(36px, 4vw, 52px);
-  background: var(--blue);
-  color: #fff;
+  padding-block: clamp(44px, 6vw, 68px);
 }
 .pg-methode .direction-ic {
   flex: none;
@@ -2275,7 +2380,7 @@ select.fld {
 .pg-realisations .cas-list {
   display: grid;
   gap: 32px;
-  padding-top: clamp(72px, 9vw, 110px);
+  padding-block: clamp(72px, 9vw, 110px);
 }
 .pg-realisations .cas {
   display: flex;

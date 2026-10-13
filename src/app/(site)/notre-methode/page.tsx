@@ -63,13 +63,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="wrap" style={{ paddingTop: 'clamp(80px, 10vw, 120px)' }} aria-labelledby="dir-t">
-        <div className="clip on-blue rv direction">
-          <div
-            className="blob"
-            aria-hidden="true"
-            style={{ right: -60, top: -60, width: 200, height: 200, border: '2px solid rgba(245,179,53,0.7)' }}
-          ></div>
+      <section className="clip on-blue direction-band" aria-labelledby="dir-t">
+        <div
+          className="blob"
+          aria-hidden="true"
+          style={{ right: -60, top: -60, width: 200, height: 200, border: '2px solid rgba(245,179,53,0.7)' }}
+        ></div>
+        <div className="wrap rel rv direction">
           <span className="direction-ic">
             <Icon name="bouclier-valide" size={42} stroke="var(--blue)" trace />
           </span>

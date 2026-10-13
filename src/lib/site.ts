@@ -16,7 +16,7 @@ export type RouteKey = keyof typeof ROUTES
 
 /** Navigation principale (en-tête). */
 export const NAV: { key: RouteKey; label: string }[] = [
-  { key: 'teledok', label: 'TeleDok' },
+  { key: 'teledok', label: 'Qui sommes-nous ?' },
   { key: 'methode', label: 'Notre méthode' },
   { key: 'recherche', label: 'Recherche' },
   { key: 'realisations', label: 'Réalisations' },

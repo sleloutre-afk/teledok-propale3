@@ -30,7 +30,7 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
             <p className="label ftr-t">Le site</p>
             <ul>
               <li>
-                <Link href={ROUTES.teledok}>TeleDok</Link>
+                <Link href={ROUTES.teledok}>Qui sommes-nous&nbsp;?</Link>
               </li>
               <li>
                 <Link href={ROUTES.methode}>Notre méthode</Link>

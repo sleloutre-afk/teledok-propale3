@@ -86,7 +86,7 @@ Tout ce qui apparaît entre crochets `[…]` sur le site est en attente de TeleD
 « Points ouverts »). Hors back-office, restent à renseigner dans le code :
 
 - photographies des pages : remplacer les composants `<Ph>` par des images ;
-- direction (second co-fondateur) : `src/app/(site)/teledok/page.tsx` ;
+- direction (deux cases restent libres) : `src/app/(site)/teledok/page.tsx` ;
 - pages légales, mentions RGPD des formulaires, délais de recontact ;
 - icône du site (favicon) ; adresses e-mail destinataires des formulaires ; nom de domaine.
 

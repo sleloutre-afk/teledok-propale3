@@ -193,12 +193,57 @@ export default async function Page() {
               Qui est TeleDok
             </h2>
             <p style={{ marginBottom: 32, fontSize: 20, lineHeight: '1.7' }}>
-              TeleDok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service
-              de parcours de soins innovants. Son modèle repose sur l’indépendance médicale et l’exigence de qualité.
+              Précurseur des plateformes de médecins destiné aux téléconsultations, TeleDok a été créé en 2018 par les docteurs François
+              Teboul et Stéphane Illouz. TeleDok a pour but de servir la santé dans le cadre de la modernisation de l’accès aux soins à
+              travers la mise à disposition de ses médecins pour des opérateurs de télémédecine. Aujourd’hui, TeleDok réunit des médecins
+              généralistes et spécialistes, ainsi que des professionnels paramédicaux, dédiés à la construction, l’évaluation et la mise à
+              disposition de ressources humaines aux projets de télémédecine.
             </p>
             <More href={ROUTES.teledok} fg className="">
               En savoir plus sur TeleDok
             </More>
+          </div>
+        </div>
+      </section>
+
+      <section className="clip on-blue home-mission" aria-labelledby="mis-t">
+        <div
+          className="blob"
+          aria-hidden="true"
+          style={{ right: -120, top: -120, width: 340, height: 340, border: '2px solid rgba(245,179,53,0.6)' }}
+        ></div>
+        <div className="wrap mission rel rv">
+          <Image
+            className="mission-photo"
+            src="/photos/arnaud.webp"
+            width={906}
+            height={1076}
+            alt="Portrait d’Arnaud Molinié."
+            sizes="(min-width: 900px) 340px, 200px"
+          />
+          <div className="mission-txt">
+            <p className="pill eyebrow">Ce qui nous anime</p>
+            <h2 id="mis-t" className="h2 mission-t">
+              Notre mission
+            </h2>
+            <figure className="mission-fig">
+              <blockquote className="mission-quote">
+                <p>
+                  «&nbsp;Les docteurs Stéphane Illouz et François Teboul sont de véritables pionniers qui ont posé les bases de la
+                  télémédecine en France. Ce sont deux médecins visionnaires, dotés d’une humanité rare. Je partage entièrement leur vision
+                  du soin et de la relation aux patients.
+                </p>
+                <p>
+                  Investir dans de nouveaux outils digitaux et technologiques pour moderniser les dispositifs existants afin de développer
+                  des solutions de télémédecine innovantes est un élément clé. Le cœur de métier de TeleDok est la médecine et surtout celle
+                  “de demain”.&nbsp;»
+                </p>
+              </blockquote>
+              <figcaption className="mission-who">
+                <strong>Arnaud Molinié</strong>
+                <span>président-directeur général de TeleDok</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -222,6 +267,8 @@ export default async function Page() {
               {SPOKES.map(([x1, y1, x2, y2], i) => (
                 <line key={i} className={cx('sp', { on: i === 0 })} pathLength="1" x1={x1} y1={y1} x2={x2} y2={y2} data-spoke />
               ))}
+              <circle className="web-orbit" cx="469" cy="227" r="5" />
+              <circle className="web-orbit web-orbit2" cx="295.8" cy="400.2" r="3.5" />
             </svg>
             <div className="web-center">
               <span className="web-ring" aria-hidden="true"></span>
@@ -345,43 +392,45 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="wrap home-orient" aria-label="Orientation">
-        <div className="grid" style={{ '--min': '320px', gap: 24 } as CSSProperties}>
-          <div className="cta cta--blue on-blue rv home-cta">
-            <div
-              className="blob"
-              aria-hidden="true"
-              style={{ right: -70, bottom: -70, width: 240, height: 240, background: 'var(--amber)', opacity: 0.9 }}
-            ></div>
-            <div
-              className="blob blob--dot"
-              aria-hidden="true"
-              style={{ right: 150, bottom: 120, width: 18, height: 18, background: 'var(--soft)' }}
-            ></div>
-            <Icon name="stethoscope" size={48} width={1.6} stroke="#fff" trace />
-            <h2 className="h2 home-cta-t">Vous êtes médecin ?</h2>
-            <p>Exercer la télémédecine sans renoncer à la qualité du soin ni à votre indépendance.</p>
-            <Link className="btn btn-amber" href={ROUTES.medecins}>
-              Rejoindre TeleDok
-            </Link>
-          </div>
-          <div className="cta rv home-cta">
-            <div
-              className="blob"
-              aria-hidden="true"
-              style={{ right: -60, top: -60, width: 200, height: 200, background: 'var(--card)' }}
-            ></div>
-            <div
-              className="blob blob--dot"
-              aria-hidden="true"
-              style={{ right: 70, top: 120, width: 26, height: 26, background: 'var(--soft)' }}
-            ></div>
-            <Icon name="organisation" size={48} width={1.6} stroke="var(--blue)" trace />
-            <h2 className="h2 home-cta-t">Vous êtes une organisation ?</h2>
-            <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
-            <Link className="btn btn-primary" href={ROUTES.partenaires}>
-              Devenir partenaire
-            </Link>
+      <section className="bg-cream" aria-label="Orientation">
+        <div className="wrap home-orient">
+          <div className="grid" style={{ '--min': '320px', gap: 24 } as CSSProperties}>
+            <div className="cta cta--blue on-blue rv home-cta">
+              <div
+                className="blob"
+                aria-hidden="true"
+                style={{ right: -70, bottom: -70, width: 240, height: 240, background: 'var(--amber)', opacity: 0.9 }}
+              ></div>
+              <div
+                className="blob blob--dot"
+                aria-hidden="true"
+                style={{ right: 150, bottom: 120, width: 18, height: 18, background: 'var(--soft)' }}
+              ></div>
+              <Icon name="stethoscope" size={48} width={1.6} stroke="#fff" trace />
+              <h2 className="h2 home-cta-t">Vous êtes médecin ?</h2>
+              <p>Exercer la télémédecine sans renoncer à la qualité du soin ni à votre indépendance.</p>
+              <Link className="btn btn-amber" href={ROUTES.medecins}>
+                Rejoindre TeleDok
+              </Link>
+            </div>
+            <div className="cta rv home-cta">
+              <div
+                className="blob"
+                aria-hidden="true"
+                style={{ right: -60, top: -60, width: 200, height: 200, background: 'var(--card)' }}
+              ></div>
+              <div
+                className="blob blob--dot"
+                aria-hidden="true"
+                style={{ right: 70, top: 120, width: 26, height: 26, background: 'var(--soft)' }}
+              ></div>
+              <Icon name="organisation" size={48} width={1.6} stroke="var(--blue)" trace />
+              <h2 className="h2 home-cta-t">Vous êtes une organisation ?</h2>
+              <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
+              <Link className="btn btn-primary" href={ROUTES.partenaires}>
+                Devenir partenaire
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { CSSProperties } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
 import { Crumb } from '@/components/Crumb'
 import { Orientation } from '@/components/Orientation'
@@ -8,7 +9,6 @@ import { Ph } from '@/components/Ph'
 import { Uline } from '@/components/Uline'
 import { pictos } from '@/data/pictos'
 import { getValeurs } from '@/lib/content'
-import { cx } from '@/lib/cx'
 import { pageMetadata } from '@/lib/seo'
 import { ROUTES } from '@/lib/site'
 
@@ -21,12 +21,40 @@ export const metadata: Metadata = pageMetadata(
   'TeleDok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de parcours de soins innovants.',
 )
 
-const DIRECTION: { nom: string; role: string; pending?: boolean }[] = [
-  { nom: 'Dr Stéphane Illouz', role: 'Co-fondateur' },
-  { nom: 'Matthieu Guillotin', role: 'Directeur général' },
-  // Second co-fondateur : à confirmer par TeleDok.
-  { nom: '[Nom à préciser]', role: '[Second co-fondateur, à confirmer]', pending: true },
+// Fonctions et parcours repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
+const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string }[] = [
+  {
+    nom: 'Arnaud Molinié',
+    de: 'd’Arnaud Molinié',
+    role: 'Président-directeur général',
+    detail: 'Fondateur et président de Doxamed, fondateur de Capitello Group.',
+    photo: '/photos/arnaud.webp',
+  },
+  {
+    nom: 'Matthieu Guillotin',
+    de: 'de Matthieu Guillotin',
+    role: 'Directeur général',
+    detail: 'Directeur général de Doxamed.',
+    photo: '/photos/guillotin.webp',
+  },
+  {
+    nom: 'Dr Stéphane Illouz',
+    de: 'du Dr Stéphane Illouz',
+    role: 'Co-fondateur',
+    detail: 'Urgentiste, médecin généraliste. Coordinateur MSP.',
+    photo: '/photos/illouz.webp',
+  },
+  {
+    nom: 'Dr François Teboul',
+    de: 'du Dr François Teboul',
+    role: 'Co-fondateur',
+    detail:
+      'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie Francophone de Télémédecine.',
+    photo: '/photos/teboul.webp',
+  },
 ]
+// Cases laissées libres à la suite, pour compléter la grille de six.
+const DIRECTION_LIBRES = 2
 
 export default async function Page() {
   const valeurs = await getValeurs()
@@ -45,7 +73,7 @@ export default async function Page() {
           style={{ right: 260, bottom: 90, width: 22, height: 22, background: 'var(--soft)' }}
         ></div>
         <div className="wrap phero rel" style={{ paddingBottom: 'clamp(80px, 9vw, 130px)' }}>
-          <Crumb label="TeleDok" />
+          <Crumb label="Qui sommes-nous ?" />
           <p className="hero-in pill">
             <span className="pill__dot" aria-hidden="true"></span>Qui sommes-nous
           </p>
@@ -159,12 +187,27 @@ export default async function Page() {
               Direction
             </h2>
           </div>
-          <ul className="grid" style={{ '--min': '280px', gap: 24 } as CSSProperties}>
-            {DIRECTION.map((d, i) => (
-              <li key={i} className={cx('card rv portrait', { 'portrait--pending': d.pending })}>
-                <Ph tag="Portrait réel" ratio="1 / 1" className="portrait-ph" />
+          <ul className="grid" style={{ '--min': '240px', gap: 24 } as CSSProperties}>
+            {DIRECTION.map((d) => (
+              <li key={d.nom} className="card rv portrait">
+                <Image
+                  className="portrait-photo"
+                  src={d.photo}
+                  width={600}
+                  height={600}
+                  alt={`Portrait ${d.de}.`}
+                  sizes="(min-width: 1100px) 240px, (min-width: 640px) 45vw, 90vw"
+                />
                 <h3>{d.nom}</h3>
-                <p>{d.role}</p>
+                <p className="portrait-role">{d.role}</p>
+                <p className="portrait-detail">{d.detail}</p>
+              </li>
+            ))}
+            {Array.from({ length: DIRECTION_LIBRES }, (_, i) => (
+              <li key={i} className="card rv portrait portrait--pending">
+                <Ph tag="Portrait réel" ratio="1 / 1" className="portrait-ph" />
+                <h3>[Nom à préciser]</h3>
+                <p className="portrait-role">[Fonction à préciser]</p>
               </li>
             ))}
           </ul>

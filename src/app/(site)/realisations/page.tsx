@@ -104,20 +104,22 @@ export default async function Page() {
         ))}
       </div>
 
-      <section className="wrap" style={{ paddingBlock: 'clamp(80px, 10vw, 120px)' }} aria-label="Orientation">
-        <div className="cta cta--row rv">
-          <div
-            className="blob"
-            aria-hidden="true"
-            style={{ right: -60, top: -80, width: 220, height: 220, background: 'var(--card)' }}
-          ></div>
-          <div>
-            <h2 className="h2 h2--sm">Vous êtes une organisation ?</h2>
-            <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
+      <section className="bg-cream" aria-label="Orientation">
+        <div className="wrap" style={{ paddingBlock: 'clamp(80px, 10vw, 120px)' }}>
+          <div className="cta cta--row rv">
+            <div
+              className="blob"
+              aria-hidden="true"
+              style={{ right: -60, top: -80, width: 220, height: 220, background: 'var(--card)' }}
+            ></div>
+            <div>
+              <h2 className="h2 h2--sm">Vous êtes une organisation ?</h2>
+              <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
+            </div>
+            <Link className="btn btn-primary" href={ROUTES.partenaires}>
+              Devenir partenaire
+            </Link>
           </div>
-          <Link className="btn btn-primary" href={ROUTES.partenaires}>
-            Devenir partenaire
-          </Link>
         </div>
       </section>
     </PageShell>

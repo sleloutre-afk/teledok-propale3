@@ -77,7 +77,7 @@ export default async function Page() {
 
       <Travaux publications={publications} />
 
-      <section className="bg-cream" aria-label="Orientation">
+      <section aria-label="Orientation">
         <div className="wrap" style={{ paddingBlock: 'clamp(80px, 10vw, 120px)' }}>
           <div className="cta cta--blue cta--row on-blue rv">
             <div
