@@ -36,12 +36,13 @@ const CONDITIONS = [
   {
     icon: 'chrono',
     titre: 'Qualité, pas rendement',
-    texte: '15 à 20 minutes par patient, sans aucune obligation de rendement (pas d’« abattage »).',
+    texte:
+      '15 à 20 minutes par patient pour des soins primaires, 30 à 40 minutes pour un examen prévention, sans aucune obligation de rendement (pas d’« abattage »).',
   },
   {
     icon: 'agenda',
     titre: 'Volume garanti',
-    texte: 'Un volume d’occupation médicale garanti ; la « taxe lapin » (no-show patient) est assumée par TeleDok.',
+    texte: 'Un volume d’occupation médicale garanti ; la taxe « lapin » (no-show patient) est assumée par TeleDok.',
   },
 ] as const
 
@@ -118,12 +119,15 @@ export default async function Page() {
             <div className="kpi-dot" aria-hidden="true"></div>
             <p className="kpi-n">
               15–
-              <span data-count data-from="15" data-to="20">
-                20
+              <span data-count data-from="15" data-to="40">
+                40
               </span>
               <small> min</small>
             </p>
-            <p className="kpi-l">par patient, sans obligation de rendement</p>
+            <p className="kpi-l">
+              par patient en fonction du type d’examen (téléconsultation soins primaires ou téléconsultation prévention), sans obligation de
+              rendement
+            </p>
           </div>
           <div className="kpi rv">
             <div className="kpi-dot" aria-hidden="true"></div>

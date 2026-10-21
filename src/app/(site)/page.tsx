@@ -146,7 +146,15 @@ export default async function Page() {
               </span>
               <small> min</small>
             </p>
-            <p className="kpi-l">de temps dédié par téléconsultation</p>
+            <p className="kpi-l">de temps dédié par téléconsultation pour des soins primaires</p>
+            <p className="kpi-n kpi-n--2">
+              30–
+              <span data-count data-from="30" data-to="40">
+                40
+              </span>
+              <small> min</small>
+            </p>
+            <p className="kpi-l">de temps dédié en téléconsultation prévention</p>
           </div>
           <div className="kpi rv">
             <div className="kpi-dot" aria-hidden="true"></div>
