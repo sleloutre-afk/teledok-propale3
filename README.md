@@ -88,7 +88,7 @@ Tout ce qui apparaît entre crochets `[…]` sur le site est en attente de TeleD
 - photographies des pages : remplacer les composants `<Ph>` par des images ;
 - direction (deux cases restent libres) : `src/app/(site)/teledok/page.tsx` ;
 - pages légales, mentions RGPD des formulaires, délais de recontact ;
-- icône du site (favicon) ; adresses e-mail destinataires des formulaires ; nom de domaine.
+- adresses e-mail destinataires des formulaires ; nom de domaine.
 
 ## Hébergement (Clever Cloud)
 

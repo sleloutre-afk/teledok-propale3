@@ -12,6 +12,16 @@ const signika = Signika({ subsets: ['latin'], display: 'swap', variable: '--font
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: 'TeleDok : téléconsultation médicale et parcours de soins',
+  // Monogramme du logo (public/favicon.svg, qui passe en bleu clair quand le navigateur est en thème sombre) ;
+  // les versions PNG et ICO en sont dérivées.
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export const viewport: Viewport = { themeColor: '#0D628F' }
