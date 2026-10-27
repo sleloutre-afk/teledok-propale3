@@ -26,6 +26,13 @@ export const NAV: { key: RouteKey; label: string }[] = [
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3087'
 
+/** Coordonnées de TeleDok, affichées dans le pied de page et sur la page « Contact ». */
+export const COORDONNEES: { adresse: string | null; telephone: string | null; email: string | null } = {
+  adresse: '351 Bureaux de la Colline\n92210 Saint-Cloud Cedex',
+  telephone: null,
+  email: null,
+}
+
 /**
  * Vidéo d'arrière-plan de l'accueil : boucle muette, sans texte incrusté.
  * Les fichiers de public/videos sont la version web (H.264 720p allégé,

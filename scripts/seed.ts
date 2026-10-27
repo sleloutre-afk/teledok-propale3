@@ -1,8 +1,7 @@
 /**
  * Charge dans le BO les contenus de départ repris des maquettes : les huit
- * travaux de la page « Recherche & publications » et les deux études de cas
- * de la page « Réalisations ». Dates, auteurs, PDF et textes des études de
- * cas restent à compléter dans le BO.
+ * travaux de la page « Recherche & publications ». Dates, auteurs et PDF
+ * restent à compléter dans le BO.
  *
  * Idempotent : une fiche déjà présente (même titre) est laissée telle
  * quelle, on peut donc relancer sans risque d'écraser des modifications
@@ -12,7 +11,7 @@
  */
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
-import type { Publication, Realisation } from '../src/payload-types'
+import type { Publication } from '../src/payload-types'
 
 type PublicationSeed = Pick<Publication, 'title' | 'type' | 'theme'> & { showOnHome?: boolean; showOnMedecins?: boolean }
 
@@ -49,27 +48,6 @@ const PUBLICATIONS: PublicationSeed[] = [
   },
 ]
 
-type RealisationSeed = Pick<Realisation, 'title' | 'theme' | 'tagsLabel' | 'imageBrief' | 'linkToRecherche'> & { tags: string[] }
-
-const REALISATIONS: RealisationSeed[] = [
-  {
-    title: 'Parcours de bilan de prévention',
-    theme: 'Prévention',
-    tagsLabel: 'Références',
-    tags: ['ADP', 'BPI', 'Deloitte', 'EHPAD'],
-    imageBrief: 'Bilan de prévention en situation : poste de téléconsultation, professionnel de santé.',
-    linkToRecherche: false,
-  },
-  {
-    title: 'Téléconsultation de soins primaires, assistée d’une infirmière et d’objets connectés',
-    theme: 'Soins primaires',
-    tagsLabel: 'Lieux de déploiement',
-    tags: ['Mairies', 'Pharmacies', 'Unités mobiles (Médicobus)'],
-    imageBrief: 'Cabine connectée en mairie ou en pharmacie, Médicobus ; infirmière et patient.',
-    linkToRecherche: true,
-  },
-]
-
 async function main() {
   const payload = await getPayload({ config })
   let created = 0
@@ -78,16 +56,6 @@ async function main() {
     const existing = await payload.find({ collection: 'publications', where: { title: { equals: item.title } }, limit: 1, depth: 0, draft: true })
     if (existing.docs[0]) continue
     await payload.create({ collection: 'publications', data: { ...item, _status: 'published' } })
-    created++
-  }
-
-  for (const { tags, ...item } of REALISATIONS) {
-    const existing = await payload.find({ collection: 'realisations', where: { title: { equals: item.title } }, limit: 1, depth: 0, draft: true })
-    if (existing.docs[0]) continue
-    await payload.create({
-      collection: 'realisations',
-      data: { ...item, tags: tags.map((label) => ({ label })), _status: 'published' },
-    })
     created++
   }
 

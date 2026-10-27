@@ -11,9 +11,6 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Publications } from './collections/Publications'
-import { Realisations } from './collections/Realisations'
-import { Valeurs } from './globals/Valeurs'
-import { Coordonnees } from './globals/Coordonnees'
 import { resendEmailAdapter } from './lib/payloadEmailAdapter'
 
 const filename = fileURLToPath(import.meta.url)
@@ -56,8 +53,7 @@ export default buildConfig({
   },
   // Ordre = ordre des entrées dans la nav latérale. Le site est en français
   // uniquement : pas de champs traduits.
-  collections: [Publications, Realisations, Media, Users],
-  globals: [Valeurs, Coordonnees],
+  collections: [Publications, Media, Users],
   editor: lexicalEditor(),
   // E-mails du BO (invitation, mot de passe oublié) envoyés via Resend.
   email: resendEmailAdapter,

@@ -1,6 +1,8 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { THEMES, VALEURS, type ThemeId } from '@/data/themes'
+import { REALISATIONS } from '@/data/realisations'
+import { COORDONNEES } from '@/lib/site'
 
 /** Contenus saisis dans le BO, tels que les pages du site les affichent. */
 
@@ -57,49 +59,21 @@ export type RealisationView = {
   linkToRecherche: boolean
 }
 
-/** Études de cas publiées, dans l'ordre choisi dans le BO. */
+/** Études de cas de la page « Réalisations », textes en dur (voir src/data/realisations.ts). */
 export async function getRealisations(): Promise<RealisationView[]> {
-  const payload = await getPayload({ config })
-  const { docs } = await payload.find({
-    collection: 'realisations',
-    where: { _status: { equals: 'published' } },
-    sort: '_order',
-    depth: 1,
-    pagination: false,
-  })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return docs.map((doc: any) => {
-    const image = asUpload(doc.image)
-    return {
-      id: doc.id,
-      title: doc.title,
-      theme: doc.theme,
-      tagsLabel: doc.tagsLabel || 'Références',
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      tags: (doc.tags || []).map((tag: any) => tag.label).filter(Boolean),
-      contexte: doc.contexte || null,
-      role: doc.role || null,
-      resultat: doc.resultat || null,
-      image: image?.url ? { src: image.url, alt: image.alt || '', width: image.width, height: image.height } : null,
-      imageBrief: doc.imageBrief || null,
-      linkToRecherche: Boolean(doc.linkToRecherche),
-    }
-  })
+  return REALISATIONS.map((cas) => ({ ...cas, image: null }))
 }
 
 export type ValeurView = { titre: string; texte: string | null }
 
-/** Les six valeurs, avec leur texte explicatif s'il a été rédigé dans le BO. */
+/** Les six valeurs, textes en dur (voir src/data/themes.ts). */
 export async function getValeurs(): Promise<ValeurView[]> {
-  const payload = await getPayload({ config })
-  const textes = (await payload.findGlobal({ slug: 'valeurs' })) as unknown as Record<string, string | null | undefined>
-  return VALEURS.map((valeur) => ({ titre: valeur.titre, texte: textes[valeur.key]?.trim() || null }))
+  return VALEURS.map((valeur) => ({ titre: valeur.titre, texte: valeur.texte }))
 }
 
 export type CoordonneesView = { adresse: string | null; telephone: string | null; email: string | null }
 
+/** Coordonnées de TeleDok, en dur (voir COORDONNEES dans src/lib/site.ts). */
 export async function getCoordonnees(): Promise<CoordonneesView> {
-  const payload = await getPayload({ config })
-  const doc = await payload.findGlobal({ slug: 'coordonnees' })
-  return { adresse: doc.adresse?.trim() || null, telephone: doc.telephone?.trim() || null, email: doc.email?.trim() || null }
+  return COORDONNEES
 }

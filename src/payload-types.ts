@@ -68,7 +68,6 @@ export interface Config {
   blocks: {};
   collections: {
     publications: Publication;
-    realisations: Realisation;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -79,7 +78,6 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     publications: PublicationsSelect<false> | PublicationsSelect<true>;
-    realisations: RealisationsSelect<false> | RealisationsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -91,14 +89,8 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {
-    valeurs: Valeur;
-    coordonnees: Coordonnee;
-  };
-  globalsSelect: {
-    valeurs: ValeursSelect<false> | ValeursSelect<true>;
-    coordonnees: CoordonneesSelect<false> | CoordonneesSelect<true>;
-  };
+  globals: {};
+  globalsSelect: {};
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -191,46 +183,6 @@ export interface Media {
   focalY?: number | null;
 }
 /**
- * Études de cas affichées sur la page « Réalisations », dans l’ordre de cette liste (glisser-déposer pour réordonner).
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "realisations".
- */
-export interface Realisation {
-  id: number;
-  _order?: string | null;
-  title: string;
-  /**
-   * Surtitre au-dessus du titre (ex. « Prévention »).
-   */
-  theme: string;
-  /**
-   * Lu par les lecteurs d’écran (ex. « Références », « Lieux de déploiement »).
-   */
-  tagsLabel?: string | null;
-  tags?:
-    | {
-        label: string;
-        id?: string | null;
-      }[]
-    | null;
-  /**
-   * Tant que ce texte est vide, le site affiche « [À rédiger avec TeleDok] ».
-   */
-  contexte?: string | null;
-  role?: string | null;
-  resultat?: string | null;
-  /**
-   * Photographie réelle de l’opération. Sans image, le site affiche l’emplacement réservé et la consigne ci-dessous.
-   */
-  image?: (number | null) | Media;
-  imageBrief?: string | null;
-  linkToRecherche?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -288,10 +240,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'publications';
         value: number | Publication;
-      } | null)
-    | ({
-        relationTo: 'realisations';
-        value: number | Realisation;
       } | null)
     | ({
         relationTo: 'media';
@@ -357,31 +305,6 @@ export interface PublicationsSelect<T extends boolean = true> {
   file?: T;
   showOnHome?: T;
   showOnMedecins?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "realisations_select".
- */
-export interface RealisationsSelect<T extends boolean = true> {
-  _order?: T;
-  title?: T;
-  theme?: T;
-  tagsLabel?: T;
-  tags?:
-    | T
-    | {
-        label?: T;
-        id?: T;
-      };
-  contexte?: T;
-  role?: T;
-  resultat?: T;
-  image?: T;
-  imageBrief?: T;
-  linkToRecherche?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -468,64 +391,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
-}
-/**
- * Une à deux lignes par valeur, affichées sous son titre. Les titres et les pictos sont fixes. Tant qu’un texte est vide, le site affiche la mention « à rédiger ».
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "valeurs".
- */
-export interface Valeur {
-  id: number;
-  parcours?: string | null;
-  plateforme?: string | null;
-  conditions?: string | null;
-  independance?: string | null;
-  evaluation?: string | null;
-  teleconsultation?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * Affichées dans le pied de page et sur la page « Contact ». Un champ vide reste signalé « à fournir » sur le site.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "coordonnees".
- */
-export interface Coordonnee {
-  id: number;
-  adresse?: string | null;
-  telephone?: string | null;
-  email?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "valeurs_select".
- */
-export interface ValeursSelect<T extends boolean = true> {
-  parcours?: T;
-  plateforme?: T;
-  conditions?: T;
-  independance?: T;
-  evaluation?: T;
-  teleconsultation?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "coordonnees_select".
- */
-export interface CoordonneesSelect<T extends boolean = true> {
-  adresse?: T;
-  telephone?: T;
-  email?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
