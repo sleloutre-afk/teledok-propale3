@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
 import { Crumb } from '@/components/Crumb'
-import { More } from '@/components/More'
+import { CasDetails } from '@/components/CasDetails'
 import { Ph } from '@/components/Ph'
 import { getRealisations } from '@/lib/content'
 import { cx } from '@/lib/cx'
@@ -16,7 +16,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/realisations',
   'Réalisations | TeleDok',
-  'Parcours de bilan de prévention, téléconsultation de soins primaires assistée : pour chaque opération, le contexte, le rôle de TeleDok et les résultats de l’évaluation.',
+  'Parcours de bilan de prévention, téléconsultation de soins primaires assistée, téléformation en crèches : pour chaque opération, le contexte, le rôle de TeleDok et les résultats de l’évaluation.',
 )
 
 export default async function Page() {
@@ -44,14 +44,17 @@ export default async function Page() {
             Des parcours conçus, déployés et évalués
           </h1>
           <p className="hero-in3 phero-lead" style={{ marginTop: 24, maxWidth: 760, fontSize: 'clamp(19px, 1.8vw, 22px)' }}>
-            Pour chaque opération : le contexte, le rôle de TeleDok et les résultats de l’évaluation.
+            Trois domaines d’intervention : la <a href="#prevention">prévention</a>, les{' '}
+            <a href="#soins-primaires">soins primaires</a> et la <a href="#formation">formation</a>. En entreprise, en mairie,
+            en pharmacie, à bord des Médicobus, en EHPAD ou en crèche : pour chaque opération, le contexte, le rôle de TeleDok et
+            les résultats obtenus.
           </p>
         </div>
       </section>
 
       <div className="wrap cas-list">
         {realisations.map((cas, i) => (
-          <section key={cas.id} aria-labelledby={`cas-${cas.id}-t`}>
+          <section key={cas.id} id={cas.id} aria-labelledby={`cas-${cas.id}-t`}>
             <article className={cx('cas rv', { 'cas--rev': i % 2 === 1 })}>
               {cas.image ? (
                 <Image
@@ -70,34 +73,7 @@ export default async function Page() {
                 <h2 id={`cas-${cas.id}-t`} className="h2 cas-t">
                   {cas.title}
                 </h2>
-                {cas.tags.length > 0 && (
-                  <ul className="pills cas-tags" aria-label={cas.tagsLabel}>
-                    {cas.tags.map((tag, i) => (
-                      <li key={i} className="pill pill--light">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <dl>
-                  {(
-                    [
-                      ['Contexte', cas.contexte],
-                      ['Rôle de TeleDok', cas.role],
-                      ['Résultat et évaluation', cas.resultat],
-                    ] as const
-                  ).map(([label, texte], i) => (
-                    <div key={i}>
-                      <dt>{label}</dt>
-                      <dd>{texte ?? <span className="todo">[À rédiger avec TeleDok]</span>}</dd>
-                    </div>
-                  ))}
-                </dl>
-                {cas.linkToRecherche && (
-                  <More href={ROUTES.recherche} fg className="cas-more">
-                    Travaux de recherche associés
-                  </More>
-                )}
+                <CasDetails cas={cas} />
               </div>
             </article>
           </section>

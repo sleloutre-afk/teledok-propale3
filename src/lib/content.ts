@@ -45,18 +45,27 @@ export async function getPublications(filter?: 'showOnHome' | 'showOnMedecins', 
   return docs.map(toPublication)
 }
 
+export type RealisationVoletView = {
+  tag: string
+  contexte: string | null
+  role: string | string[] | null
+  resultat: string | string[] | null
+  linkToRecherche: boolean
+}
+
 export type RealisationView = {
-  id: string | number
+  id: string
   title: string
   theme: string
   tagsLabel: string
   tags: string[]
   contexte: string | null
-  role: string | null
-  resultat: string | null
+  role: string | string[] | null
+  resultat: string | string[] | null
   image: { src: string; alt: string; width?: number | null; height?: number | null } | null
   imageBrief: string | null
   linkToRecherche: boolean
+  volets?: RealisationVoletView[]
 }
 
 /** Études de cas de la page « Réalisations », textes en dur (voir src/data/realisations.ts). */
