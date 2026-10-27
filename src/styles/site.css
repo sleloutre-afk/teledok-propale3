@@ -2073,6 +2073,28 @@ select.fld {
   margin: 0 0 6px 8px;
   font-size: 20px;
 }
+.pg-teledok .portrait .portrait-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pg-teledok .portrait .portrait-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--blue);
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.pg-teledok .portrait .portrait-linkedin:hover,
+.pg-teledok .portrait .portrait-linkedin:focus-visible {
+  background: var(--card);
+  border-color: var(--blue);
+}
 .pg-teledok .portrait p {
   margin-inline: 8px;
   font-size: 16px;

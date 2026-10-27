@@ -48,11 +48,7 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
           </nav>
           <div>
             <p className="label ftr-t">Contact</p>
-            <p className="ftr-adr">
-              {coordonnees.adresse ?? '[Adresse postale]'}
-              <br />
-              {coordonnees.email ? <a href={`mailto:${coordonnees.email}`}>{coordonnees.email}</a> : '[E-mail de contact]'}
-            </p>
+            <p className="ftr-adr">{coordonnees.adresse ?? '[Adresse postale]'}</p>
             <Link className="ftr-contact" href={ROUTES.contact}>
               Nous contacter
             </Link>

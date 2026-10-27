@@ -205,7 +205,7 @@ export default async function Page() {
               Teboul et Stéphane Illouz. TeleDok a pour but de servir la santé dans le cadre de la modernisation de l’accès aux soins à
               travers la mise à disposition de ses médecins pour des opérateurs de télémédecine. Aujourd’hui, TeleDok réunit des médecins
               généralistes et spécialistes, ainsi que des professionnels paramédicaux, dédiés à la construction, l’évaluation et la mise à
-              disposition de ressources humaines aux projets de télémédecine.
+              disposition de ressources humaines aux projets de télémédecine, avec télérequérants et objets connectés.
             </p>
             <More href={ROUTES.teledok} fg className="">
               En savoir plus sur TeleDok

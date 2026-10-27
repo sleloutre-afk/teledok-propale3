@@ -60,20 +60,6 @@ export default async function Page() {
                 <Icon name="adresse" size={22} width={1.7} stroke="var(--blue)" />
                 <span style={{ whiteSpace: 'pre-line' }}>{coordonnees.adresse ?? <span className="todo">[Adresse postale]</span>}</span>
               </li>
-              <li>
-                <Icon name="telephone" size={22} width={1.7} stroke="var(--blue)" />
-                <span>{coordonnees.telephone ?? <span className="todo">[Téléphone]</span>}</span>
-              </li>
-              <li>
-                <Icon name="courriel" size={22} width={1.7} stroke="var(--blue)" />
-                <span>
-                  {coordonnees.email ? (
-                    <a href={`mailto:${coordonnees.email}`}>{coordonnees.email}</a>
-                  ) : (
-                    <span className="todo">[E-mail de contact]</span>
-                  )}
-                </span>
-              </li>
             </ul>
           </div>
         </aside>

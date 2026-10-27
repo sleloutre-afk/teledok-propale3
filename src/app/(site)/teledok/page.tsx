@@ -21,14 +21,15 @@ export const metadata: Metadata = pageMetadata(
   'TeleDok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de parcours de soins innovants.',
 )
 
-// Fonctions et parcours repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
-const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string }[] = [
+// Fonctions, parcours et liens LinkedIn repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
+const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string; linkedin: string }[] = [
   {
     nom: 'Arnaud Molinié',
     de: 'd’Arnaud Molinié',
     role: 'Président-directeur général',
     detail: 'Fondateur et président de Doxamed, fondateur de Capitello Group.',
     photo: '/photos/arnaud.webp',
+    linkedin: 'https://www.linkedin.com/in/arnaud-molini%C3%A9-loxamed/',
   },
   {
     nom: 'Matthieu Guillotin',
@@ -36,6 +37,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     role: 'Directeur général',
     detail: 'Directeur général de Doxamed.',
     photo: '/photos/guillotin.webp',
+    linkedin: 'https://www.linkedin.com/in/matthieu-guillotin-5755924/',
   },
   {
     nom: 'Dr Stéphane Illouz',
@@ -43,6 +45,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     role: 'Co-fondateur',
     detail: 'Urgentiste, médecin généraliste. Coordinateur MSP.',
     photo: '/photos/illouz.webp',
+    linkedin: 'https://www.linkedin.com/in/stephane-illouz-0b3413270/',
   },
   {
     nom: 'Dr François Teboul',
@@ -51,10 +54,19 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     detail:
       'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie Francophone de Télémédecine.',
     photo: '/photos/teboul.webp',
+    linkedin: 'https://www.linkedin.com/in/francois-teboul-b03a9599/',
   },
 ]
 // Cases laissées libres à la suite, pour compléter la grille de six.
 const DIRECTION_LIBRES = 2
+
+function LinkedinIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.15 1.46-2.15 2.97V21h-4V9Z" />
+    </svg>
+  )
+}
 
 export default async function Page() {
   const valeurs = await getValeurs()
@@ -198,7 +210,18 @@ export default async function Page() {
                   alt={`Portrait ${d.de}.`}
                   sizes="(min-width: 1100px) 240px, (min-width: 640px) 45vw, 90vw"
                 />
-                <h3>{d.nom}</h3>
+                <h3 className="portrait-name">
+                  <span>{d.nom}</span>
+                  <a
+                    href={d.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Profil LinkedIn ${d.de}`}
+                    className="portrait-linkedin"
+                  >
+                    <LinkedinIcon />
+                  </a>
+                </h3>
                 <p className="portrait-role">{d.role}</p>
                 <p className="portrait-detail">{d.detail}</p>
               </li>
