@@ -2453,6 +2453,10 @@ select.fld {
 .pg-realisations .cas-media-item.is-on {
   opacity: 1;
 }
+.pg-realisations .cas-media-item.ph {
+  border: none;
+  border-radius: 0;
+}
 @media (prefers-reduced-motion: reduce) {
   .pg-realisations .cas-media-item {
     transition: none;
