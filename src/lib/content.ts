@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { THEMES, VALEURS, type ThemeId } from '@/data/themes'
-import { REALISATIONS } from '@/data/realisations'
+import { REALISATIONS, type RealisationTexte } from '@/data/realisations'
 import { COORDONNEES } from '@/lib/site'
 
 /** Contenus saisis dans le BO, tels que les pages du site les affichent. */
@@ -47,9 +47,10 @@ export async function getPublications(filter?: 'showOnHome' | 'showOnMedecins', 
 
 export type RealisationVoletView = {
   tag: string
+  image: { src: string; alt: string } | null
   contexte: string | null
-  role: string | string[] | null
-  resultat: string | string[] | null
+  role: RealisationTexte
+  resultat: RealisationTexte
   linkToRecherche: boolean
 }
 
@@ -60,8 +61,8 @@ export type RealisationView = {
   tagsLabel: string
   tags: string[]
   contexte: string | null
-  role: string | string[] | null
-  resultat: string | string[] | null
+  role: RealisationTexte
+  resultat: RealisationTexte
   image: { src: string; alt: string; width?: number | null; height?: number | null } | null
   imageBrief: string | null
   linkToRecherche: boolean

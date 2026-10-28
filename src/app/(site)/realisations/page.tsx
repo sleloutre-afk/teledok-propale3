@@ -1,12 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
 import { Crumb } from '@/components/Crumb'
-import { CasDetails } from '@/components/CasDetails'
-import { Ph } from '@/components/Ph'
+import { Cas } from '@/components/Cas'
 import { getRealisations } from '@/lib/content'
-import { cx } from '@/lib/cx'
 import { pageMetadata } from '@/lib/seo'
 import { ROUTES } from '@/lib/site'
 
@@ -46,7 +43,7 @@ export default async function Page() {
           <p className="hero-in3 phero-lead" style={{ marginTop: 24, maxWidth: 760, fontSize: 'clamp(19px, 1.8vw, 22px)' }}>
             Trois domaines d’intervention : la <a href="#prevention">prévention</a>, les{' '}
             <a href="#soins-primaires">soins primaires</a> et la <a href="#formation">formation</a>. En entreprise, en mairie,
-            en pharmacie, à bord des Médicobus, en EHPAD ou en crèche : pour chaque opération, le contexte, le rôle de TeleDok et
+            en pharmacie, à bord des Médicobus, en EHPAD, en gare ou en crèche : pour chaque opération, le contexte, le rôle de TeleDok et
             les résultats obtenus.
           </p>
         </div>
@@ -55,27 +52,7 @@ export default async function Page() {
       <div className="wrap cas-list">
         {realisations.map((cas, i) => (
           <section key={cas.id} id={cas.id} aria-labelledby={`cas-${cas.id}-t`}>
-            <article className={cx('cas rv', { 'cas--rev': i % 2 === 1 })}>
-              {cas.image ? (
-                <Image
-                  className="cas-ph cas-img"
-                  src={cas.image.src}
-                  alt={cas.image.alt}
-                  width={cas.image.width ?? 1200}
-                  height={cas.image.height ?? 900}
-                  sizes="(min-width: 1000px) 560px, 100vw"
-                />
-              ) : (
-                <Ph className="cas-ph" tag="Photographie ou vidéo réelle attendue" text={cas.imageBrief} />
-              )}
-              <div className="cas-b">
-                <p className="pill cas-theme">{cas.theme}</p>
-                <h2 id={`cas-${cas.id}-t`} className="h2 cas-t">
-                  {cas.title}
-                </h2>
-                <CasDetails cas={cas} />
-              </div>
-            </article>
+            <Cas cas={cas} rev={i % 2 === 1} />
           </section>
         ))}
       </div>

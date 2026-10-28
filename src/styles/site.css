@@ -1325,6 +1325,7 @@ select.fld {
 }
 .ftr-adr {
   margin-bottom: 10px;
+  white-space: pre-line;
 }
 .ftr-contact {
   font-weight: 700;
@@ -2435,6 +2436,28 @@ select.fld {
   align-self: stretch;
   object-fit: cover;
 }
+/* Photos des volets : superposées, celle du tag actif apparaît en fondu. */
+.pg-realisations .cas .cas-media {
+  position: relative;
+  overflow: hidden;
+}
+.pg-realisations .cas-media-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.pg-realisations .cas-media-item.is-on {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-realisations .cas-media-item {
+    transition: none;
+  }
+}
 .pg-realisations .cas-b {
   flex: 1.2 1 480px;
   min-width: 0;
@@ -2507,6 +2530,10 @@ select.fld {
 .pg-realisations .cas dd {
   margin: 0;
   font-size: 16px;
+}
+.pg-realisations .cas-lien {
+  font-weight: 700;
+  white-space: nowrap;
 }
 .pg-realisations .cas-resultat-list {
   margin: 0;

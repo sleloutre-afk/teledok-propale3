@@ -1,11 +1,19 @@
 /** Études de cas de la page « Réalisations », dans l'ordre d'affichage. Contenu en dur (voir src/lib/content.ts). */
 
 /** Un lieu de déploiement d'un cas : son propre contexte / rôle / résultat, affiché au clic sur son tag. */
+export type RealisationImage = { src: string; alt: string }
+
+/** Une puce de liste, éventuellement suivie d'un lien externe (« En savoir plus »). */
+export type RealisationLigne = string | { texte: string; lien: { href: string; label: string; titre: string } }
+
+export type RealisationTexte = string | RealisationLigne[] | null
+
 export type RealisationVolet = {
   tag: string
+  image: RealisationImage | null
   contexte: string | null
-  role: string | string[] | null
-  resultat: string | string[] | null
+  role: RealisationTexte
+  resultat: RealisationTexte
   linkToRecherche: boolean
 }
 
@@ -16,8 +24,8 @@ export type RealisationData = {
   tagsLabel: string
   tags: string[]
   contexte: string | null
-  role: string | string[] | null
-  resultat: string | string[] | null
+  role: RealisationTexte
+  resultat: RealisationTexte
   imageBrief: string | null
   linkToRecherche: boolean
   /** Quand renseigné, les tags deviennent cliquables : chacun affiche son propre volet (contexte / rôle / résultat). */
@@ -42,7 +50,7 @@ export const REALISATIONS: RealisationData[] = [
     title: 'Téléconsultation de soins primaires, assistée d’une infirmière et d’objets connectés',
     theme: 'Soins primaires',
     tagsLabel: 'Lieux de déploiement',
-    tags: ['Mairies', 'Pharmacies', 'Unités mobiles (Médicobus)', 'EHPAD'],
+    tags: ['Mairies', 'Pharmacies', 'Unités mobiles (Médicobus)', 'EHPAD', 'Gares'],
     contexte: null,
     role: null,
     resultat: null,
@@ -51,6 +59,7 @@ export const REALISATIONS: RealisationData[] = [
     volets: [
       {
         tag: 'Mairies',
+        image: { src: '/photos/mairie.jpg', alt: 'Cabine de téléconsultation connectée installée dans le hall d’une mairie' },
         contexte:
           'Déploiement par la société H4D, spécialisée dans les cabines médicales connectées, de cabines au sein d’entreprises et de mairies.',
         role:
@@ -63,6 +72,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Pharmacies',
+        image: { src: '/photos/pharmacie.jpg', alt: 'Dans l’espace de téléconsultation d’une pharmacie, une professionnelle de santé installe le brassard de tension d’une patiente' },
         contexte:
           'Visiomed, société spécialisée dans la médecine connectée, a mis en place un programme de télécabines en pharmacies pour des téléconsultations assistées par un pharmacien.',
         role: 'Création des protocoles médicaux et mise à disposition de médecins pour des téléconsultations avec pharmaciens télérequérants.',
@@ -74,6 +84,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Unités mobiles (Médicobus)',
+        image: { src: '/photos/medicobus.jpg', alt: 'À bord d’un Médicobus, une infirmière prend la tension d’un patient' },
         contexte:
           'Déploiement par la société Hocoia, spécialisée dans la conception de bus connectés dédiés à la santé, en partenariat avec Numerisat, de bus médicaux connectés dans des déserts médicaux, avec infirmiers télérequérants.',
         role: 'Formation des infirmiers et mise à disposition de médecins pour des téléconsultations depuis les Médicobus.',
@@ -85,10 +96,30 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'EHPAD',
+        image: { src: '/photos/ehpad.jpg', alt: 'Une infirmière examine l’oreille d’une résidente avec un otoscope relié à un smartphone' },
         contexte:
           'Mise en place par la société Toktokdok, en EHPAD, d’une solution de téléexpertise ORL (audiométrie assistée par un infirmier, suivie par un médecin ORL).',
         role: 'Formation des infirmiers et mise à disposition de médecins ORL pour des téléconsultations sur rendez-vous.',
         resultat: 'Entre 2020 et 2022, plus de 3 000 téléconsultations et téléconseils réalisés.',
+        linkToRecherche: false,
+      },
+      {
+        tag: 'Gares',
+        image: { src: '/photos/gares.jpg', alt: 'Entrée d’un espace santé Doxamed dans le hall d’une gare' },
+        contexte:
+          'Fin 2023, Doxamed remporte l’appel d’offres de SNCF Gares & Connexions pour déployer des espaces de santé permanents en gare.',
+        role: 'Mise à disposition de médecins pour des téléconsultations sur rendez-vous, avec prise en charge des patients par une infirmière.',
+        resultat: [
+          'Premier centre ouvert en gare SNCF d’Épinay-sur-Orge',
+          {
+            texte: 'Un patient souffrant d’une pneumonie non diagnostiquée sauvé in extremis grâce au dispositif',
+            lien: {
+              href: 'https://www.youtube.com/watch?v=USVbMg3lowQ',
+              label: 'En savoir plus',
+              titre: 'En savoir plus sur ce patient pris en charge en gare (vidéo YouTube, nouvel onglet)',
+            },
+          },
+        ],
         linkToRecherche: false,
       },
     ],
