@@ -1,0 +1,12 @@
+import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+
+// Colonne ajoutée par le stockage S3 de Payload (plugin cloud-storage), activé en production avec l'add-on Cellar.
+export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+  await db.execute(sql`
+   ALTER TABLE "media" ADD COLUMN "_objectkey" varchar;`)
+}
+
+export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
+  await db.execute(sql`
+   ALTER TABLE "media" DROP COLUMN "_objectkey";`)
+}
