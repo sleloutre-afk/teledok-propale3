@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { CSSProperties } from 'react'
+import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
 import { CandidatureForm } from '@/components/CandidatureForm'
 import { Crumb } from '@/components/Crumb'
@@ -24,23 +25,23 @@ export const metadata: Metadata = pageMetadata(
 
 const CONDITIONS = [
   {
-    icon: 'aucune-vente',
+    picto: '/pictos/no-vente.svg',
     titre: 'Aucune vente',
     texte: 'TeleDok ne vend rien aux médecins : ni technologie, ni process, ni formation.',
   },
   {
-    icon: 'honoraires',
+    picto: '/pictos/remuneration.svg',
     titre: 'Rémunération intégrale',
     texte: 'TeleDok ne se rémunère pas sur les consultations ; l’intégralité des honoraires revient au médecin.',
   },
   {
-    icon: 'chrono',
+    picto: '/pictos/qualite.svg',
     titre: 'Qualité, pas rendement',
     texte:
       '15 à 20 minutes par patient pour des soins primaires, 30 à 40 minutes pour un examen prévention, sans aucune obligation de rendement (pas d’« abattage »).',
   },
   {
-    icon: 'agenda',
+    picto: '/pictos/volume.svg',
     titre: 'Volume garanti',
     texte: 'Un volume d’occupation médicale garanti ; la taxe « lapin » (no-show patient) est assumée par TeleDok.',
   },
@@ -93,10 +94,14 @@ export default async function Page() {
                 aria-hidden="true"
                 style={{ left: -26, bottom: -26, width: 110, height: 110, background: 'var(--soft)', opacity: 0.85 }}
               ></div>
-              <Ph
-                tag="Photographie réelle attendue"
-                text="Un médecin de TeleDok en téléconsultation, au poste de travail ; cadrage sobre, lumière naturelle."
-                ratio="4 / 3"
+              <Image
+                className="ph-photo"
+                src="/photos/teleconsultation.jpg"
+                width={1448}
+                height={1086}
+                alt="Un médecin, à son bureau, suit en téléconsultation une infirmière qui examine un patient âgé à l’écran."
+                sizes="(min-width: 1100px) 560px, 92vw"
+                priority
               />
             </div>
           </div>
@@ -153,7 +158,7 @@ export default async function Page() {
           {CONDITIONS.map((c, i) => (
             <div key={i} className="card rv">
               <div className="ic">
-                <Icon name={c.icon} stroke="var(--blue)" trace />
+                <span className="ic-picto" aria-hidden="true" style={{ '--picto': `url(${c.picto})` } as CSSProperties} />
               </div>
               <h3>{c.titre}</h3>
               <p>{c.texte}</p>
@@ -175,7 +180,7 @@ export default async function Page() {
         ></div>
         <div className="wrap sec split rel">
           <div className="rv" style={{ flex: '1 1 460px' }}>
-            <p className="pill pill--solid eyebrow">Gratuite</p>
+            <p className="pill pill--solid eyebrow">Formation</p>
             <h2 id="form-t" className="h2" style={{ marginBottom: 20 }}>
               Une formation gratuite
             </h2>

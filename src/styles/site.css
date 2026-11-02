@@ -438,6 +438,14 @@ select:focus-visible {
 .ph-w {
   position: relative;
 }
+/* Photo réelle à la place d'un emplacement : même cadre, au-dessus des formes décoratives. */
+.ph-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+}
 
 /* ---------- Cartes ---------- */
 
@@ -2047,13 +2055,207 @@ select.fld {
   font-size: clamp(22px, 2.2vw, 28px);
   line-height: 1.5;
 }
+/* Notre histoire : bandeau bleu, frise horizontale (verticale sur mobile). */
+.pg-teledok .histoire {
+  background: var(--blue);
+  color: #fff;
+}
+.pg-teledok .histoire-head {
+  margin-bottom: 64px;
+}
+.pg-teledok .histoire-pill {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+.pg-teledok .histo-frise {
+  position: relative;
+  height: 150px;
+  /* Place pour les libellés centrés sous la première et la dernière année. */
+  margin: 0 70px 40px;
+}
+.pg-teledok .histo-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 51px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.pg-teledok .histo-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #fff;
+  transition: width 0.9s ease;
+}
+.pg-teledok .histo-node {
+  position: absolute;
+  top: 0;
+  left: calc(var(--x) * 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 140px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transform: translateX(-50%);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.pg-teledok .histo-year {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 32px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.pg-teledok .histo-dot {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--blue);
+  transition:
+    background-color 0.3s 0.5s,
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.pg-teledok .histo-title {
+  font-size: 15px;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+.pg-teledok .histo-node.is-past .histo-dot {
+  background: #fff;
+}
+.pg-teledok .histo-node.is-on .histo-dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.18);
+}
+.pg-teledok .histo-node:hover .histo-year,
+.pg-teledok .histo-node:hover .histo-title,
+.pg-teledok .histo-node.is-on .histo-year,
+.pg-teledok .histo-node.is-on .histo-title {
+  opacity: 1;
+}
+.pg-teledok .histo-node.is-on .histo-title {
+  font-weight: 700;
+}
+/* Détail des années, empilés dans une même cellule : la hauteur ne change pas d'une année à l'autre. */
+.pg-teledok .histo-panels {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pg-teledok .histo-panel {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 36px 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s;
+}
+.pg-teledok .histo-panel.is-on {
+  opacity: 1;
+  visibility: visible;
+}
+.pg-teledok .histo-panel .histo-panel-year {
+  flex: none;
+  font-size: clamp(44px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+}
+.pg-teledok .histo-panel h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.pg-teledok .histo-panel p {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.pg-teledok .histo-panel .histo-medecins {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 15px;
+  font-weight: 700;
+}
+@media (max-width: 899.98px) {
+  .pg-teledok .histoire-head {
+    margin-bottom: 40px;
+  }
+  .pg-teledok .histo-frise {
+    display: none;
+  }
+  .pg-teledok .histo-panels {
+    position: relative;
+    gap: 32px;
+    padding-left: 40px;
+  }
+  .pg-teledok .histo-panels::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .pg-teledok .histo-panel {
+    position: relative;
+    grid-area: auto;
+    display: block;
+    padding: 0;
+    background: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .pg-teledok .histo-panel::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 6px;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .pg-teledok .histo-panel .histo-panel-year {
+    margin-bottom: 8px;
+    font-size: 32px;
+  }
+  .pg-teledok .histo-panel h3 {
+    font-size: 20px;
+  }
+  .pg-teledok .histo-panel p {
+    font-size: 17px;
+  }
+}
 .pg-teledok .portrait {
   padding: 16px 16px 26px;
   background: #fff;
-}
-.pg-teledok .portrait--pending {
-  background: transparent;
-  border: 2px dashed var(--line-strong);
 }
 .pg-teledok .portrait .portrait-ph {
   margin-bottom: 24px;
@@ -2372,6 +2574,14 @@ select.fld {
 .pg-recherche .ncard:hover .ncard-ic {
   transform: scale(1.1);
 }
+/* Picto du type de document (SVG plein, en masque, coloré comme les icônes). */
+.pg-recherche .ncard-picto {
+  width: 120px;
+  height: 80px;
+  background: var(--fg);
+  -webkit-mask: var(--picto) center / contain no-repeat;
+  mask: var(--picto) center / contain no-repeat;
+}
 .pg-recherche .ncard:hover .ncard-dot {
   transform: scale(1.15);
 }
@@ -2644,6 +2854,14 @@ select.fld {
   .pg-medecins .conditions {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+/* Pictos pleins des conditions d'exercice (SVG en masque, en bleu). */
+.pg-medecins .ic-picto {
+  width: 42px;
+  height: 42px;
+  background: var(--blue);
+  -webkit-mask: var(--picto) center / contain no-repeat;
+  mask: var(--picto) center / contain no-repeat;
 }
 .pg-medecins .formation {
   background: var(--blue);

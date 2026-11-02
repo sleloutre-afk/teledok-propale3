@@ -113,12 +113,18 @@ export function Travaux({ publications }: { publications: PublicationView[] }) {
         <ul className="ncards">
           {publications.map((p) => {
             const th = THEMES[p.theme]
+            // Picto du type de document ; à défaut de type renseigné, celui du thème.
+            const cat = CATEGORIES.find((c) => c.id === categoryOf(p.type))
             const body = (
               <>
                 <span className="ncard-v" aria-hidden="true">
                   <span className="ncard-dot" />
                   <span className="ncard-dot2" />
-                  <Icon className="ncard-ic" name={th.icon} size={72} width={1.5} stroke="var(--fg)" />
+                  {cat ? (
+                    <span className="ncard-ic ncard-picto" style={{ '--picto': `url(${cat.picto})` } as CSSProperties} />
+                  ) : (
+                    <Icon className="ncard-ic" name={th.icon} size={72} width={1.5} stroke="var(--fg)" />
+                  )}
                 </span>
                 <span className="ncard-b">
                   <span className="ncard-meta">

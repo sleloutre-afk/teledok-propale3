@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
 import { Crumb } from '@/components/Crumb'
+import { Histoire } from '@/components/Histoire'
 import { Orientation } from '@/components/Orientation'
 import { Ph } from '@/components/Ph'
 import { Uline } from '@/components/Uline'
@@ -22,7 +23,8 @@ export const metadata: Metadata = pageMetadata(
 )
 
 // Fonctions, parcours et liens LinkedIn repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
-const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string; linkedin: string }[] = [
+// Sans photo, la carte affiche un emplacement « Portrait réel ».
+const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string | null; linkedin: string }[] = [
   {
     nom: 'Arnaud Molinié',
     de: 'd’Arnaud Molinié',
@@ -56,9 +58,15 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     photo: '/photos/teboul.webp',
     linkedin: 'https://www.linkedin.com/in/francois-teboul-b03a9599/',
   },
+  {
+    nom: 'Jennifer Krumhorn',
+    de: 'de Jennifer Krumhorn',
+    role: 'Responsable RH médical',
+    detail: 'IDE, responsable du centre de plaie de l’hôpital privé d’Antony.',
+    photo: '/photos/krumhorn.jpg',
+    linkedin: 'https://www.linkedin.com/in/jennifer-krumhorn-a256a8bb/',
+  },
 ]
-// Cases laissées libres à la suite, pour compléter la grille de six.
-const DIRECTION_LIBRES = 2
 
 function LinkedinIcon() {
   return (
@@ -127,6 +135,30 @@ export default async function Page() {
             text="Équipe médicale et paramédicale de TeleDok : portrait de groupe en situation."
             ratio="5 / 4"
           />
+        </div>
+      </section>
+
+      <section id="histoire" className="histoire on-blue clip" aria-labelledby="hist-t">
+        <div
+          className="blob"
+          aria-hidden="true"
+          style={{ right: -120, top: -140, width: 340, height: 340, background: 'var(--amber)' }}
+        ></div>
+        <div
+          className="blob blob--dot"
+          aria-hidden="true"
+          style={{ left: '46%', top: 70, width: 22, height: 22, background: 'var(--soft)' }}
+        ></div>
+        <div className="wrap sec rel">
+          <div className="rv histoire-head">
+            <p className="pill histoire-pill">Depuis 2018</p>
+            <h2 id="hist-t" className="h2">
+              Notre histoire
+            </h2>
+          </div>
+          <div className="rv">
+            <Histoire />
+          </div>
         </div>
       </section>
 
@@ -202,14 +234,18 @@ export default async function Page() {
           <ul className="grid" style={{ '--min': '240px', gap: 24 } as CSSProperties}>
             {DIRECTION.map((d) => (
               <li key={d.nom} className="card rv portrait">
-                <Image
-                  className="portrait-photo"
-                  src={d.photo}
-                  width={600}
-                  height={600}
-                  alt={`Portrait ${d.de}.`}
-                  sizes="(min-width: 1100px) 240px, (min-width: 640px) 45vw, 90vw"
-                />
+                {d.photo ? (
+                  <Image
+                    className="portrait-photo"
+                    src={d.photo}
+                    width={600}
+                    height={600}
+                    alt={`Portrait ${d.de}.`}
+                    sizes="(min-width: 1100px) 240px, (min-width: 640px) 45vw, 90vw"
+                  />
+                ) : (
+                  <Ph tag="Portrait réel" ratio="1 / 1" className="portrait-ph" />
+                )}
                 <h3 className="portrait-name">
                   <span>{d.nom}</span>
                   <a
@@ -224,13 +260,6 @@ export default async function Page() {
                 </h3>
                 <p className="portrait-role">{d.role}</p>
                 <p className="portrait-detail">{d.detail}</p>
-              </li>
-            ))}
-            {Array.from({ length: DIRECTION_LIBRES }, (_, i) => (
-              <li key={i} className="card rv portrait portrait--pending">
-                <Ph tag="Portrait réel" ratio="1 / 1" className="portrait-ph" />
-                <h3>[Nom à préciser]</h3>
-                <p className="portrait-role">[Fonction à préciser]</p>
               </li>
             ))}
           </ul>
