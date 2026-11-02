@@ -12,6 +12,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Publications } from './collections/Publications'
 import { resendEmailAdapter } from './lib/payloadEmailAdapter'
+import { s3 } from './lib/s3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -76,16 +77,13 @@ export default buildConfig({
     // En production, les fichiers uploadés partent sur un bucket S3 ;
     // sans configuration S3 (local), ils restent dans ./media.
     s3Storage({
-      enabled: Boolean(process.env.S3_BUCKET),
+      enabled: Boolean(s3.bucket),
       collections: { media: true },
-      bucket: process.env.S3_BUCKET || '',
+      bucket: s3.bucket,
       config: {
-        endpoint: process.env.S3_ENDPOINT,
-        region: process.env.S3_REGION,
-        credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
-        },
+        endpoint: s3.endpoint,
+        region: s3.region,
+        credentials: s3.credentials,
         forcePathStyle: true,
       },
     }),

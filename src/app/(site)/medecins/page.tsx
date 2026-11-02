@@ -6,7 +6,6 @@ import { CandidatureForm } from '@/components/CandidatureForm'
 import { Crumb } from '@/components/Crumb'
 import { Icon } from '@/components/Icon'
 import { More } from '@/components/More'
-import { Ph } from '@/components/Ph'
 import { Pub } from '@/components/Pub'
 import { Uline } from '@/components/Uline'
 import { getPublications } from '@/lib/content'
@@ -198,11 +197,13 @@ export default async function Page() {
               ))}
             </ol>
           </div>
-          <Ph
-            className="rv formation-ph"
-            tag="Photographie réelle attendue"
-            text="Session de formation entre médecins TeleDok : échange de pratiques autour d’un parcours."
-            ratio="5 / 4"
+          <Image
+            className="rv ph-photo formation-ph"
+            src="/photos/formation.jpg"
+            width={1402}
+            height={1122}
+            alt="Autour d’une table, un médecin montre à quatre confrères comment utiliser un stéthoscope connecté relié à un ordinateur portable."
+            sizes="(min-width: 1100px) 560px, 92vw"
           />
         </div>
       </section>
