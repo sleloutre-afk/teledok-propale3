@@ -1079,12 +1079,14 @@ select.fld {
   animation: rv 0.7s ease both;
 }
 
-/* Tracé progressif des icônes linéaires. */
-.js .trace [pathLength] {
+/* Tracé progressif des icônes linéaires : chaque forme, enfant direct du SVG, porte pathLength="1".
+   Pas de sélecteur [pathLength] : compilé en minuscules, Chrome ne réévalue plus la forme
+   quand la classe .is-in arrive, et l'icône reste invisible. */
+.js .trace > * {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
-.js .trace.is-in [pathLength] {
+.js .trace.is-in > * {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1.2s ease 0.15s;
 }
@@ -1111,7 +1113,7 @@ select.fld {
   .js .rv {
     opacity: 1;
   }
-  .js .trace [pathLength],
+  .js .trace > *,
   .uline path {
     stroke-dasharray: none;
     stroke-dashoffset: 0;
@@ -1743,11 +1745,13 @@ select.fld {
   width: 80px;
   height: 80px;
 }
-.pg-home .pic [pathLength] {
+/* Formes tracées des pictos (toutes portent pathLength="1", sauf les pointillés .d) :
+   même raison que pour .trace, pas de sélecteur [pathLength]. */
+.pg-home .pic :not(g, .d) {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
 }
-.pg-home .node.on .pic [pathLength] {
+.pg-home .node.on .pic :not(g, .d) {
   animation: redraw 1.2s ease both;
 }
 .pg-home .node.on .pic .d {
