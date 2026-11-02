@@ -2244,24 +2244,50 @@ select.fld {
    Recherche & publications — .pg-recherche
    ========================================================================== */
 
-.pg-recherche .formes-t {
-  margin-bottom: 32px;
-  font-size: clamp(26px, 2.6vw, 34px);
-}
-.pg-recherche .forme {
-  display: flex;
+/* Filtres par catégorie : picto (SVG en masque, coloré en CSS) + libellé. */
+.pg-recherche .chip--picto {
+  display: inline-flex;
   align-items: center;
-  gap: 20px;
-  padding: 26px 28px;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--fg);
+  gap: 10px;
 }
-.pg-recherche .forme .ic {
-  margin: 0;
+.pg-recherche .chip-picto {
+  flex: none;
+  width: 32px;
+  height: 26px;
+  background: var(--blue);
+  -webkit-mask: var(--picto) center / contain no-repeat;
+  mask: var(--picto) center / contain no-repeat;
 }
-.pg-recherche .travaux {
-  margin-top: clamp(72px, 9vw, 110px);
+.pg-recherche .chip-on .chip-picto {
+  background: #fff;
+}
+.pg-recherche .travaux-intro {
+  max-width: 640px;
+  margin: 16px 0 0;
+  font-size: 18px;
+}
+/* Trois lignes de filtres (type, année, thème), libellés alignés. */
+.pg-recherche .filtres {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.pg-recherche .filtres-label {
+  min-width: 72px;
+  margin-right: 8px;
+}
+.pg-recherche .travaux-vide {
+  margin: -16px 0 32px;
+  font-size: 16px;
+}
+.pg-recherche .travaux-reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .pg-recherche .travaux-in {
   padding-top: clamp(72px, 9vw, 110px);
@@ -2411,32 +2437,54 @@ select.fld {
   gap: 32px;
   padding-block: clamp(72px, 9vw, 110px);
 }
+/* Grand écran : visuel sur toute la hauteur d'un côté, en-tête (thème, titre, tags) puis contenu de l'autre.
+   Mobile : en-tête, visuel, contenu — le visuel suit les tags qui le pilotent. */
 .pg-realisations .cas {
-  display: flex;
-  flex-wrap: wrap;
+  --cas-pad: clamp(32px, 4vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'media head'
+    'media body';
   overflow: hidden;
   border-radius: 32px;
   background: var(--bg);
 }
-/* Un cas sur deux : visuel à droite sur grand écran, toujours au-dessus du texte sur mobile. */
+/* Un cas sur deux : visuel à droite sur grand écran. */
 .pg-realisations .cas--rev {
-  flex-direction: row-reverse;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-areas:
+    'head media'
+    'body media';
+}
+.pg-realisations .cas-head {
+  grid-area: head;
+  padding: var(--cas-pad) var(--cas-pad) 0;
+}
+.pg-realisations .cas-body {
+  grid-area: body;
+  padding: 0 var(--cas-pad) var(--cas-pad);
 }
 .pg-realisations .cas .cas-ph {
-  flex: 1 1 420px;
+  grid-area: media;
   min-width: 0;
   min-height: 360px;
   border: none;
   border-radius: 0;
 }
-/* Photographie déposée dans le BO : remplit l'emplacement, recadrée au besoin. */
-.pg-realisations .cas .cas-img {
-  width: 0;
-  height: auto;
-  align-self: stretch;
-  object-fit: cover;
+@media (max-width: 899.98px) {
+  .pg-realisations .cas,
+  .pg-realisations .cas--rev {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'head' 'media' 'body';
+  }
+  .pg-realisations .cas-body {
+    padding-top: var(--cas-pad);
+  }
 }
-/* Photos des volets : superposées, celle du tag actif apparaît en fondu. */
+/* Photos : remplissent l'emplacement, recadrées au besoin ; avec des onglets, superposées et celle du tag actif apparaît en fondu. */
 .pg-realisations .cas .cas-media {
   position: relative;
   overflow: hidden;
@@ -2453,6 +2501,44 @@ select.fld {
 .pg-realisations .cas-media-item.is-on {
   opacity: 1;
 }
+.pg-realisations .cas-media-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.pg-realisations .cas-media-credit.is-on {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-realisations .cas-media-credit {
+    transition: none;
+  }
+}
+/* Logo client à défaut de photo : entier, sur une tuile blanche centrée. */
+.pg-realisations .cas-media-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pg-realisations .cas-logo-tile {
+  position: relative;
+  width: 72%;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  background: #fff;
+}
+.pg-realisations .cas-logo-tile img {
+  object-fit: contain;
+  padding: 14%;
+}
 .pg-realisations .cas-media-item.ph {
   border: none;
   border-radius: 0;
@@ -2461,11 +2547,6 @@ select.fld {
   .pg-realisations .cas-media-item {
     transition: none;
   }
-}
-.pg-realisations .cas-b {
-  flex: 1.2 1 480px;
-  min-width: 0;
-  padding: clamp(32px, 4vw, 52px);
 }
 .pg-realisations .cas-volets {
   display: grid;

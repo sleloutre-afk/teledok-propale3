@@ -17,7 +17,7 @@ type PublicationSeed = Pick<Publication, 'title' | 'type' | 'theme'> & { showOnH
 
 // Ordre = ordre d'affichage sur le site.
 const PUBLICATIONS: PublicationSeed[] = [
-  { title: '[Titre de la thèse à préciser]', type: 'Thèse', theme: 'th' },
+  { title: '[Titre de la thèse à préciser]', type: 'Thèse', theme: 'sp' },
   { title: 'Rapport médical sur 1 000 patients en bilan de prévention', type: 'Rapport', theme: 'prev', showOnHome: true },
   { title: 'Rapport sur la téléconsultation en période de Covid sur camps de migrants', type: 'Rapport', theme: 'crise' },
   {

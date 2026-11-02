@@ -130,19 +130,19 @@ export interface Publication {
   _order?: string | null;
   title: string;
   /**
-   * Affiché en étiquette sur la carte. Tant qu’il est vide, le site affiche « [Type] ».
+   * Affiché en étiquette sur la carte et utilisé par le filtre « Type ». Tant qu’il est vide, le site affiche « [Type] ».
    */
   type?: ('Thèse' | 'Rapport' | 'Publication scientifique' | 'Étude qualitative') | null;
   /**
-   * Détermine le picto de la carte et le filtre correspondant.
+   * Détermine le picto de la carte et le filtre « Thème ». La thèse est un type de document, pas un thème.
    */
-  theme: 'prev' | 'sp' | 'dmc' | 'mob' | 'crise' | 'th';
+  theme: 'prev' | 'sp' | 'dmc' | 'mob' | 'crise';
   /**
-   * Mois et année affichés sur le site.
+   * Mois et année affichés sur le site ; l’année alimente le filtre « Année ».
    */
   date?: string | null;
   /**
-   * Ex. « Dr A. Martin, B. Durand ».
+   * Ex. « Dr A. Martin, B. Durand ». Laissé vide, aucun auteur n’est affiché.
    */
   authors?: string | null;
   /**

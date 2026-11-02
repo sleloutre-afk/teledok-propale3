@@ -7,13 +7,29 @@ export const THEMES = {
   dmc: { label: 'Dispositifs connectés', icon: 'ecran' },
   mob: { label: 'Unités mobiles', icon: 'medicobus' },
   crise: { label: 'Situations sanitaires exceptionnelles', icon: 'globe' },
-  th: { label: 'Thèses', icon: 'these' },
 } as const satisfies Record<string, { label: string; icon: IconName }>
 
 export type ThemeId = keyof typeof THEMES
 
 /** Types de document proposés dans le BO. */
 export const PUBLICATION_TYPES = ['Thèse', 'Rapport', 'Publication scientifique', 'Étude qualitative'] as const
+
+/** Filtres de la page « Recherche & publications » : chaque type de document du BO relève d'une catégorie. */
+export const CATEGORIES = [
+  { id: 'epidemio', label: 'Rapports épidémiologiques', picto: '/pictos/epidemiologique.svg', types: ['Rapport'] },
+  { id: 'theses', label: 'Thèses', picto: '/pictos/these.svg', types: ['Thèse'] },
+  {
+    id: 'publications',
+    label: 'Publications scientifiques',
+    picto: '/pictos/publication.svg',
+    types: ['Publication scientifique', 'Étude qualitative'],
+  },
+] as const satisfies readonly { id: string; label: string; picto: string; types: readonly (typeof PUBLICATION_TYPES)[number][] }[]
+
+export type CategoryId = (typeof CATEGORIES)[number]['id']
+
+export const categoryOf = (type: string | null): CategoryId | null =>
+  CATEGORIES.find((c) => (c.types as readonly string[]).includes(type ?? ''))?.id ?? null
 
 /** Les six valeurs de TeleDok, dans l'ordre de la planche d'origine (picto n° = rang). Textes validés par le Dr Illouz. */
 export const VALEURS: { key: string; titre: string; texte: string }[] = [

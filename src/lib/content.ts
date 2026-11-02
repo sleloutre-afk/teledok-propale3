@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { THEMES, VALEURS, type ThemeId } from '@/data/themes'
-import { REALISATIONS, type RealisationTexte } from '@/data/realisations'
+import { REALISATIONS, type RealisationImage, type RealisationTexte } from '@/data/realisations'
 import { COORDONNEES } from '@/lib/site'
 
 /** Contenus saisis dans le BO, tels que les pages du site les affichent. */
@@ -47,7 +47,7 @@ export async function getPublications(filter?: 'showOnHome' | 'showOnMedecins', 
 
 export type RealisationVoletView = {
   tag: string
-  image: { src: string; alt: string } | null
+  image: RealisationImage | null
   contexte: string | null
   role: RealisationTexte
   resultat: RealisationTexte
@@ -63,7 +63,7 @@ export type RealisationView = {
   contexte: string | null
   role: RealisationTexte
   resultat: RealisationTexte
-  image: { src: string; alt: string; width?: number | null; height?: number | null } | null
+  image: RealisationImage | null
   imageBrief: string | null
   linkToRecherche: boolean
   volets?: RealisationVoletView[]
@@ -71,7 +71,7 @@ export type RealisationView = {
 
 /** Études de cas de la page « Réalisations », textes en dur (voir src/data/realisations.ts). */
 export async function getRealisations(): Promise<RealisationView[]> {
-  return REALISATIONS.map((cas) => ({ ...cas, image: null }))
+  return REALISATIONS
 }
 
 export type ValeurView = { titre: string; texte: string | null }

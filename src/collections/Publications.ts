@@ -25,7 +25,10 @@ export const Publications: CollectionConfig = {
       type: 'select',
       label: 'Type de document',
       options: PUBLICATION_TYPES.map((type) => ({ label: type, value: type })),
-      admin: { description: 'Affiché en étiquette sur la carte. Tant qu’il est vide, le site affiche « [Type] ».' },
+      admin: {
+        description:
+          'Affiché en étiquette sur la carte et utilisé par le filtre « Type ». Tant qu’il est vide, le site affiche « [Type] ».',
+      },
     },
     {
       name: 'theme',
@@ -33,7 +36,7 @@ export const Publications: CollectionConfig = {
       label: 'Thème',
       required: true,
       options: Object.entries(THEMES).map(([value, theme]) => ({ label: theme.label, value })),
-      admin: { description: 'Détermine le picto de la carte et le filtre correspondant.' },
+      admin: { description: 'Détermine le picto de la carte et le filtre « Thème ». La thèse est un type de document, pas un thème.' },
     },
     {
       name: 'date',
@@ -42,10 +45,10 @@ export const Publications: CollectionConfig = {
       admin: {
         position: 'sidebar',
         date: { pickerAppearance: 'monthOnly', displayFormat: 'MM/yyyy' },
-        description: 'Mois et année affichés sur le site.',
+        description: 'Mois et année affichés sur le site ; l’année alimente le filtre « Année ».',
       },
     },
-    { name: 'authors', type: 'text', label: 'Auteurs', admin: { description: 'Ex. « Dr A. Martin, B. Durand ».' } },
+    { name: 'authors', type: 'text', label: 'Auteurs', admin: { description: 'Ex. « Dr A. Martin, B. Durand ». Laissé vide, aucun auteur n’est affiché.' } },
     {
       name: 'file',
       type: 'upload',

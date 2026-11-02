@@ -1,7 +1,12 @@
 /** Études de cas de la page « Réalisations », dans l'ordre d'affichage. Contenu en dur (voir src/lib/content.ts). */
 
 /** Un lieu de déploiement d'un cas : son propre contexte / rôle / résultat, affiché au clic sur son tag. */
-export type RealisationImage = { src: string; alt: string }
+/**
+ * `logo` : affiché en entier, centré sur fond blanc (au lieu d'être recadré comme une photo).
+ * `position` : cadrage de la photo dans son emplacement (CSS object-position), centré par défaut.
+ * `credit` : crédit photo, affiché en surimpression (« © … »).
+ */
+export type RealisationImage = { src: string; alt: string; logo?: boolean; position?: string; credit?: string }
 
 /** Une puce de liste, éventuellement suivie d'un lien externe (« En savoir plus »). */
 export type RealisationLigne = string | { texte: string; lien: { href: string; label: string; titre: string } }
@@ -26,6 +31,8 @@ export type RealisationData = {
   contexte: string | null
   role: RealisationTexte
   resultat: RealisationTexte
+  /** Photo du cas, quand il n'a pas d'onglets (sinon chaque onglet a la sienne). */
+  image: RealisationImage | null
   imageBrief: string | null
   linkToRecherche: boolean
   /** Quand renseigné, les tags deviennent cliquables : chacun affiche son propre volet (contexte / rôle / résultat). */
@@ -42,12 +49,13 @@ export const REALISATIONS: RealisationData[] = [
     contexte: null,
     role: null,
     resultat: null,
+    image: null,
     imageBrief: 'Bilan de prévention en situation : poste de téléconsultation, professionnel de santé.',
     linkToRecherche: false,
     volets: [
       {
         tag: 'Groupe ADP',
-        image: null,
+        image: { src: '/photos/adp.webp', alt: 'Entrée du centre de bilan de prévention santé du Groupe ADP, aux logos Groupe ADP et Doxamed', position: '83% 50%', credit: 'Sébastien Aubry / Groupe ADP' },
         contexte:
           'Depuis avril 2025, le Groupe ADP propose avec Doxamed à tous ses collaborateurs un bilan de prévention santé complet, anonyme, basé sur le volontariat et pris en charge par l’entreprise : près de 1 000 bilans par an, dans des espaces dédiés à Paris-Charles-de-Gaulle et Paris-Orly. Une première en France à l’échelle de toute une entreprise.',
         role: [
@@ -63,7 +71,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Bpifrance',
-        image: null,
+        image: { src: '/photos/logos/bpifrance.png', alt: 'Bpifrance', logo: true },
         contexte:
           'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, avec Doxamed, un bilan de prévention santé complet, anonyme, basé sur le volontariat et entièrement pris en charge, accessible à environ 850 collaborateurs par an dans un espace dédié de son siège, à Maisons-Alfort.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et l’orientent si nécessaire dans le parcours de soins.',
@@ -72,7 +80,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Deloitte',
-        image: null,
+        image: { src: '/photos/logos/deloitte.png', alt: 'Deloitte', logo: true },
         contexte:
           'Depuis 2026, Deloitte propose avec Doxamed à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé, dans un espace dédié de ses locaux à La Défense : une première pour un cabinet de conseil et d’audit en France.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et l’orientent si nécessaire dans le parcours de soins.',
@@ -81,7 +89,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Colisée',
-        image: null,
+        image: { src: '/photos/logos/colisee.webp', alt: 'Colisée', logo: true },
         contexte:
           'Colisée France, premier groupe du secteur du grand âge à proposer ces bilans à ses équipes, lance avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit EHPAD d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
         role: 'Téléconsultation de chaque collaborateur, quelques jours après son bilan, par un médecin qui lui remet un compte rendu complet et l’oriente si nécessaire dans le parcours de soins.',
@@ -99,6 +107,7 @@ export const REALISATIONS: RealisationData[] = [
     contexte: null,
     role: null,
     resultat: null,
+    image: null,
     imageBrief: 'Cabine connectée en mairie ou en pharmacie, Médicobus ; infirmière et patient.',
     linkToRecherche: true,
     volets: [
@@ -184,6 +193,11 @@ export const REALISATIONS: RealisationData[] = [
       'Entre 2022 et 2025, plus de 50 protocoles mis en place',
       '[Nombre de téléformations réalisées à préciser]',
     ],
+    image: {
+      src: '/photos/puericulture.jpg',
+      alt: 'Dans une crèche, une professionnelle s’exerce sur une poupée à utiliser une chambre d’inhalation, guidée en visioconférence par un médecin',
+      position: '100% 40%',
+    },
     imageBrief: 'Professionnels de crèche en séance de téléformation avec un médecin.',
     linkToRecherche: false,
   },
