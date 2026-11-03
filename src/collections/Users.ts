@@ -24,12 +24,12 @@ export const Users: CollectionConfig = {
     // Même e-mail pour l'invitation d'un nouveau compte et pour un vrai
     // « mot de passe oublié » : un lien sécurisé, à usage unique.
     forgotPassword: {
-      generateEmailSubject: () => 'Accès au back-office TeleDok',
+      generateEmailSubject: () => 'Accès au back-office Teledok',
       generateEmailHTML: ({ token } = {}) => {
         const url = `${SITE_ORIGIN}/BO/reset/${token}`
         return `
           <p>Bonjour,</p>
-          <p>Vous êtes invité(e) à vous connecter au back-office du site TeleDok. Cliquez sur le lien ci-dessous pour définir votre mot de passe&nbsp;:</p>
+          <p>Vous êtes invité(e) à vous connecter au back-office du site Teledok. Cliquez sur le lien ci-dessous pour définir votre mot de passe&nbsp;:</p>
           <p><a href="${url}">${url}</a></p>
           <p>Le mot de passe doit compter au moins 10 caractères, dont une majuscule, un chiffre et un caractère spécial.</p>
           <p>Ce lien est valable 1 heure. Passé ce délai, utilisez «&nbsp;Mot de passe oublié&nbsp;» sur la page de connexion pour en recevoir un nouveau. Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail.</p>

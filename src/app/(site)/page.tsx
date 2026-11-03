@@ -22,8 +22,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/',
-  'TeleDok : téléconsultation médicale et parcours de soins',
-  'TeleDok réunit des médecins et des paramédicaux autour de parcours de soins conçus, mis en œuvre et évalués avec rigueur, pour les patients comme pour les praticiens.',
+  'Teledok : téléconsultation médicale et parcours de soins',
+  'Teledok réunit des médecins et des paramédicaux autour de parcours de soins conçus, mis en œuvre et évalués avec rigueur, pour les patients comme pour les praticiens.',
 )
 
 // Rayons de l'araignée des valeurs, du logo central vers chaque picto (repère 740 × 700).
@@ -39,7 +39,7 @@ const SPOKES = [
 const ETAPES = [
   {
     titre: 'Conception sur-mesure du parcours',
-    texte: 'Analyse du contexte, rédaction des protocoles, formation des praticiens. TeleDok adopte la technologie du client.',
+    texte: 'Analyse du contexte, rédaction des protocoles, formation des praticiens. Teledok adopte la technologie du client.',
   },
   {
     titre: 'Mise en œuvre & ressources humaines',
@@ -94,12 +94,12 @@ export default async function Page() {
               Une médecine de qualité, partout, <Uline>en toute indépendance.</Uline>
             </h1>
             <p className="hero-in3 hero-lead">
-              TeleDok réunit des médecins et des paramédicaux autour de parcours de soins conçus, mis en œuvre et évalués avec rigueur, pour
+              Teledok réunit des médecins et des paramédicaux autour de parcours de soins conçus, mis en œuvre et évalués avec rigueur, pour
               les patients comme pour les praticiens.
             </p>
             <div className="hero-in3 btns">
               <Link className="btn btn-amber" href={ROUTES.medecins}>
-                Rejoindre TeleDok
+                Rejoindre Teledok
               </Link>
               <a className="btn btn-ghost" href="#methode">
                 Découvrir notre méthode
@@ -126,7 +126,7 @@ export default async function Page() {
                 50
               </span>
             </p>
-            <p className="kpi-l">médecins travaillant quotidiennement avec TeleDok</p>
+            <p className="kpi-l">médecins travaillant quotidiennement avec Teledok</p>
           </div>
           <div className="kpi kpi--plain rv">
             <div className="kpi-dot" aria-hidden="true"></div>
@@ -189,17 +189,17 @@ export default async function Page() {
           <div className="rv" style={{ flex: '1 1 460px' }}>
             <p className="pill eyebrow">Qui sommes-nous</p>
             <h2 id="qui-t" className="h2" style={{ marginBottom: 28 }}>
-              Qui est TeleDok
+              Qui est Teledok
             </h2>
             <p style={{ marginBottom: 32, fontSize: 20, lineHeight: '1.7' }}>
-              Précurseur des plateformes de médecins destiné aux téléconsultations, TeleDok a été créé en 2018 par les docteurs François
-              Teboul et Stéphane Illouz. TeleDok a pour but de servir la santé dans le cadre de la modernisation de l’accès aux soins à
-              travers la mise à disposition de ses médecins pour des opérateurs de télémédecine. Aujourd’hui, TeleDok réunit des médecins
+              Précurseur des plateformes de médecins destiné aux téléconsultations, Teledok a été créé en 2018 par les docteurs François
+              Teboul et Stéphane Illouz. Teledok a pour but de servir la santé dans le cadre de la modernisation de l’accès aux soins à
+              travers la mise à disposition de ses médecins pour des opérateurs de télémédecine. Aujourd’hui, Teledok réunit des médecins
               généralistes et spécialistes, ainsi que des professionnels paramédicaux, dédiés à la construction, l’évaluation et la mise à
               disposition de ressources humaines aux projets de télémédecine, avec télérequérants et objets connectés.
             </p>
             <More href={ROUTES.teledok} fg className="">
-              En savoir plus sur TeleDok
+              En savoir plus sur Teledok
             </More>
           </div>
         </div>
@@ -234,13 +234,13 @@ export default async function Page() {
                 </p>
                 <p>
                   Investir dans de nouveaux outils digitaux et technologiques pour moderniser les dispositifs existants afin de développer
-                  des solutions de télémédecine innovantes est un élément clé. Le cœur de métier de TeleDok est la médecine et surtout celle
+                  des solutions de télémédecine innovantes est un élément clé. Le cœur de métier de Teledok est la médecine et surtout celle
                   “de demain”.&nbsp;»
                 </p>
               </blockquote>
               <figcaption className="mission-who">
                 <strong>Arnaud Molinié</strong>
-                <span>président-directeur général de TeleDok</span>
+                <span>président-directeur général de Teledok</span>
               </figcaption>
             </figure>
           </div>
@@ -274,7 +274,7 @@ export default async function Page() {
               <span className="web-ring web-ring2" aria-hidden="true"></span>
               <Image
                 src={logo}
-                alt="TeleDok"
+                alt="Teledok"
                 width={118}
                 height={Math.round((118 * logo.height) / logo.width)}
                 style={{ height: 'auto' }}
@@ -318,13 +318,13 @@ export default async function Page() {
                 </span>
                 <div>
                   <p className="web-detail-t">{v.titre}</p>
-                  <p>{v.texte ?? '[Texte explicatif de la valeur : 1 à 2 lignes, à rédiger avec TeleDok]'}</p>
+                  <p>{v.texte ?? '[Texte explicatif de la valeur : 1 à 2 lignes, à rédiger avec Teledok]'}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="valeurs-more">
-            <More href={ROUTES.teledok}>Découvrir TeleDok et ses valeurs</More>
+            <More href={ROUTES.teledok}>Découvrir Teledok et ses valeurs</More>
           </div>
         </div>
       </section>
@@ -373,7 +373,7 @@ export default async function Page() {
               Contribution à la recherche
             </h2>
             <p style={{ marginBottom: 32, fontSize: 19, lineHeight: '1.7' }}>
-              TeleDok n’est pas seulement une structure opérationnelle : chaque opération, par ses retours d’expérience et ses données
+              Teledok n’est pas seulement une structure opérationnelle : chaque opération, par ses retours d’expérience et ses données
               agrégées, contribue à la connaissance scientifique, pour apporter sa pierre à l’édifice d’une santé globale.
             </p>
             <ul className="pills" style={{ marginBottom: 36 }}>
@@ -409,7 +409,7 @@ export default async function Page() {
               <h2 className="h2 home-cta-t">Vous êtes médecin ?</h2>
               <p>Exercer la télémédecine sans renoncer à la qualité du soin ni à votre indépendance.</p>
               <Link className="btn btn-amber" href={ROUTES.medecins}>
-                Rejoindre TeleDok
+                Rejoindre Teledok
               </Link>
             </div>
             <div className="cta rv home-cta">

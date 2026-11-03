@@ -51,7 +51,7 @@ function VerifyForm() {
   return (
     <main className="gate">
       <div className="gate__card">
-        <img className="gate__logo" src={logo.src} width={200} height={55} alt="TeleDok" />
+        <img className="gate__logo" src={logo.src} width={200} height={55} alt="Teledok" />
         <h1 className="gate__title">Accès au back-office</h1>
         <p className="gate__text">Une vérification rapide avant d’accéder à la page de connexion.</p>
         <form onSubmit={handleSubmit} className="gate__form">

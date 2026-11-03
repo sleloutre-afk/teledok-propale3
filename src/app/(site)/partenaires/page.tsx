@@ -14,7 +14,7 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/partenaires',
-  'Partenaires | TeleDok',
+  'Partenaires | Teledok',
   'Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics : mutuelles, grands groupes, professionnels de santé, collectivités et institutionnels.',
 )
 
@@ -136,7 +136,7 @@ export default function Page() {
               </li>
             ))}
           </ol>
-          <p className="rv agnostic">Agnosticisme technologique : TeleDok adopte la technologie du client.</p>
+          <p className="rv agnostic">Agnosticisme technologique : Teledok adopte la technologie du client.</p>
         </div>
       </section>
 

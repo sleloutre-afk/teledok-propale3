@@ -25,7 +25,7 @@ function Ligne({ ligne }: { ligne: RealisationLigne }) {
 }
 
 function Texte({ texte }: { texte: RealisationTexte }) {
-  if (texte == null) return <span className="todo">[À rédiger avec TeleDok]</span>
+  if (texte == null) return <span className="todo">[À rédiger avec Teledok]</span>
   if (Array.isArray(texte)) {
     return (
       <ul className="cas-resultat-list">
@@ -46,7 +46,7 @@ function Rubriques({ contexte, role, resultat }: { contexte: RealisationTexte; r
       {(
         [
           ['Contexte', contexte],
-          ['Rôle de TeleDok', role],
+          ['Rôle de Teledok', role],
           ['Résultat et évaluation', resultat],
         ] as const
       ).map(([label, texte]) => (

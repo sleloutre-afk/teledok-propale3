@@ -12,8 +12,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/mentions-legales',
-  'Mentions légales | TeleDok',
-  'Mentions légales et conditions générales d’utilisation du site TeleDok : éditeur, directeur de la publication, hébergement, propriété intellectuelle, responsabilité.',
+  'Mentions légales | Teledok',
+  'Mentions légales et conditions générales d’utilisation du site Teledok : éditeur, directeur de la publication, hébergement, propriété intellectuelle, responsabilité.',
 )
 
 const sommaire = [
@@ -79,7 +79,7 @@ export default function Page() {
 
       <h2 id="sante">Information médicale</h2>
       <p>
-        Les informations publiées sur le Site Internet ont une vocation générale d’information sur TeleDok, ses activités et ses travaux.
+        Les informations publiées sur le Site Internet ont une vocation générale d’information sur Teledok, ses activités et ses travaux.
         Elles ne constituent pas un avis médical et ne remplacent en aucun cas une consultation avec un professionnel de santé.
       </p>
       <p>
@@ -114,7 +114,7 @@ export default function Page() {
       <h2 id="services">Description des services et accès</h2>
       <p>
         Le Site Internet permet aux Utilisateurs d’avoir accès aux services, fonctionnalités et Contenus qu’il propose, notamment la
-        présentation de TeleDok, la consultation de ses publications et l’envoi de candidatures ou de demandes de contact. Ceux-ci sont
+        présentation de Teledok, la consultation de ses publications et l’envoi de candidatures ou de demandes de contact. Ceux-ci sont
         évolutifs, de même que les CGU, sans information préalable de l’Utilisateur. Celui-ci est donc invité à en prendre connaissance
         régulièrement pour se tenir au courant.
       </p>
@@ -206,7 +206,7 @@ export default function Page() {
 
       <h2 id="credits">Crédits</h2>
       <ul>
-        <li>Portraits de la direction : TeleDok.</li>
+        <li>Portraits de la direction : Teledok.</li>
         <li>Certaines illustrations et vidéos du Site Internet ont été réalisées à l’aide d’outils d’intelligence artificielle.</li>
         <li>
           Conception et réalisation : TheOtter —{' '}

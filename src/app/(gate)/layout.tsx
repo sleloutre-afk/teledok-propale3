@@ -4,7 +4,7 @@ import Script from 'next/script'
 import './gate.css'
 
 export const metadata: Metadata = {
-  title: 'Accès au back-office — TeleDok',
+  title: 'Accès au back-office — Teledok',
   robots: { index: false, follow: false },
 }
 

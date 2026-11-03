@@ -16,7 +16,7 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/notre-methode',
-  'Notre méthode | TeleDok',
+  'Notre méthode | Teledok',
   'De la conception à l’évaluation, chaque parcours est documenté, mesuré et amélioré : conception sur-mesure, mise en œuvre, évaluation systématique, amélioration itérative.',
 )
 
@@ -123,7 +123,7 @@ export default function Page() {
             </ul>
             <div className="agnostic">
               <p className="agnostic-t">Agnosticisme technologique</p>
-              <p className="agnostic-p">TeleDok adopte la technologie du client.</p>
+              <p className="agnostic-p">Teledok adopte la technologie du client.</p>
             </div>
           </li>
           <li className="step rv">
@@ -131,7 +131,7 @@ export default function Page() {
             <h3>Mise en œuvre &amp; ressources humaines</h3>
             <ul className="blist">
               <li>Fourniture des médecins et paramédicaux nécessaires</li>
-              <li>Un premier pool d’environ 50 médecins collaborant quotidiennement avec TeleDok</li>
+              <li>Un premier pool d’environ 50 médecins collaborant quotidiennement avec Teledok</li>
             </ul>
             <p className="pool">
               <span className="pool-n">≈ 50</span>

@@ -12,8 +12,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/recherche',
-  'Recherche & publications | TeleDok',
-  'Rapports épidémiologiques, publications scientifiques et thèses : chaque opération de TeleDok contribue, par ses retours d’expérience et ses données agrégées, à la connaissance scientifique.',
+  'Recherche & publications | Teledok',
+  'Rapports épidémiologiques, publications scientifiques et thèses : chaque opération de Teledok contribue, par ses retours d’expérience et ses données agrégées, à la connaissance scientifique.',
 )
 
 export default async function Page() {
@@ -41,7 +41,7 @@ export default async function Page() {
             Contribution à la recherche
           </h1>
           <p className="hero-in3 phero-lead">
-            TeleDok n’est pas seulement une structure opérationnelle : chaque opération, par ses retours d’expérience et ses données
+            Teledok n’est pas seulement une structure opérationnelle : chaque opération, par ses retours d’expérience et ses données
             agrégées, contribue à la connaissance scientifique, pour apporter sa pierre à l’édifice d’une santé globale.
           </p>
         </div>

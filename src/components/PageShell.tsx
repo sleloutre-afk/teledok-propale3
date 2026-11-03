@@ -11,7 +11,7 @@ type Props = {
   current?: RouteKey
   /** En-tête transparent posé sur le visuel d'ouverture (accueil). */
   overlayHeader?: boolean
-  /** Cible du bouton « Rejoindre TeleDok » de l'en-tête. */
+  /** Cible du bouton « Rejoindre Teledok » de l'en-tête. */
   joinHref?: string
   /** Dernière colonne du pied de page. */
   footerCta?: 'medecins' | 'partenaires'

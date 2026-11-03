@@ -1,5 +1,5 @@
-/* TeleDok — proposition 3. Charte : bleu #0D628F, gris #3C3C3C, Signika.
-   Palette resserrée : l'ambre est le seul accent (couleur ajoutée à la charte, à valider par TeleDok). */
+/* Teledok — proposition 3. Charte : bleu #0D628F, gris #3C3C3C, Signika.
+   Palette resserrée : l'ambre est le seul accent (couleur ajoutée à la charte, à valider par Teledok). */
 
 :root {
   --blue: #0d628f;
@@ -220,7 +220,7 @@ select:focus-visible {
   color: var(--muted);
 }
 
-/* Contenu en attente, à fournir par TeleDok. */
+/* Contenu en attente, à fournir par Teledok. */
 .todo {
   background: var(--card);
   border-radius: 6px;
@@ -1579,7 +1579,7 @@ select.fld {
   margin-top: -60px;
   padding-top: 60px;
 }
-/* Photographie de la section « Qui est TeleDok » : même gabarit que l'emplacement réservé,
+/* Photographie de la section « Qui est Teledok » : même gabarit que l'emplacement réservé,
    posée au-dessus des formes décoratives. */
 .pg-home .photo {
   position: relative;
@@ -2045,7 +2045,7 @@ select.fld {
 }
 
 /* ==========================================================================
-   TeleDok — .pg-teledok
+   Teledok — .pg-teledok
    ========================================================================== */
 
 /* Portraits en visio, « le réseau se constitue » (« Un regroupement de praticiens »), voir Visios.tsx :

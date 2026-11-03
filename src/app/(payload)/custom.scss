@@ -1,9 +1,9 @@
-// Habillage du BO aux couleurs TeleDok (bleu #0D628F de la charte).
+// Habillage du BO aux couleurs Teledok (bleu #0D628F de la charte).
 //
 // Payload construit sa palette d'accent (liens, focus, zones de dépôt,
 // badges « publié »…) à partir de l'échelle --color-success-50 → 950,
 // reprise par --theme-success-* en clair et en sombre : la remplacer par
-// une déclinaison du bleu TeleDok rebrande l'interface sans toucher aux
+// une déclinaison du bleu Teledok rebrande l'interface sans toucher aux
 // composants.
 @layer payload-default {
   :root {

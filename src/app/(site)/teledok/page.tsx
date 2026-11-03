@@ -19,8 +19,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/teledok',
-  'Qui sommes-nous | TeleDok',
-  'TeleDok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de parcours de soins innovants.',
+  'Qui sommes-nous | Teledok',
+  'Teledok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de parcours de soins innovants.',
 )
 
 // Fonctions, parcours et liens LinkedIn repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
@@ -99,7 +99,7 @@ export default async function Page() {
             <span className="pill__dot" aria-hidden="true"></span>Qui sommes-nous
           </p>
           <h1 id="hero-t" className="hero-in2 h1 hero-h1">
-            TeleDok est né d’une conviction : la télémédecine n’a de valeur que si elle préserve la qualité du soin et{' '}
+            Teledok est né d’une conviction : la télémédecine n’a de valeur que si elle préserve la qualité du soin et{' '}
             <Uline>l’indépendance de ceux qui l’exercent.</Uline>
           </h1>
         </div>
@@ -111,7 +111,7 @@ export default async function Page() {
             Un regroupement de praticiens
           </h2>
           <p style={{ marginBottom: 32, fontSize: 20, lineHeight: '1.7' }}>
-            TeleDok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de
+            Teledok est un regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux, au service de
             parcours de soins innovants. Son modèle repose sur l’indépendance médicale et l’exigence de qualité.
           </p>
           <ul className="pills">
@@ -185,7 +185,7 @@ export default async function Page() {
                   />
                 </div>
                 <h3>{v.titre}</h3>
-                <p>{v.texte ?? <span className="todo">[1 à 2 lignes à rédiger avec TeleDok]</span>}</p>
+                <p>{v.texte ?? <span className="todo">[1 à 2 lignes à rédiger avec Teledok]</span>}</p>
               </li>
             ))}
           </ul>
@@ -210,7 +210,7 @@ export default async function Page() {
               Un modèle indépendant
             </h2>
             <p className="indep-txt">
-              TeleDok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
+              Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
               la condition de la confiance.
             </p>
             <Link className="btn btn-amber" href={ROUTES.medecins}>

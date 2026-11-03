@@ -18,7 +18,7 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/medecins',
-  'Médecins : rejoindre TeleDok',
+  'Médecins : rejoindre Teledok',
   'Exercer la télémédecine sans renoncer à la qualité du soin ni à votre indépendance : conditions d’exercice, formation gratuite et candidature.',
 )
 
@@ -26,12 +26,12 @@ const CONDITIONS = [
   {
     picto: '/pictos/no-vente.svg',
     titre: 'Aucune vente',
-    texte: 'TeleDok ne vend rien aux médecins : ni technologie, ni process, ni formation.',
+    texte: 'Teledok ne vend rien aux médecins : ni technologie, ni process, ni formation.',
   },
   {
     picto: '/pictos/remuneration.svg',
     titre: 'Rémunération intégrale',
-    texte: 'TeleDok ne se rémunère pas sur les consultations ; l’intégralité des honoraires revient au médecin.',
+    texte: 'Teledok ne se rémunère pas sur les consultations ; l’intégralité des honoraires revient au médecin.',
   },
   {
     picto: '/pictos/qualite.svg',
@@ -42,13 +42,13 @@ const CONDITIONS = [
   {
     picto: '/pictos/volume.svg',
     titre: 'Volume garanti',
-    texte: 'Un volume d’occupation médicale garanti ; la taxe « lapin » (no-show patient) est assumée par TeleDok.',
+    texte: 'Un volume d’occupation médicale garanti ; la taxe « lapin » (no-show patient) est assumée par Teledok.',
   },
 ] as const
 
 const MODULES = [
   { icon: 'bouclier-pouls', label: 'Médecine de prévention' },
-  { icon: 'ecran', label: 'Méthodologies TeleDok (téléconsultation)' },
+  { icon: 'ecran', label: 'Méthodologies Teledok (téléconsultation)' },
   { icon: 'parcours', label: 'Outils propres à chaque parcours de soins' },
 ] as const
 
@@ -64,7 +64,7 @@ export default async function Page() {
           style={{ left: -140, bottom: -160, width: 380, height: 380, background: 'var(--card)' }}
         ></div>
         <div className="wrap phero rel" style={{ paddingBottom: 170 }}>
-          <Crumb label="Médecins : rejoindre TeleDok" />
+          <Crumb label="Médecins : rejoindre Teledok" />
           <div className="split">
             <div style={{ flex: '1 1 520px' }}>
               <p className="hero-in pill">
@@ -141,7 +141,7 @@ export default async function Page() {
                 50
               </span>
             </p>
-            <p className="kpi-l">médecins travaillant quotidiennement avec TeleDok</p>
+            <p className="kpi-l">médecins travaillant quotidiennement avec Teledok</p>
           </div>
         </div>
       </section>
@@ -218,7 +218,7 @@ export default async function Page() {
               Un modèle indépendant
             </h2>
             <p className="quote-p">
-              TeleDok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
+              Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
               la condition de la confiance.
             </p>
           </div>
@@ -232,7 +232,7 @@ export default async function Page() {
             <h2 id="etu-t" className="h2" style={{ marginBottom: 12, fontSize: 28, lineHeight: '1.3' }}>
               Travaux menés auprès des médecins
             </h2>
-            <p style={{ marginBottom: 20, fontSize: 17 }}>Extraits des travaux de recherche conduits par TeleDok.</p>
+            <p style={{ marginBottom: 20, fontSize: 17 }}>Extraits des travaux de recherche conduits par Teledok.</p>
             <More href={ROUTES.recherche}>Recherche &amp; publications</More>
           </div>
           <ul className="pubs rv" style={{ flex: '2 1 560px', minWidth: '0' }}>
@@ -253,7 +253,7 @@ export default async function Page() {
           <div className="rv" style={{ flex: '1 1 340px', minWidth: '0' }}>
             <p className="pill eyebrow">Candidature</p>
             <h2 id="cand-t" className="h2" style={{ marginBottom: 20 }}>
-              Rejoindre TeleDok
+              Rejoindre Teledok
             </h2>
             <p style={{ marginBottom: 28, lineHeight: '1.65' }}>Tous les champs sont obligatoires.</p>
             <div className="rpps-note">

@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import { structures, type FormKind } from './forms'
 
 /** Expéditeur des notifications ; le domaine doit être vérifié dans le compte Resend. */
-const FROM = process.env.EMAIL_FROM || 'TeleDok <noreply@teledok.fr>'
+const FROM = process.env.EMAIL_FROM || 'Teledok <noreply@teledok.fr>'
 
 const LABELS: Record<string, string> = {
   org: 'Organisation',
@@ -21,7 +21,7 @@ type SendResult = { ok: true } | { ok: false; error: string }
 const oneLine = (value: string) => value.replace(/[\r\n]+/g, ' ').slice(0, 120)
 
 /**
- * Notification interne envoyée à TeleDok à chaque formulaire reçu
+ * Notification interne envoyée à Teledok à chaque formulaire reçu
  * (candidature médecin ou demande de contact), via Resend. Les demandes ne
  * sont pas conservées par le site : l'e-mail en est la seule trace.
  *
@@ -33,8 +33,8 @@ const oneLine = (value: string) => value.replace(/[\r\n]+/g, ' ').slice(0, 120)
 export async function sendFormNotification(kind: FormKind, data: Record<string, string>): Promise<SendResult> {
   const subject =
     kind === 'candidature'
-      ? `[TeleDok] Candidature médecin — ${oneLine(`${data.nom} ${data.prenom}`)}`
-      : `[TeleDok] Demande de contact — ${oneLine(data.org)}`
+      ? `[Teledok] Candidature médecin — ${oneLine(`${data.nom} ${data.prenom}`)}`
+      : `[Teledok] Demande de contact — ${oneLine(data.org)}`
 
   const lines = Object.entries(data).map(([key, raw]) => {
     const value = key === 'type' ? (structures[raw as keyof typeof structures] ?? raw) : raw

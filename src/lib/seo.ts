@@ -6,6 +6,6 @@ export function pageMetadata(path: string, title: string, description: string): 
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { type: 'website', siteName: 'TeleDok', locale: 'fr_FR', title, description, url: path },
+    openGraph: { type: 'website', siteName: 'Teledok', locale: 'fr_FR', title, description, url: path },
   }
 }

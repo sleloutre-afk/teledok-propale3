@@ -4,14 +4,14 @@ import { Signika } from 'next/font/google'
 import { SITE_URL } from '@/lib/site'
 import '@/styles/site.css'
 
-// Police unique de la charte TeleDok (300 à 700). Téléchargée à la
+// Police unique de la charte Teledok (300 à 700). Téléchargée à la
 // compilation et servie par le site lui-même : aucun appel à Google côté visiteur.
 // Seul le jeu de caractères latin est préchargé ; le latin étendu reste chargé à la demande.
 const signika = Signika({ subsets: ['latin'], display: 'swap', variable: '--font-signika' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'TeleDok : téléconsultation médicale et parcours de soins',
+  title: 'Teledok : téléconsultation médicale et parcours de soins',
   // Monogramme du logo (public/favicon.svg, qui passe en bleu clair quand le navigateur est en thème sombre) ;
   // les versions PNG et ICO en sont dérivées.
   icons: {

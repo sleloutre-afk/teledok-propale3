@@ -9,7 +9,7 @@ type Props = {
   children?: ReactNode
 }
 
-/** Emplacement réservé à une photographie ou une vidéo réelle, à fournir par TeleDok. */
+/** Emplacement réservé à une photographie ou une vidéo réelle, à fournir par Teledok. */
 export function Ph({ tag, text, ratio, className, children }: Props) {
   return (
     <div className={cx('ph', className)} style={ratio ? { aspectRatio: ratio } : undefined}>

@@ -83,7 +83,7 @@ export async function getValeurs(): Promise<ValeurView[]> {
 
 export type CoordonneesView = { adresse: string | null; telephone: string | null; email: string | null }
 
-/** Coordonnées de TeleDok, en dur (voir COORDONNEES dans src/lib/site.ts). */
+/** Coordonnées de Teledok, en dur (voir COORDONNEES dans src/lib/site.ts). */
 export async function getCoordonnees(): Promise<CoordonneesView> {
   return COORDONNEES
 }

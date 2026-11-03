@@ -10,7 +10,7 @@ type Props = {
   current?: RouteKey
   /** En-tête transparent posé sur le visuel d'ouverture (accueil). */
   overlay?: boolean
-  /** Cible du bouton « Rejoindre TeleDok ». */
+  /** Cible du bouton « Rejoindre Teledok ». */
   joinHref?: string
 }
 
@@ -28,8 +28,8 @@ export function Header({ current, overlay = false, joinHref = ROUTES.medecins }:
     <header className={cx('site-hdr', { 'site-hdr--overlay': overlay })} data-header>
       <div className="hdr">
         <div className="hdr-in">
-          <Link className="hdr-logo" href={ROUTES.accueil} aria-label="TeleDok, retour à l’accueil">
-            <Image className="logo logo--c" src={logo} alt="TeleDok" width={LOGO_WIDTH} height={LOGO_HEIGHT} style={LOGO_STYLE} priority />
+          <Link className="hdr-logo" href={ROUTES.accueil} aria-label="Teledok, retour à l’accueil">
+            <Image className="logo logo--c" src={logo} alt="Teledok" width={LOGO_WIDTH} height={LOGO_HEIGHT} style={LOGO_STYLE} priority />
             {overlay && (
               <Image className="logo logo--w" src={logoBlanc} alt="" width={LOGO_WIDTH} height={LOGO_HEIGHT} style={LOGO_STYLE} priority />
             )}
@@ -65,7 +65,7 @@ export function Header({ current, overlay = false, joinHref = ROUTES.medecins }:
               </Link>
             ))}
             <Link className="btn btn-amber hdr-join" href={joinHref}>
-              Rejoindre TeleDok
+              Rejoindre Teledok
             </Link>
           </nav>
         </div>

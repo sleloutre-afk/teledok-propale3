@@ -4,7 +4,7 @@ import { PageShell } from '@/components/PageShell'
 import { ROUTES } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Page introuvable | TeleDok',
+  title: 'Page introuvable | Teledok',
   description: 'La page demandée n’existe pas ou a été déplacée.',
   robots: { index: false, follow: false },
 }

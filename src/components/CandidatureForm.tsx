@@ -9,10 +9,10 @@ export function CandidatureForm({ labelledBy }: { labelledBy: string }) {
       kind="candidature"
       prefix="b"
       labelledBy={labelledBy}
-      consent="J’accepte que les informations saisies soient utilisées par TeleDok pour traiter ma candidature."
+      consent="J’accepte que les informations saisies soient utilisées par Teledok pour traiter ma candidature."
       submitLabel="Envoyer ma candidature"
       doneTitle="Votre candidature a bien été transmise."
-      doneText={(nom) => <>Merci, Dr {nom}. [Délai et modalités de recontact à préciser par TeleDok.]</>}
+      doneText={(nom) => <>Merci, Dr {nom}. [Délai et modalités de recontact à préciser par Teledok.]</>}
       resetLabel="Revenir au formulaire"
       aside={
         <p className="hint" style={{ margin: 0 }}>

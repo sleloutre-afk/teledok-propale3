@@ -1,6 +1,6 @@
 /**
- * Portraits en visio qui défilent en fondu (page TeleDok, « Un regroupement de praticiens »), dans l'ordre
- * de passage : généralistes, spécialistes et paramédicaux, en alternant femmes et hommes. Images
+ * Portraits en visio de la section « Un regroupement de praticiens » (page Teledok), dans l'ordre
+ * d'arrivée : généralistes, spécialistes et paramédicaux, en alternant femmes et hommes. Images
  * d'illustration générées par IA (originaux : assets/photos/groupement).
  */
 export const PRATICIENS: string[] = [

@@ -13,8 +13,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/contact',
-  'Contact | TeleDok',
-  'Contacter TeleDok : coordonnées et formulaire de contact pour les organisations et les demandes générales.',
+  'Contact | Teledok',
+  'Contacter Teledok : coordonnées et formulaire de contact pour les organisations et les demandes générales.',
 )
 
 export default async function Page() {
@@ -50,7 +50,7 @@ export default async function Page() {
             <h2 className="rel">Vous êtes médecin ?</h2>
             <p className="rel">La candidature se fait depuis la page dédiée, avec votre numéro RPPS.</p>
             <Link className="btn btn-amber rel" href={ROUTES.medecins}>
-              Rejoindre TeleDok
+              Rejoindre Teledok
             </Link>
           </div>
           <div className="side-coord">

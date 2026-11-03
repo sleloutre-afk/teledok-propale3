@@ -31,7 +31,7 @@ export type CategoryId = (typeof CATEGORIES)[number]['id']
 export const categoryOf = (type: string | null): CategoryId | null =>
   CATEGORIES.find((c) => (c.types as readonly string[]).includes(type ?? ''))?.id ?? null
 
-/** Les six valeurs de TeleDok, dans l'ordre de la planche d'origine (picto n° = rang). Textes validés par le Dr Illouz. */
+/** Les six valeurs de Teledok, dans l'ordre de la planche d'origine (picto n° = rang). Textes validés par le Dr Illouz. */
 export const VALEURS: { key: string; titre: string; texte: string }[] = [
   {
     key: 'parcours',

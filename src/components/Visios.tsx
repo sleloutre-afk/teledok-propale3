@@ -55,7 +55,7 @@ function slot(p: number, debut: number, e: number, n: number) {
 }
 
 /**
- * Portraits de praticiens en visio, en boucle (page TeleDok) : « le réseau se constitue ». Un praticien
+ * Portraits de praticiens en visio, en boucle (page Teledok) : « le réseau se constitue ». Un praticien
  * seul à l'écran, puis 2, 4, 6, 9 et 12 réunis en grille, comme des participants qui rejoignent l'appel ;
  * une tuile du centre s'agrandit ensuite pour ouvrir le cycle suivant. Les tuiles glissent et se
  * redimensionnent d'une étape à l'autre ; celles qui arrivent apparaissent sur place, celles qui

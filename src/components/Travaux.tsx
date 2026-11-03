@@ -89,7 +89,7 @@ export function Travaux({ publications }: { publications: PublicationView[] }) {
               Travaux
             </h2>
             <p className="travaux-intro">
-              Une sélection des travaux réalisés à partir des opérations de TeleDok : rapports épidémiologiques, thèses et
+              Une sélection des travaux réalisés à partir des opérations de Teledok : rapports épidémiologiques, thèses et
               publications scientifiques.
             </p>
           </div>

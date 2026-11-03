@@ -19,7 +19,7 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
             <Image
               className="ftr-logo"
               src={logoBlanc}
-              alt="TeleDok"
+              alt="Teledok"
               width={LOGO_WIDTH}
               height={LOGO_HEIGHT}
               style={{ height: LOGO_HEIGHT, width: 'auto' }}
@@ -58,7 +58,7 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
               <p className="label ftr-t">Médecins</p>
               <p className="ftr-cta">Candidature réservée aux professionnels de santé inscrits au RPPS.</p>
               <Link className="btn btn-amber" href={ROUTES.medecins}>
-                Rejoindre TeleDok
+                Rejoindre Teledok
               </Link>
             </div>
           ) : (
@@ -72,7 +72,7 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
           )}
         </div>
         <div className="ftr-bottom">
-          <p>© {new Date().getFullYear()} TeleDok</p>
+          <p>© {new Date().getFullYear()} Teledok</p>
           <p className="ftr-legal">
             <Link href={ROUTES.mentions}>Mentions légales</Link>
             <Link href={ROUTES.confidentialite}>Politique de confidentialité</Link>

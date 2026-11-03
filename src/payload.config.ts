@@ -28,7 +28,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     meta: {
-      titleSuffix: '— TeleDok BO',
+      titleSuffix: '— Teledok BO',
     },
     components: {
       graphics: {

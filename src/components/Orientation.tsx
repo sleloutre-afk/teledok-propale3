@@ -14,7 +14,7 @@ export function Orientation() {
         <h2 className="h2 h2--sm">Vous êtes médecin ?</h2>
         <p>Exercer la télémédecine sans renoncer à la qualité du soin ni à votre indépendance.</p>
         <Link className="btn btn-amber" href={ROUTES.medecins}>
-          Rejoindre TeleDok
+          Rejoindre Teledok
         </Link>
       </div>
       <div className="cta rv">

@@ -28,7 +28,7 @@ const escape = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': 
 
 /** Réponse minimale lorsque le formulaire est envoyé sans JavaScript. */
 function page(title: string, lines: string[], back: string, status: number) {
-  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>${escape(title)} | TeleDok</title></head><body style="font-family:system-ui,sans-serif;color:#3C3C3C;max-width:640px;margin:15vh auto;padding:0 24px;line-height:1.6"><h1 style="color:#0D628F;font-size:28px">${escape(title)}</h1>${lines.map((l) => `<p>${escape(l)}</p>`).join('')}<p><a href="${back}" style="color:#0D628F">Revenir au site</a></p></body></html>`
+  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>${escape(title)} | Teledok</title></head><body style="font-family:system-ui,sans-serif;color:#3C3C3C;max-width:640px;margin:15vh auto;padding:0 24px;line-height:1.6"><h1 style="color:#0D628F;font-size:28px">${escape(title)}</h1>${lines.map((l) => `<p>${escape(l)}</p>`).join('')}<p><a href="${back}" style="color:#0D628F">Revenir au site</a></p></body></html>`
   return new NextResponse(html, { status, headers: { 'Content-Type': 'text/html; charset=utf-8', ...NO_STORE } })
 }
 

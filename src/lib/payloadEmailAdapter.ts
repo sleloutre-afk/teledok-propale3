@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import type { PayloadEmailAdapter } from 'payload'
 
 /** Expéditeur des e-mails du BO ; le domaine doit être vérifié dans le compte Resend. */
-const FROM = process.env.EMAIL_FROM || 'TeleDok <noreply@teledok.fr>'
+const FROM = process.env.EMAIL_FROM || 'Teledok <noreply@teledok.fr>'
 
 /**
  * Envoie les e-mails système de Payload (invitation d'un nouveau compte,
@@ -11,7 +11,7 @@ const FROM = process.env.EMAIL_FROM || 'TeleDok <noreply@teledok.fr>'
  * est écrit dans la console pour pouvoir suivre le lien à la main.
  */
 export const resendEmailAdapter: PayloadEmailAdapter = () => {
-  const [, name, address] = FROM.match(/^(.*?)\s*<(.+)>$/) || [null, 'TeleDok', FROM]
+  const [, name, address] = FROM.match(/^(.*?)\s*<(.+)>$/) || [null, 'Teledok', FROM]
   return {
     name: 'resend',
     defaultFromAddress: address as string,

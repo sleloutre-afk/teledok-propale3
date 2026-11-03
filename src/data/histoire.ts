@@ -1,4 +1,4 @@
-/** Étapes de la frise « Notre histoire » (page TeleDok), dans l'ordre chronologique. Contenu en dur. */
+/** Étapes de la frise « Notre histoire » (page Teledok), dans l'ordre chronologique. Contenu en dur. */
 export type Etape = {
   annee: number
   titre: string
@@ -10,7 +10,7 @@ export type Etape = {
 export const HISTOIRE: Etape[] = [
   {
     annee: 2018,
-    titre: 'Création de TeleDok',
+    titre: 'Création de Teledok',
     texte:
       'Un concept : mettre des médecins à disposition pour pratiquer et évaluer la téléconsultation, avec un télérequérant et des objets connectés.',
     medecins: 4,

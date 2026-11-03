@@ -11,7 +11,7 @@ const place = (annee: number) => (annee - DEBUT) / (FIN - DEBUT)
 const INTERVAL = 2200
 
 /**
- * Frise « Notre histoire » (page TeleDok). À l'entrée dans la fenêtre, elle se remplit
+ * Frise « Notre histoire » (page Teledok). À l'entrée dans la fenêtre, elle se remplit
  * d'année en année ; le survol ou le clic sur une année affiche son détail et arrête le
  * défilement automatique. Sur mobile, frise verticale avec toutes les étapes visibles.
  */

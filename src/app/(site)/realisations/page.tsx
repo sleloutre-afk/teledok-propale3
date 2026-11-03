@@ -12,8 +12,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/realisations',
-  'Réalisations | TeleDok',
-  'Parcours de bilan de prévention, téléconsultation de soins primaires assistée, téléformation en crèches : pour chaque opération, le contexte, le rôle de TeleDok et les résultats de l’évaluation.',
+  'Réalisations | Teledok',
+  'Parcours de bilan de prévention, téléconsultation de soins primaires assistée, téléformation en crèches : pour chaque opération, le contexte, le rôle de Teledok et les résultats de l’évaluation.',
 )
 
 export default async function Page() {
@@ -43,7 +43,7 @@ export default async function Page() {
           <p className="hero-in3 phero-lead" style={{ marginTop: 24, maxWidth: 760, fontSize: 'clamp(19px, 1.8vw, 22px)' }}>
             Trois domaines d’intervention : la <a href="#prevention">prévention</a>, les{' '}
             <a href="#soins-primaires">soins primaires</a> et la <a href="#formation">formation</a>. En entreprise, en mairie,
-            en pharmacie, à bord des Médicobus, en EHPAD, en gare ou en crèche : pour chaque opération, le contexte, le rôle de TeleDok et
+            en pharmacie, à bord des Médicobus, en EHPAD, en gare ou en crèche : pour chaque opération, le contexte, le rôle de Teledok et
             les résultats obtenus.
           </p>
         </div>

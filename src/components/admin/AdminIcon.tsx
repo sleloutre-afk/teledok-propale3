@@ -1,6 +1,6 @@
 /**
  * Remplace le cube par défaut de Payload (fil d'Ariane, navigation repliée)
- * par l'arc du logo TeleDok.
+ * par l'arc du logo Teledok.
  */
 export function AdminIcon() {
   return (

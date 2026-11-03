@@ -13,8 +13,8 @@ export const revalidate = 60
 
 export const metadata: Metadata = pageMetadata(
   '/politique-de-confidentialite',
-  'Politique de confidentialité | TeleDok',
-  'Politique de protection des données personnelles de TeleDok : données collectées, finalités, destinataires, durées de conservation, cookies et exercice de vos droits.',
+  'Politique de confidentialité | Teledok',
+  'Politique de protection des données personnelles de Teledok : données collectées, finalités, destinataires, durées de conservation, cookies et exercice de vos droits.',
 )
 
 const sommaire = [
@@ -35,7 +35,7 @@ const sommaire = [
 
 const FINALITES = [
   'répondre aux demandes d’information et de contact qui nous sont adressées, via le Site Internet ou par tout autre moyen* ;',
-  'étudier les candidatures des médecins et des professionnels de santé souhaitant exercer avec TeleDok, vérifier leur inscription au répertoire partagé des professionnels de santé (RPPS) et les recontacter* ;',
+  'étudier les candidatures des médecins et des professionnels de santé souhaitant exercer avec Teledok, vérifier leur inscription au répertoire partagé des professionnels de santé (RPPS) et les recontacter* ;',
   'préparer et soumettre des propositions, participer à des appels à projets ou à des appels d’offres* ;',
   'permettre le suivi des relations contractuelles avec nos partenaires et clients (collectivités, entreprises, établissements, organismes complémentaires, etc.)* ;',
   'permettre le suivi des relations contractuelles avec nos fournisseurs, nos prestataires de services et nos sous-traitants* ;',
@@ -121,27 +121,27 @@ export default function Page() {
       title="Politique de confidentialité"
       updated="3 novembre 2026"
       sommaire={sommaire}
-      notice="Texte établi sur le modèle de la politique de protection des données du site Doxamed, adapté aux traitements réels du site TeleDok. L’élément entre crochets reste à confirmer, et l’ensemble est à faire valider par le juriste et le DPO avant publication."
+      notice="Texte établi sur le modèle de la politique de protection des données du site Doxamed, adapté aux traitements réels du site Teledok. L’élément entre crochets reste à confirmer, et l’ensemble est à faire valider par le juriste et le DPO avant publication."
     >
       <p style={{ marginTop: 32 }}>
         TELEDOK, société par actions simplifiée immatriculée au Registre du commerce et des sociétés de Nanterre sous le numéro 843 204 678,
-        sise 351 Bureaux de la Colline, 92210 Saint-Cloud Cedex (France) (ci-après « TeleDok »), procède au traitement de données à
+        sise 351 Bureaux de la Colline, 92210 Saint-Cloud Cedex (France) (ci-après « Teledok »), procède au traitement de données à
         caractère personnel dans le cadre de son activité. Les termes commençant par une majuscule sont définis à la fin de la page, à la
         section « Définitions ».
       </p>
       <p>
-        La présente politique (la « Politique ») décrit la manière dont TeleDok collecte, utilise et traite vos données personnelles, en
+        La présente politique (la « Politique ») décrit la manière dont Teledok collecte, utilise et traite vos données personnelles, en
         qualité de Responsable de traitement, en conformité avec le RGPD et la loi n° 78-17 du 6 janvier 1978 modifiée dite « Informatique et
         Libertés ». Elle s’applique aux données personnelles des utilisateurs du site Internet www.teledok.fr (le « Site Internet »), des médecins et professionnels de santé qui nous adressent leur candidature, de nos partenaires, clients,
         fournisseurs, prestataires et sous-traitants, de nos salariés et, plus largement, de toutes les personnes que nous sommes
         légitimement amenés à contacter dans le cadre de nos activités.
       </p>
       <p>
-        Elle ne couvre pas les données de santé des patients pris en charge par les professionnels de santé exerçant avec TeleDok : ces
+        Elle ne couvre pas les données de santé des patients pris en charge par les professionnels de santé exerçant avec Teledok : ces
         données relèvent du secret médical et font l’objet d’une information spécifique dans le cadre des soins.
       </p>
       <p>
-        TeleDok peut être amenée à modifier ou à actualiser la Politique selon ses activités et pour prendre en compte l’évolution de la
+        Teledok peut être amenée à modifier ou à actualiser la Politique selon ses activités et pour prendre en compte l’évolution de la
         réglementation. Nous vous invitons à la consulter régulièrement.
       </p>
 
@@ -193,7 +193,7 @@ export default function Page() {
         </div>
       </div>
       <p>
-        Ces demandes ne sont pas conservées sur le Site Internet : elles sont transmises par courriel aux équipes de TeleDok chargées d’y
+        Ces demandes ne sont pas conservées sur le Site Internet : elles sont transmises par courriel aux équipes de Teledok chargées d’y
         répondre.
       </p>
       <h3>Données relatives aux partenaires, clients et prospects</h3>
@@ -217,8 +217,8 @@ export default function Page() {
       <h2 id="destinataires">Destinataires des données personnelles</h2>
       <p>Les destinataires des données personnelles sont, dans la limite de leurs attributions :</p>
       <ul>
-        <li>les services internes de TeleDok habilités, dont la direction médicale pour les candidatures de médecins ;</li>
-        <li>les prestataires et sous-traitants de TeleDok habilités (voir la section « Communication des données à des tiers »).</li>
+        <li>les services internes de Teledok habilités, dont la direction médicale pour les candidatures de médecins ;</li>
+        <li>les prestataires et sous-traitants de Teledok habilités (voir la section « Communication des données à des tiers »).</li>
       </ul>
 
       <h2 id="sensibles">Données sensibles et données des mineurs</h2>
@@ -227,10 +227,10 @@ export default function Page() {
         médicale via ses formulaires.
       </p>
       <p>
-        TeleDok ne cherche pas à collecter de données personnelles sensibles au travers du Site Internet ni dans le cadre des traitements
+        Teledok ne cherche pas à collecter de données personnelles sensibles au travers du Site Internet ni dans le cadre des traitements
         décrits dans la Politique, sauf lorsque la loi l’impose ou le permet, ou avec votre consentement exprès.
       </p>
-      <p>TeleDok ne collecte pas volontairement de données personnelles de mineurs via le Site Internet.</p>
+      <p>Teledok ne collecte pas volontairement de données personnelles de mineurs via le Site Internet.</p>
 
       <h2 id="tiers">Communication des données à des tiers</h2>
       <p>
@@ -243,7 +243,7 @@ export default function Page() {
           loi applicable ;
         </li>
         <li>
-          les comptables, commissaires aux comptes, avocats et autres conseils professionnels de TeleDok, soumis à des obligations de
+          les comptables, commissaires aux comptes, avocats et autres conseils professionnels de Teledok, soumis à des obligations de
           confidentialité ;
         </li>
         <li>nos prestataires et sous-traitants, dans les conditions décrites ci-dessous ;</li>
@@ -344,20 +344,20 @@ export default function Page() {
       <h2 id="contact">Réclamations et contact</h2>
       <p>
         Pour toute question relative à la Politique, pour exercer vos droits, ou si vous avez des raisons de penser que la sécurité de vos
-        données a été compromise, vous pouvez contacter TeleDok :
+        données a été compromise, vous pouvez contacter Teledok :
       </p>
       <ul>
-        <li>par courrier : TeleDok, Direction générale — 351 Bureaux de la Colline, 92210 Saint-Cloud Cedex (France) ;</li>
+        <li>par courrier : Teledok, Direction générale — 351 Bureaux de la Colline, 92210 Saint-Cloud Cedex (France) ;</li>
         <li>
           par courriel : <Email /> ;
         </li>
         <li>
           avec copie à Maître Philippe de Bondy — 51 avenue Raymond Poincaré, 75116 Paris, <DpoEmail />, en sa qualité de délégué à la
-          protection des données (DPO) externe de TeleDok.
+          protection des données (DPO) externe de Teledok.
         </li>
       </ul>
       <p>
-        TeleDok instruira les réclamations concernant l’utilisation et la communication de vos données personnelles et s’efforcera de les
+        Teledok instruira les réclamations concernant l’utilisation et la communication de vos données personnelles et s’efforcera de les
         résoudre conformément aux principes figurant dans la Politique.
       </p>
 
