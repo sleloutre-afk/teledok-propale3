@@ -103,7 +103,7 @@ export const REALISATIONS: RealisationData[] = [
     title: 'Téléconsultation de soins primaires, assistée d’une infirmière et d’objets connectés',
     theme: 'Soins primaires',
     tagsLabel: 'Lieux de déploiement',
-    tags: ['Mairies', 'Pharmacies', 'Unités mobiles (Médicobus)', 'EHPAD', 'Gares'],
+    tags: ['Pharmacies', 'Unités mobiles (Médicobus)', 'Mairies', 'EHPAD', 'Gares'],
     contexte: null,
     role: null,
     resultat: null,
@@ -111,19 +111,6 @@ export const REALISATIONS: RealisationData[] = [
     imageBrief: 'Cabine connectée en mairie ou en pharmacie, Médicobus ; infirmière et patient.',
     linkToRecherche: true,
     volets: [
-      {
-        tag: 'Mairies',
-        image: { src: '/photos/mairie.jpg', alt: 'Cabine de téléconsultation connectée installée dans le hall d’une mairie' },
-        contexte:
-          'Déploiement par la société H4D, spécialisée dans les cabines médicales connectées, de cabines au sein d’entreprises et de mairies.',
-        role:
-          'Création des protocoles médicaux et mise à disposition de médecins pour des téléconsultations sur rendez-vous à partir des télécabines installées en mairie (plus d’une centaine entre 2020 et 2024) et dans de grandes entreprises (plus de 30).',
-        resultat: [
-          'Entre 2020 et 2024, 250 téléconsultations en moyenne réalisées par mois par nos médecins',
-          'Objet d’une thèse soutenue en 2023 sur l’« Efficacité des téléconsultations dans des cabines avec dispositifs médicaux connectés dans les lieux publics »',
-        ],
-        linkToRecherche: true,
-      },
       {
         tag: 'Pharmacies',
         image: { src: '/photos/pharmacie.jpg', alt: 'Dans l’espace de téléconsultation d’une pharmacie, une professionnelle de santé installe le brassard de tension d’une patiente' },
@@ -145,6 +132,19 @@ export const REALISATIONS: RealisationData[] = [
         resultat: [
           'Entre 2023 et 2025 : [nombre d’infirmiers formés à préciser], [nombre de téléconsultations réalisées à préciser]',
           'Objet d’une thèse en 2026 sur le « Ressenti des médecins généralistes effectuant des téléconsultations à bord de Médicobus en Île-de-France »',
+        ],
+        linkToRecherche: true,
+      },
+      {
+        tag: 'Mairies',
+        image: { src: '/photos/mairie.jpg', alt: 'Cabine de téléconsultation connectée installée dans le hall d’une mairie' },
+        contexte:
+          'Déploiement par la société H4D, spécialisée dans les cabines médicales connectées, de cabines au sein d’entreprises et de mairies.',
+        role:
+          'Création des protocoles médicaux et mise à disposition de médecins pour des téléconsultations sur rendez-vous à partir des télécabines installées en mairie (plus d’une centaine entre 2020 et 2024) et dans de grandes entreprises (plus de 30).',
+        resultat: [
+          'Entre 2020 et 2024, 250 téléconsultations en moyenne réalisées par mois par nos médecins',
+          'Objet d’une thèse soutenue en 2023 sur l’« Efficacité des téléconsultations dans des cabines avec dispositifs médicaux connectés dans les lieux publics »',
         ],
         linkToRecherche: true,
       },

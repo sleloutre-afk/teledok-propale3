@@ -19,7 +19,7 @@ export const HISTOIRE: Etape[] = [
     annee: 2020,
     titre: 'Plateforme Covid',
     texte:
-      'Plateforme de prise en charge du Covid dans les camps de migrants, en gare et dans les zones isolées, avec des parcours spécifiques.',
+      'Plateforme de prise en charge du Covid dans les camps de migrants, en gares et dans les zones isolées, avec des parcours dédiés.',
     medecins: 20,
   },
   {
