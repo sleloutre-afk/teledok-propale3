@@ -2048,6 +2048,57 @@ select.fld {
    TeleDok — .pg-teledok
    ========================================================================== */
 
+/* Portraits en visio, « le réseau se constitue » (« Un regroupement de praticiens »), voir Visios.tsx :
+   chaque praticien est une tuile placée en % de l'écran (Visios.tsx calcule la grille de chaque étape) ;
+   les tuiles glissent et se redimensionnent d'une étape à l'autre, celles qui arrivent apparaissent
+   sur place, celles qui partent s'effacent sur place. */
+.pg-teledok .visio {
+  position: relative;
+}
+.pg-teledok .visio-stack {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  border-radius: 28px;
+  background: var(--blue-footer);
+  isolation: isolate;
+}
+.pg-teledok .visio-tuile {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    left 0.9s cubic-bezier(0.65, 0, 0.35, 1),
+    top 0.9s cubic-bezier(0.65, 0, 0.35, 1),
+    width 0.9s cubic-bezier(0.65, 0, 0.35, 1),
+    height 0.9s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.pg-teledok .visio-tuile.is-on {
+  z-index: 2;
+  opacity: 1;
+  transform: none;
+}
+.pg-teledok .visio-tuile img {
+  object-fit: cover;
+}
+/* Sans animation demandée : les tuiles changent de place sans mouvement, en fondu seulement. */
+@media (prefers-reduced-motion: reduce) {
+  .pg-teledok .visio-tuile {
+    transition: opacity 0.6s ease;
+  }
+}
+.pg-teledok .visio .vbtn {
+  right: 18px;
+  bottom: 18px;
+  width: 40px;
+  height: 40px;
+}
+
 .pg-teledok .hero-h1 {
   max-width: 980px;
   font-size: clamp(32px, 3.8vw, 50px);

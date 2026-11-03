@@ -8,6 +8,7 @@ import { Histoire } from '@/components/Histoire'
 import { Orientation } from '@/components/Orientation'
 import { Ph } from '@/components/Ph'
 import { Uline } from '@/components/Uline'
+import { Visios } from '@/components/Visios'
 import { pictos } from '@/data/pictos'
 import { getValeurs } from '@/lib/content'
 import { pageMetadata } from '@/lib/seo'
@@ -130,11 +131,7 @@ export default async function Page() {
             aria-hidden="true"
             style={{ right: -24, bottom: -26, width: 110, height: 110, background: 'var(--soft)', opacity: 0.85 }}
           ></div>
-          <Ph
-            tag="Photographie réelle attendue"
-            text="Équipe médicale et paramédicale de TeleDok : portrait de groupe en situation."
-            ratio="5 / 4"
-          />
+          <Visios />
         </div>
       </section>
 
