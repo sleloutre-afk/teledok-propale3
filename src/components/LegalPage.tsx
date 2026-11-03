@@ -4,6 +4,8 @@ import { PageShell } from './PageShell'
 
 type Props = {
   title: string
+  /** Date d'établissement ou de dernière mise à jour du texte, en toutes lettres. */
+  updated: string
   sommaire: { id: string; label: string }[]
   /** Avertissement « Modèle à compléter », en tête de page. */
   notice: ReactNode
@@ -11,7 +13,7 @@ type Props = {
 }
 
 /** Gabarit des pages légales : sommaire à gauche, texte à droite. */
-export function LegalPage({ title, sommaire, notice, children }: Props) {
+export function LegalPage({ title, updated, sommaire, notice, children }: Props) {
   return (
     <PageShell page="pg-legal">
       <section className="bg-cream" aria-labelledby="hero-t">
@@ -21,7 +23,7 @@ export function LegalPage({ title, sommaire, notice, children }: Props) {
             {title}
           </h1>
           <p className="muted" style={{ fontSize: 15 }}>
-            Dernière mise à jour : <span className="todo">[date]</span>
+            Dernière mise à jour : {updated}
           </p>
         </div>
       </section>

@@ -1010,6 +1010,24 @@ select.fld {
   font-size: 17px;
   line-height: 1.7;
 }
+.legal h3 {
+  margin: 28px 0 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--fg);
+}
+.legal li + li {
+  margin-top: 6px;
+}
+.legal address {
+  margin: 0 0 12px;
+  border-left: 3px solid var(--card);
+  padding-left: 16px;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 1.7;
+}
 .toc a {
   display: block;
   padding: 8px 14px;
