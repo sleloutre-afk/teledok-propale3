@@ -212,7 +212,7 @@ export function SiteBehaviors() {
       })
     }
 
-    // ---------- Vidéo d'arrière-plan de l'accueil : bouton lecture / pause ----------
+    // ---------- Vidéo en boucle du hero (accueil, Notre méthode) : bouton lecture / pause ----------
     const video = document.querySelector<HTMLVideoElement>('[data-hero-video]')
     const toggle = document.querySelector<HTMLButtonElement>('[data-hero-toggle]')
     if (video && toggle) {

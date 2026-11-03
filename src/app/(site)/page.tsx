@@ -12,6 +12,7 @@ import { Uline } from '@/components/Uline'
 import { pictos } from '@/data/pictos'
 import { getPublications, getValeurs } from '@/lib/content'
 import { HERO_VIDEO } from '@/lib/site'
+import { VideoToggle } from '@/components/VideoToggle'
 import { cx } from '@/lib/cx'
 import { pageMetadata } from '@/lib/seo'
 import { ROUTES } from '@/lib/site'
@@ -112,17 +113,7 @@ export default async function Page() {
             <Icon name="chevron" size={22} width={1.6} />
           </a>
         </div>
-        {hasVideo && (
-          <button type="button" className="vbtn" aria-label="Mettre en pause la vidéo d’arrière-plan" data-hero-toggle>
-            <svg className="vbtn-pause" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
-              <rect x="4" y="3" width="3.5" height="12" />
-              <rect x="10.5" y="3" width="3.5" height="12" />
-            </svg>
-            <svg className="vbtn-play" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
-              <path d="M5 3l10 6-10 6z" />
-            </svg>
-          </button>
-        )}
+        {hasVideo && <VideoToggle />}
       </section>
 
       <section id="chiffres" className="wrap kpis home-kpis" aria-label="Chiffres clés">

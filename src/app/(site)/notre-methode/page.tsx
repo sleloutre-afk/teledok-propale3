@@ -5,8 +5,8 @@ import { PageShell } from '@/components/PageShell'
 import { Crumb } from '@/components/Crumb'
 import { Icon } from '@/components/Icon'
 import { More } from '@/components/More'
-import { Ph } from '@/components/Ph'
 import { Uline } from '@/components/Uline'
+import { VideoToggle } from '@/components/VideoToggle'
 import { cx } from '@/lib/cx'
 import { pageMetadata } from '@/lib/seo'
 import { ROUTES } from '@/lib/site'
@@ -48,16 +48,23 @@ export default function Page() {
                 aria-hidden="true"
                 style={{ right: -30, top: -30, width: 150, height: 150, background: 'var(--amber)' }}
               ></div>
-              <Ph
-                tag="Vidéo réelle attendue"
-                text="Déroulé d’un parcours sur le terrain ; sous-titrée, lecture à la demande."
-                ratio="16 / 10"
-              >
-                <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="#8A5A2B" strokeWidth="1.6" aria-hidden="true">
-                  <circle cx="32" cy="32" r="30" />
-                  <path d="M26 21 L45 32 L26 43 Z" strokeLinejoin="round" />
-                </svg>
-              </Ph>
+              {/* Boucle muette illustrative (aller-retour de la séquence source, assets/videos/parcours.mp4). */}
+              <div className="hero-vid">
+                <video
+                  className="ph-photo"
+                  src="/videos/parcours.mp4"
+                  poster="/videos/parcours.jpg"
+                  width={1280}
+                  height={720}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden="true"
+                  data-hero-video
+                />
+                <VideoToggle />
+              </div>
             </div>
           </div>
         </div>

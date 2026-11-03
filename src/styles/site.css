@@ -1486,7 +1486,7 @@ select.fld {
   animation: cue 2.4s ease-in-out infinite;
 }
 .pg-home .cue:focus-visible,
-.pg-home .vbtn:focus-visible {
+.vbtn:focus-visible {
   outline-color: var(--amber);
 }
 @keyframes cue {
@@ -1498,10 +1498,9 @@ select.fld {
     transform: translateY(6px);
   }
 }
-.pg-home .vbtn {
+/* Bouton lecture / pause des vidéos en boucle (accueil, Notre méthode). */
+.vbtn {
   position: absolute;
-  right: var(--gutter);
-  bottom: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1514,15 +1513,19 @@ select.fld {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-.pg-home .vbtn:hover {
+.vbtn:hover {
   background: rgba(255, 255, 255, 0.15);
 }
-.pg-home .vbtn-play,
-.pg-home .vbtn.is-paused .vbtn-pause {
+.vbtn-play,
+.vbtn.is-paused .vbtn-pause {
   display: none;
 }
-.pg-home .vbtn.is-paused .vbtn-play {
+.vbtn.is-paused .vbtn-play {
   display: block;
+}
+.pg-home .vbtn {
+  right: var(--gutter);
+  bottom: 120px;
 }
 @media (max-width: 720px) {
   .pg-home .hero {
@@ -2317,6 +2320,16 @@ select.fld {
 /* ==========================================================================
    Notre méthode — .pg-methode
    ========================================================================== */
+
+.pg-methode .hero-vid {
+  position: relative;
+}
+.pg-methode .hero-vid .vbtn {
+  right: 16px;
+  bottom: 16px;
+  width: 40px;
+  height: 40px;
+}
 
 .pg-methode .direction-band {
   background: var(--blue);
