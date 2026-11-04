@@ -12,9 +12,10 @@ export function ContactForm({ prefix, labelledBy }: { prefix: string; labelledBy
       labelledBy={labelledBy}
       star
       consent="J’accepte que les informations saisies soient utilisées par Teledok pour répondre à ma demande."
+      conservation="Elles sont conservées le temps nécessaire au traitement de ma demande, et au plus cinq ans."
       submitLabel="Envoyer le message"
       doneTitle="Votre message a bien été transmis."
-      doneText={() => '[Délai et modalités de réponse à préciser par Teledok.]'}
+      doneText={() => 'L’équipe Teledok vous répondra sous 2 jours ouvrés.'}
       resetLabel="Envoyer un autre message"
     >
       {(Field) => (

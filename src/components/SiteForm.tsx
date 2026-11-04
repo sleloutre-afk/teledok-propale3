@@ -31,6 +31,8 @@ export type SiteFormProps = {
   /** Affiche l'astérisque des champs obligatoires. */
   star?: boolean
   consent: string
+  /** Durée de conservation des données, reprise de la politique de confidentialité. */
+  conservation: string
   submitLabel: string
   doneTitle: string
   /** Message de confirmation ; reçoit le nom saisi. */
@@ -54,6 +56,7 @@ export function SiteForm({
   labelledBy,
   star = false,
   consent,
+  conservation,
   submitLabel,
   doneTitle,
   doneText,
@@ -227,8 +230,8 @@ export function SiteForm({
             aria-describedby={errors.rgpd ? `${prefix}e-rgpd` : undefined}
           />
           <label htmlFor={`${prefix}-rgpd`}>
-            {consent} [Durée de conservation et responsable de traitement à préciser.] Pour en savoir plus et exercer vos droits, consultez
-            notre <Link href={ROUTES.confidentialite}>politique de confidentialité</Link>.
+            {consent} {conservation} Responsable de traitement : TELEDOK SAS. Pour en savoir plus et exercer vos droits, consultez notre{' '}
+            <Link href={ROUTES.confidentialite}>politique de confidentialité</Link>.
           </label>
         </div>
         {errors.rgpd && (
