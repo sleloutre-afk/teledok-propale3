@@ -9,8 +9,9 @@ import { ROUTES } from '@/lib/site'
 import type { RealisationView } from '@/lib/content'
 import type { RealisationLigne, RealisationTexte } from '@/data/realisations'
 
-// Photos recadrées (cover) dans un emplacement plus haut que large : il faut une image bien plus large que la colonne.
-const MEDIA_SIZES = '(min-width: 1000px) 1500px, 100vw'
+// Photos recadrées (cover) dans un emplacement plus haut que large : il faut une image plus large que la colonne.
+// 1000px suffit : en haute résolution, le navigateur demande 2048 px, au-delà des originaux (2000 px au plus).
+const MEDIA_SIZES = '(min-width: 1000px) 1000px, 100vw'
 
 function Ligne({ ligne }: { ligne: RealisationLigne }) {
   if (typeof ligne === 'string') return <>{ligne}</>
