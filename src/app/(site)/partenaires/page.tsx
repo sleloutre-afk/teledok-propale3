@@ -19,10 +19,10 @@ export const metadata: Metadata = pageMetadata(
 )
 
 const ETAPES = [
-  'Conception sur-mesure du parcours',
-  'Mise en œuvre & ressources humaines',
+  'Conception sur mesure du parcours',
+  'Mise en œuvre &\u00a0ressources humaines',
   'Évaluation systématique',
-  'Amélioration itérative & recherche',
+  'Amélioration itérative &\u00a0recherche',
 ]
 
 export default function Page() {

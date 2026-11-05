@@ -17,7 +17,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/notre-methode',
   'Notre méthode | Teledok',
-  'De la conception à l’évaluation, chaque parcours est documenté, mesuré et amélioré : conception sur-mesure, mise en œuvre, évaluation systématique, amélioration itérative.',
+  'De la conception à l’évaluation, chaque parcours est documenté, mesuré et amélioré : conception sur mesure, mise en œuvre, évaluation systématique, amélioration itérative.',
 )
 
 const CHIPS = ['Conception', 'Mise en œuvre', 'Évaluation', 'Amélioration']
@@ -115,10 +115,10 @@ export default function Page() {
         <ol className="steps etapes-list">
           <li className="step step--1 rv on">
             <span className="step-n">1</span>
-            <h3>Conception sur-mesure du parcours</h3>
+            <h3>Conception sur mesure du parcours</h3>
             <ul className="blist">
               <li>Analyse initiale du contexte et des enjeux du client</li>
-              <li>Rédaction des protocoles et procédures</li>
+              <li>Rédaction des protocoles et des procédures</li>
               <li>Formation des praticiens à chaque parcours et aux technologies spécifiques</li>
             </ul>
             <div className="agnostic">
@@ -128,7 +128,7 @@ export default function Page() {
           </li>
           <li className="step rv">
             <span className="step-n">2</span>
-            <h3>Mise en œuvre &amp; ressources humaines</h3>
+            <h3>Mise en œuvre &amp;&nbsp;ressources humaines</h3>
             <ul className="blist">
               <li>Fourniture des médecins et paramédicaux nécessaires</li>
               <li>Un premier pool d’environ 50 médecins collaborant quotidiennement avec Teledok</li>
@@ -158,9 +158,9 @@ export default function Page() {
           </li>
           <li className="step rv">
             <span className="step-n">4</span>
-            <h3>Amélioration itérative &amp; recherche</h3>
+            <h3>Amélioration itérative &amp;&nbsp;recherche</h3>
             <ul className="blist">
-              <li>Les enseignements de chaque opération nourrissent l’amélioration des parcours futurs</li>
+              <li>Les enseignements de chaque opération nourrissent l’amélioration des parcours futurs…</li>
               <li>… et alimentent la recherche scientifique</li>
             </ul>
             <More href={ROUTES.recherche} fg className="etapes-more">
@@ -184,7 +184,7 @@ export default function Page() {
                 style={{ right: -60, top: -60, width: 190, height: 190, background: 'var(--card)' }}
               ></div>
               <h2 className="h2 h2--sm">Voir la méthode appliquée</h2>
-              <p>Parcours de bilan de prévention, téléconsultation de soins primaires assistée.</p>
+              <p>Parcours de bilan de prévention, téléconsultation assistée pour les soins primaires.</p>
               <Link className="btn btn-secondary" href={ROUTES.realisations}>
                 Nos réalisations
               </Link>

@@ -37,12 +37,16 @@ const CONDITIONS = [
     picto: '/pictos/qualite.svg',
     titre: 'Qualité, pas rendement',
     texte:
-      '15 à 20 minutes par patient pour des soins primaires, 30 à 40 minutes pour un examen prévention, sans aucune obligation de rendement (pas d’« abattage »).',
+      '15 à 20 minutes par patient pour des soins primaires, 30 à 40 minutes pour un examen prévention, sans aucune obligation de rendement (pas « d’abattage »).',
   },
   {
     picto: '/pictos/volume.svg',
     titre: 'Volume garanti',
-    texte: 'Un volume d’occupation médicale garanti ; la taxe « lapin » (no-show patient) est assumée par Teledok.',
+    texte: (
+      <>
+        Un volume d’occupation médicale garanti ; la taxe « lapin » (<em>no-show</em> patient) est assumée par Teledok.
+      </>
+    ),
   },
 ] as const
 
@@ -210,18 +214,24 @@ export default async function Page() {
 
       <section className="bg-cream" aria-labelledby="ind-t">
         <div className="wrap sec" style={{ maxWidth: 1040 }}>
-          <div className="rv quote">
-            <svg aria-hidden="true" width="64" height="48" viewBox="0 0 64 48">
-              <path d="M4 44V26C4 13 10 6 24 4v8c-7 2-10 6-10 14h10v18zM36 44V26c0-13 6-20 20-22v8c-7 2-10 6-10 14h10v18z" fill="#9DBDD0" />
-            </svg>
+          <figure className="rv quote">
             <h2 id="ind-t" className="quote-t">
               Un modèle indépendant
             </h2>
-            <p className="quote-p">
-              Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
-              la condition de la confiance.
-            </p>
-          </div>
+            {/* Guillemet ouvrant dessiné ; le fermant est dans le texte. */}
+            <svg aria-hidden="true" width="64" height="48" viewBox="0 0 64 48">
+              <path d="M4 44V26C4 13 10 6 24 4v8c-7 2-10 6-10 14h10v18zM36 44V26c0-13 6-20 20-22v8c-7 2-10 6-10 14h10v18z" fill="#9DBDD0" />
+            </svg>
+            <blockquote>
+              <p className="quote-p">
+                Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique
+                est la condition de la confiance.&nbsp;»
+              </p>
+            </blockquote>
+            <figcaption className="quote-who">
+              <strong>Dr Stéphane Illouz</strong>, co-fondateur de Teledok
+            </figcaption>
+          </figure>
         </div>
       </section>
 

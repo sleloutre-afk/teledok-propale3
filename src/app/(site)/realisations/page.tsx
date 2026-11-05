@@ -13,7 +13,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/realisations',
   'Réalisations | Teledok',
-  'Parcours de bilan de prévention, téléconsultation de soins primaires assistée, téléformation en crèches : pour chaque opération, le contexte, le rôle de Teledok et les résultats de l’évaluation.',
+  'Parcours de bilan de prévention, téléconsultation assistée pour les soins primaires, téléformation en crèches : pour chaque opération, le contexte, le rôle de Teledok et les résultats de l’évaluation.',
 )
 
 export default async function Page() {

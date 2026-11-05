@@ -36,10 +36,10 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
                 <Link href={ROUTES.methode}>Notre méthode</Link>
               </li>
               <li>
-                <Link href={ROUTES.recherche}>Recherche &amp; publications</Link>
+                <Link href={ROUTES.realisations}>Réalisations</Link>
               </li>
               <li>
-                <Link href={ROUTES.realisations}>Réalisations</Link>
+                <Link href={ROUTES.recherche}>Recherche &amp; publications</Link>
               </li>
               <li>
                 <Link href={ROUTES.partenaires}>Partenaires</Link>

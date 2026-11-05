@@ -38,11 +38,11 @@ const SPOKES = [
 
 const ETAPES = [
   {
-    titre: 'Conception sur-mesure du parcours',
+    titre: 'Conception sur mesure du parcours',
     texte: 'Analyse du contexte, rédaction des protocoles, formation des praticiens. Teledok adopte la technologie du client.',
   },
   {
-    titre: 'Mise en œuvre & ressources humaines',
+    titre: 'Mise en œuvre &\u00a0ressources humaines',
     texte: 'Fourniture des médecins et paramédicaux nécessaires, au sein d’un premier pool d’environ 50 médecins.',
   },
   {
@@ -50,7 +50,7 @@ const ETAPES = [
     texte: 'Évaluation médicale et économique, pensée dès la conception, déployée pendant et à la fin du parcours.',
   },
   {
-    titre: 'Amélioration itérative & recherche',
+    titre: 'Amélioration itérative &\u00a0recherche',
     texte: 'Les enseignements de chaque opération nourrissent les parcours futurs et la recherche scientifique.',
   },
 ]
@@ -240,7 +240,7 @@ export default async function Page() {
               </blockquote>
               <figcaption className="mission-who">
                 <strong>Arnaud Molinié</strong>
-                <span>président-directeur général de Teledok</span>
+                <span>Président-directeur général de Teledok</span>
               </figcaption>
             </figure>
           </div>
