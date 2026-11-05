@@ -229,7 +229,7 @@ export default async function Page() {
               </p>
             </blockquote>
             <figcaption className="quote-who">
-              <strong>Dr Stéphane Illouz</strong>, co-fondateur de Teledok
+              <strong>Dr Stéphane Illouz</strong>, cofondateur de Teledok
             </figcaption>
           </figure>
         </div>

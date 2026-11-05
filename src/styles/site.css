@@ -2267,6 +2267,15 @@ select.fld {
   font-size: 18px;
   line-height: 1.6;
 }
+.pg-teledok .histo-panel p a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--amber);
+  text-underline-offset: 4px;
+}
+.pg-teledok .histo-panel p a:hover {
+  text-decoration-thickness: 2px;
+}
 .pg-teledok .histo-panel .histo-medecins {
   display: inline-block;
   margin-top: 18px;

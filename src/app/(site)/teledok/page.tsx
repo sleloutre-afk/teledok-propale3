@@ -25,12 +25,12 @@ export const metadata: Metadata = pageMetadata(
 
 // Fonctions, parcours et liens LinkedIn repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
 // Sans photo, la carte affiche un emplacement « Portrait réel ».
-const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string | null; linkedin: string }[] = [
+const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string | null; linkedin: string | null }[] = [
   {
     nom: 'Arnaud Molinié',
     de: 'd’Arnaud Molinié',
     role: 'Président-directeur général',
-    detail: 'Fondateur et président de Doxamed, fondateur de Capitello Group.',
+    detail: 'Fondateur et président de Capitello Group et de Doxamed.',
     photo: '/photos/arnaud.webp',
     linkedin: 'https://www.linkedin.com/in/arnaud-molini%C3%A9-loxamed/',
   },
@@ -45,7 +45,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
   {
     nom: 'Dr Stéphane Illouz',
     de: 'du Dr Stéphane Illouz',
-    role: 'Co-fondateur',
+    role: 'Cofondateur – Directeur médical',
     detail: 'Urgentiste, médecin généraliste. Coordinateur MSP.',
     photo: '/photos/illouz.webp',
     linkedin: 'https://www.linkedin.com/in/stephane-illouz-0b3413270/',
@@ -53,11 +53,19 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
   {
     nom: 'Dr François Teboul',
     de: 'du Dr François Teboul',
-    role: 'Co-fondateur',
+    role: 'Cofondateur – Directeur stratégie et technologie',
     detail:
       'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie Francophone de Télémédecine.',
     photo: '/photos/teboul.webp',
     linkedin: 'https://www.linkedin.com/in/francois-teboul-b03a9599/',
+  },
+  {
+    nom: 'Zoé Leycure',
+    de: 'de Zoé Leycure',
+    role: 'Directrice financière',
+    detail: 'Directrice finance et stratégie de Doxamed.',
+    photo: '/photos/leycure.webp',
+    linkedin: 'https://www.linkedin.com/in/zo%C3%A9-leycure-725056151/',
   },
   {
     nom: 'Jennifer Krumhorn',
@@ -117,7 +125,7 @@ export default async function Page() {
           <ul className="pills">
             <li className="pill pill--light">Médecins généralistes</li>
             <li className="pill pill--light">Médecins spécialistes</li>
-            <li className="pill pill--light">Infirmier·e·s et paramédicaux</li>
+            <li className="pill pill--light">Infirmier(e)s et paramédicaux</li>
           </ul>
         </div>
         <div className="rv ph-w" style={{ flex: '1 1 420px' }}>
@@ -245,15 +253,17 @@ export default async function Page() {
                 )}
                 <h3 className="portrait-name">
                   <span>{d.nom}</span>
-                  <a
-                    href={d.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Profil LinkedIn ${d.de}`}
-                    className="portrait-linkedin"
-                  >
-                    <LinkedinIcon />
-                  </a>
+                  {d.linkedin && (
+                    <a
+                      href={d.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Profil LinkedIn ${d.de}`}
+                      className="portrait-linkedin"
+                    >
+                      <LinkedinIcon />
+                    </a>
+                  )}
                 </h3>
                 <p className="portrait-role">{d.role}</p>
                 <p className="portrait-detail">{d.detail}</p>

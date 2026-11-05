@@ -6,8 +6,9 @@ import { cx } from '@/lib/cx'
 
 const DEBUT = HISTOIRE[0].annee
 const FIN = HISTOIRE[HISTOIRE.length - 1].annee
-// Place de chaque année sur la frise, proportionnelle au temps écoulé (0 à 1).
-const place = (annee: number) => (annee - DEBUT) / (FIN - DEBUT)
+// Place de chaque étape sur la frise (0 à 1) : moyenne entre le temps écoulé et un espacement régulier.
+// Les grands écarts restent visibles, et deux années consécutives gardent la place de leurs titres.
+const place = (i: number) => ((HISTOIRE[i].annee - DEBUT) / (FIN - DEBUT) + i / (HISTOIRE.length - 1)) / 2
 const INTERVAL = 2200
 
 /**
@@ -66,14 +67,14 @@ export function Histoire() {
     <div ref={root} className="histo">
       <div className="histo-frise" role="group" aria-label="Années">
         <div className="histo-line" aria-hidden="true">
-          <div className="histo-fill" style={{ width: `${place(HISTOIRE[active].annee) * 100}%` }} />
+          <div className="histo-fill" style={{ width: `${place(active) * 100}%` }} />
         </div>
         {HISTOIRE.map((e, i) => (
           <button
             key={e.annee}
             type="button"
             className={cx('histo-node', { 'is-past': i <= active, 'is-on': i === active })}
-            style={{ '--x': place(e.annee) } as CSSProperties}
+            style={{ '--x': place(i) } as CSSProperties}
             aria-pressed={i === active}
             aria-controls={`histo-${e.annee}`}
             onClick={() => choose(i)}

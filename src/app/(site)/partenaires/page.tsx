@@ -103,7 +103,7 @@ export default function Page() {
               <Icon name="institution" stroke="var(--blue)" trace />
             </div>
             <h3>Collectivités &amp; institutionnels</h3>
-            <p>Mairies, communautés de communes, établissements pénitentiaires, etc.</p>
+            <p>Mairies, communautés de communes, établissements pénitentiaires,&nbsp;etc.</p>
           </article>
         </div>
       </section>
