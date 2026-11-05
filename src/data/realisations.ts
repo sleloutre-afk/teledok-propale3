@@ -57,7 +57,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Groupe ADP',
         image: { src: '/photos/adp.webp', alt: 'Entrée du centre de bilan de prévention santé du Groupe ADP, aux logos Groupe ADP et Doxamed', position: '83% 50%', credit: 'Sébastien Aubry / Groupe ADP' },
         contexte:
-          'Depuis avril 2025, le Groupe ADP propose avec Doxamed à tous ses collaborateurs un bilan de prévention santé complet, anonyme, basé sur le volontariat et pris en charge par l’entreprise : près de 1 000 bilans par an, dans des espaces dédiés à Paris-Charles-de-Gaulle et Paris-Orly. Une première en France à l’échelle de toute une entreprise.',
+          'Depuis avril 2025, en partenariat avec Doxamed, le Groupe ADP propose à tous ses collaborateurs un bilan de prévention santé complet, anonyme, basé sur le volontariat et pris en charge par l’entreprise : près de 1 000 bilans par an, dans des espaces dédiés à Paris-Charles-de-Gaulle et Paris-Orly. Une première en France à l’échelle de toute une entreprise.',
         role: [
           'Mise à disposition de médecins qui interviennent à distance, par téléconsultation, en appui de l’infirmier présent tout au long du bilan',
           'Restitution des résultats et prescription d’examens complémentaires si nécessaire, notamment pour les salariés sans médecin traitant',
@@ -73,8 +73,8 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Bpifrance',
         image: { src: '/photos/logos/bpifrance.png', alt: 'Bpifrance', logo: true },
         contexte:
-          'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, avec Doxamed, un bilan de prévention santé complet, anonyme, basé sur le volontariat et entièrement pris en charge, accessible à environ 850 collaborateurs par an dans un espace dédié de son siège, à Maisons-Alfort.',
-        role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et l’orientent si nécessaire dans le parcours de soins.',
+          'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, en partenariat avec Doxamed, des bilans de prévention santé complets, anonymes, basés sur le volontariat et entièrement pris en charge par l’entreprise. Ce dispositif, accessible à environ 850 collaborateurs chaque année, a été mis en place dans un espace spécifique au siège social de Bpifrance, à Maisons-Alfort.',
+        role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,
       },
@@ -82,8 +82,8 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Deloitte',
         image: { src: '/photos/logos/deloitte.png', alt: 'Deloitte', logo: true },
         contexte:
-          'Depuis 2026, Deloitte propose avec Doxamed à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé, dans un espace dédié de ses locaux à La Défense : une première pour un cabinet de conseil et d’audit en France.',
-        role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et l’orientent si nécessaire dans le parcours de soins.',
+          'Depuis 2026, Deloitte, en partenariat avec Doxamed, propose à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé par l’entreprise. Ce dispositif a été mis en place dans un espace dédié dans les locaux de Deloitte à La Défense. Une première pour un cabinet de conseil et d’audit en France.',
+        role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,
       },
@@ -91,8 +91,8 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Colisée',
         image: { src: '/photos/logos/colisee.webp', alt: 'Colisée', logo: true },
         contexte:
-          'Colisée France, premier groupe du secteur du grand âge à proposer ces bilans à ses équipes, lance avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit EHPAD d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
-        role: 'Téléconsultation de chaque collaborateur, quelques jours après son bilan, par un médecin qui lui remet un compte rendu complet et l’oriente si nécessaire dans le parcours de soins.',
+          'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit Ehpad d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
+        role: 'Téléconsultation pour les collaborateurs, quelques jours après leur bilan, par un médecin qui leur remet un compte rendu complet et les oriente, si nécessaire, dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,
       },
@@ -103,7 +103,7 @@ export const REALISATIONS: RealisationData[] = [
     title: 'Téléconsultation de soins primaires, assistée d’une infirmière et d’objets connectés',
     theme: 'Soins primaires',
     tagsLabel: 'Lieux de déploiement',
-    tags: ['Pharmacies', 'Unités mobiles (Médicobus)', 'Mairies', 'EHPAD', 'Gares'],
+    tags: ['Pharmacies', 'Unités mobiles (Médicobus)', 'Mairies', 'Ehpad', 'Gares'],
     contexte: null,
     role: null,
     resultat: null,
@@ -127,7 +127,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Unités mobiles (Médicobus)',
         image: { src: '/photos/medicobus.jpg', alt: 'À bord d’un Médicobus, une infirmière prend la tension d’un patient' },
         contexte:
-          'Déploiement par la société Hocoia, spécialisée dans la conception de bus connectés dédiés à la santé, en partenariat avec Numerisat, de bus médicaux connectés dans des déserts médicaux, avec infirmiers télérequérants.',
+          'Déploiement par la société Hocoia, spécialisée dans la conception de bus connectés dédiés à la santé, en partenariat avec Numerisat, de bus médicaux connectés dans des déserts médicaux, avec des infirmiers télérequérants.',
         role: 'Formation des infirmiers et mise à disposition de médecins pour des téléconsultations depuis les Médicobus.',
         resultat: [
           'Entre 2023 et 2025 : [nombre d’infirmiers formés à préciser], [nombre de téléconsultations réalisées à préciser]',
@@ -149,10 +149,10 @@ export const REALISATIONS: RealisationData[] = [
         linkToRecherche: true,
       },
       {
-        tag: 'EHPAD',
+        tag: 'Ehpad',
         image: { src: '/photos/ehpad.jpg', alt: 'Une infirmière examine l’oreille d’une résidente avec un otoscope relié à un smartphone' },
         contexte:
-          'Mise en place par la société Toktokdok, en EHPAD, d’une solution de téléexpertise ORL (audiométrie assistée par un infirmier, suivie par un médecin ORL).',
+          'Mise en place par la société Toktokdok, en Ehpad, d’une solution de téléexpertise ORL (audiométrie assistée par un infirmier, suivie par un médecin ORL).',
         role: 'Formation des infirmiers et mise à disposition de médecins ORL pour des téléconsultations sur rendez-vous.',
         resultat: 'Entre 2020 et 2022, plus de 3 000 téléconsultations et téléconseils réalisés.',
         linkToRecherche: false,
@@ -161,16 +161,16 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Gares',
         image: { src: '/photos/gares.jpg', alt: 'Entrée d’un espace santé Doxamed dans le hall d’une gare' },
         contexte:
-          'Fin 2023, Doxamed remporte l’appel d’offres de SNCF Gares & Connexions pour déployer des espaces de santé permanents en gare.',
-        role: 'Mise à disposition de médecins pour des téléconsultations sur rendez-vous, avec prise en charge des patients par une infirmière.',
+          'Fin 2023, Doxamed a remporté l’appel d’offres de SNCF Gares &\u00a0Connexions pour déployer des espaces de santé permanents en gare.',
+        role: 'Mise à disposition de médecins pour des téléconsultations sur rendez-vous, avec une prise en charge des patients par une infirmière.',
         resultat: [
           'Premier centre ouvert en gare SNCF d’Épinay-sur-Orge',
           {
             texte: 'Un patient souffrant d’une pneumonie non diagnostiquée sauvé in extremis grâce au dispositif',
             lien: {
-              href: 'https://www.youtube.com/watch?v=USVbMg3lowQ',
+              href: 'https://capitello.fr/api/media/file/JT_F2_13h_27-mai-25-V3-1.mp4',
               label: 'En savoir plus',
-              titre: 'En savoir plus sur ce patient pris en charge en gare (vidéo YouTube, nouvel onglet)',
+              titre: 'En savoir plus sur ce patient pris en charge en gare (reportage vidéo, nouvel onglet)',
             },
           },
         ],
