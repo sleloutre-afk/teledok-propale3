@@ -9,6 +9,10 @@ import { Icon } from './Icon'
 
 const yearOf = (p: PublicationView) => (p.date ? new Date(p.date).getUTCFullYear() : null)
 
+/** Du plus récent au plus ancien ; sans date, en fin de liste. À date égale, l'ordre du BO est conservé. */
+const parDate = (a: PublicationView, b: PublicationView) =>
+  (b.date ? Date.parse(b.date) : -Infinity) - (a.date ? Date.parse(a.date) : -Infinity) || 0
+
 type Option<T> = { value: T; label: string; picto?: string }
 
 /** Une ligne de filtres ; masquée quand aucune valeur n'a de contenu. */
@@ -111,7 +115,7 @@ export function Travaux({ publications }: { publications: PublicationView[] }) {
           </p>
         )}
         <ul className="ncards">
-          {publications.map((p) => {
+          {[...publications].sort(parDate).map((p) => {
             const th = THEMES[p.theme]
             // Picto du type de document ; à défaut de type renseigné, celui du thème.
             const cat = CATEGORIES.find((c) => c.id === categoryOf(p.type))
