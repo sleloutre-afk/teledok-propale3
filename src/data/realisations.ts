@@ -130,7 +130,6 @@ export const REALISATIONS: RealisationData[] = [
           'Déploiement par la société Hocoia, spécialisée dans la conception de bus connectés dédiés à la santé, en partenariat avec Numerisat, de bus médicaux connectés dans des déserts médicaux, avec des infirmiers télérequérants.',
         role: 'Formation des infirmiers et mise à disposition de médecins pour des téléconsultations depuis les Médicobus.',
         resultat: [
-          'Entre 2023 et 2025 : [nombre d’infirmiers formés à préciser], [nombre de téléconsultations réalisées à préciser]',
           'Objet d’une thèse en 2026 sur le « Ressenti des médecins généralistes effectuant des téléconsultations à bord de Médicobus en Île-de-France »',
         ],
         linkToRecherche: true,
@@ -191,7 +190,6 @@ export const REALISATIONS: RealisationData[] = [
     ],
     resultat: [
       'Entre 2022 et 2025, plus de 50 protocoles mis en place',
-      '[Nombre de téléformations réalisées à préciser]',
     ],
     image: {
       src: '/photos/puericulture.jpg',
