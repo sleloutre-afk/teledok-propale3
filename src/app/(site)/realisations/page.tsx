@@ -70,7 +70,7 @@ export default async function Page() {
               <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
             </div>
             <Link className="btn btn-primary" href={ROUTES.partenaires}>
-              Devenir partenaire
+              Construisons votre projet
             </Link>
           </div>
         </div>

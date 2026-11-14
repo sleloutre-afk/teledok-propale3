@@ -22,7 +22,7 @@ export function Orientation() {
         <h2 className="h2 h2--sm">Vous êtes une organisation ?</h2>
         <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
         <Link className="btn btn-primary" href={ROUTES.partenaires}>
-          Devenir partenaire
+          Construisons votre projet
         </Link>
       </div>
     </>

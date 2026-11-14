@@ -14,14 +14,13 @@ export const ROUTES = {
 
 export type RouteKey = keyof typeof ROUTES
 
-/** Navigation principale (en-tête). */
+/** Navigation principale (en-tête). La page Partenaires y est le bouton « Construisons votre projet ». */
 export const NAV: { key: RouteKey; label: string }[] = [
   { key: 'teledok', label: 'Qui sommes-nous ?' },
   { key: 'methode', label: 'Notre méthode' },
   { key: 'realisations', label: 'Réalisations' },
   { key: 'recherche', label: 'Recherche' },
   { key: 'medecins', label: 'Médecins' },
-  { key: 'partenaires', label: 'Partenaires' },
 ]
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3087'

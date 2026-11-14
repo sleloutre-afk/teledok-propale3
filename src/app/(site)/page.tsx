@@ -98,7 +98,8 @@ export default async function Page() {
               les patients comme pour les praticiens.
             </p>
             <div className="hero-in3 btns">
-              <Link className="btn btn-amber" href={ROUTES.medecins}>
+              {/* Tant que ce bouton est visible, le bouton flottant « Rejoindre Teledok » est masqué. */}
+              <Link className="btn btn-amber" href={ROUTES.medecins} data-hide-float>
                 Rejoindre Teledok
               </Link>
               <a className="btn btn-ghost" href="#methode">
@@ -427,7 +428,7 @@ export default async function Page() {
               <h2 className="h2 home-cta-t">Vous êtes une organisation ?</h2>
               <p>Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics.</p>
               <Link className="btn btn-primary" href={ROUTES.partenaires}>
-                Devenir partenaire
+                Construisons votre projet
               </Link>
             </div>
           </div>

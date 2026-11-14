@@ -1215,6 +1215,31 @@ select.fld {
 .hdr-join {
   margin-left: 8px;
 }
+/* Bouton « Rejoindre Teledok » flottant (FloatingJoin.tsx) : en bas à droite, centré en bas sur mobile.
+   Liseré blanc pour rester visible sur les bandeaux bleus ; sous l'en-tête (z-index 20) et son menu mobile. */
+.float-join {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 15;
+  border-color: #fff;
+  box-shadow: 0 12px 32px rgba(10, 40, 60, 0.28);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+}
+.float-join.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+@media (max-width: 639.98px) {
+  .float-join {
+    right: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .burger {
   display: none;
   align-items: center;
@@ -1324,7 +1349,8 @@ select.fld {
 }
 .ftr-in {
   padding-top: 64px;
-  padding-bottom: 32px;
+  /* Place pour le bouton flottant « Rejoindre Teledok » : il ne recouvre pas la dernière ligne. */
+  padding-bottom: 104px;
 }
 .ftr-cols {
   display: grid;
@@ -1360,6 +1386,10 @@ select.fld {
 }
 .ftr-cta {
   margin-bottom: 18px;
+}
+/* Bouton bleu (comme celui de l'en-tête) sur le fond bleu du pied de page : liseré blanc pour le détacher. */
+.ftr .ftr-btn {
+  border-color: #fff;
 }
 .ftr-bottom {
   margin-top: 56px;
@@ -2092,11 +2122,19 @@ select.fld {
     transition: opacity 0.6s ease;
   }
 }
+/* Bouton pause à cheval sur le coin du cadre : il ne masque aucun visage de la grille. */
 .pg-teledok .visio .vbtn {
-  right: 18px;
-  bottom: 18px;
-  width: 40px;
-  height: 40px;
+  right: -14px;
+  bottom: -14px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-color: #fff;
+  background: var(--blue-footer);
+  box-shadow: 0 8px 20px rgba(10, 40, 60, 0.25);
+}
+.pg-teledok .visio .vbtn:hover {
+  background: var(--blue);
 }
 
 .pg-teledok .hero-h1 {

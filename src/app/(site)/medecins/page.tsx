@@ -253,7 +253,8 @@ export default async function Page() {
         </div>
       </section>
 
-      <section id="candidature" className="bg-cream clip" aria-labelledby="cand-t">
+      {/* Pendant que le formulaire est à l'écran, le bouton flottant « Rejoindre Teledok » (qui y mène) est masqué. */}
+      <section id="candidature" className="bg-cream clip" aria-labelledby="cand-t" data-hide-float>
         <div
           className="blob"
           aria-hidden="true"

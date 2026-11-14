@@ -10,8 +10,6 @@ type Props = {
   current?: RouteKey
   /** En-tête transparent posé sur le visuel d'ouverture (accueil). */
   overlay?: boolean
-  /** Cible du bouton « Rejoindre Teledok ». */
-  joinHref?: string
 }
 
 const LOGO_HEIGHT = 34
@@ -23,7 +21,7 @@ const LOGO_STYLE = { height: LOGO_HEIGHT, width: 'auto' }
  * En-tête du site. L'état au défilement (accueil) et le menu des écrans
  * étroits sont pilotés par SiteBehaviors.
  */
-export function Header({ current, overlay = false, joinHref = ROUTES.medecins }: Props) {
+export function Header({ current, overlay = false }: Props) {
   return (
     <header className={cx('site-hdr', { 'site-hdr--overlay': overlay })} data-header>
       <div className="hdr">
@@ -64,8 +62,13 @@ export function Header({ current, overlay = false, joinHref = ROUTES.medecins }:
                 {item.label}
               </Link>
             ))}
-            <Link className="btn btn-amber hdr-join" href={joinHref}>
-              Rejoindre Teledok
+            {/* Page Partenaires, présentée comme l'action principale pour les organisations. */}
+            <Link
+              className="btn btn-primary hdr-join"
+              href={ROUTES.partenaires}
+              aria-current={current === 'partenaires' ? 'page' : undefined}
+            >
+              Construisons votre projet
             </Link>
           </nav>
         </div>

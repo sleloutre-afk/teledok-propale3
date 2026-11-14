@@ -42,7 +42,10 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
                 <Link href={ROUTES.recherche}>Recherche &amp; publications</Link>
               </li>
               <li>
-                <Link href={ROUTES.partenaires}>Partenaires</Link>
+                <Link href={ROUTES.medecins}>Médecins</Link>
+              </li>
+              <li>
+                <Link href={ROUTES.partenaires}>Construisons votre projet</Link>
               </li>
             </ul>
           </nav>
@@ -57,7 +60,8 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
             <div>
               <p className="label ftr-t">Médecins</p>
               <p className="ftr-cta">Candidature réservée aux professionnels de santé inscrits au RPPS.</p>
-              <Link className="btn btn-amber" href={ROUTES.medecins}>
+              {/* Simple lien : le bouton flottant « Rejoindre Teledok » est déjà affiché à côté. */}
+              <Link className="ftr-contact" href={ROUTES.medecins}>
                 Rejoindre Teledok
               </Link>
             </div>
@@ -65,8 +69,8 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
             <div>
               <p className="label ftr-t">Organisations</p>
               <p className="ftr-cta">Mutuelles, entreprises, professionnels de santé, collectivités.</p>
-              <Link className="btn btn-amber" href={ROUTES.partenaires}>
-                Devenir partenaire
+              <Link className="btn btn-primary ftr-btn" href={ROUTES.partenaires}>
+                Construisons votre projet
               </Link>
             </div>
           )}

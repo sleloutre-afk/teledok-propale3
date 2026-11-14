@@ -13,10 +13,12 @@ const ETAPES = [
   { count: 4, cols: 2, rows: 2, ms: 1900 },
   { count: 6, cols: 3, rows: 2, ms: 1900 },
   { count: 9, cols: 3, rows: 3, ms: 1900 },
-  { count: 12, cols: 4, rows: 3, ms: 3000 },
+  { count: 12, cols: 4, rows: 3, ms: 1900 },
+  // Grille finale 4 × 4 : mêmes proportions que l'écran (3:2), elle le remplit sans bandes vides.
+  { count: 16, cols: 4, rows: 4, ms: 3000 },
 ]
 // Une tuile du centre de la grille finale (2e ligne, 2e colonne) s'agrandit pour ouvrir le cycle
-// suivant. 5 et 12 n'ayant pas de diviseur commun, chaque praticien ouvre un cycle à son tour.
+// suivant. 5 et 16 n'ayant pas de diviseur commun, chaque praticien ouvre un cycle à son tour.
 const RELAIS = 5
 // Calculs dans un écran de 1,5 × 1 (format 3:2) : marge et espacement des grilles.
 const RATIO = 1.5
@@ -56,7 +58,7 @@ function slot(p: number, debut: number, e: number, n: number) {
 
 /**
  * Portraits de praticiens en visio, en boucle (page Teledok) : « le réseau se constitue ». Un praticien
- * seul à l'écran, puis 2, 4, 6, 9 et 12 réunis en grille, comme des participants qui rejoignent l'appel ;
+ * seul à l'écran, puis 2, 4, 6, 9, 12 et 16 réunis en grille, comme des participants qui rejoignent l'appel ;
  * une tuile du centre s'agrandit ensuite pour ouvrir le cycle suivant. Les tuiles glissent et se
  * redimensionnent d'une étape à l'autre ; celles qui arrivent apparaissent sur place, celles qui
  * partent s'effacent sur place.

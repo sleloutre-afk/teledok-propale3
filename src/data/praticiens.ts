@@ -16,4 +16,8 @@ export const PRATICIENS: string[] = [
   '/photos/praticiens/pneumologue.jpg',
   '/photos/praticiens/infirmier.jpg',
   '/photos/praticiens/generaliste-rurale.jpg',
+  '/photos/praticiens/ophtalmologue.jpg',
+  '/photos/praticiens/sage-femme.jpg',
+  '/photos/praticiens/endocrinologue.jpg',
+  '/photos/praticiens/dieteticienne.jpg',
 ]
