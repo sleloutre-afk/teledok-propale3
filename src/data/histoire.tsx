@@ -27,15 +27,15 @@ export const HISTOIRE: Etape[] = [
   },
   {
     annee: 2021,
-    titre: 'Création d’une maison de santé pluridisciplinaire',
+    titre: 'Création d’une maison de santé pluriprofessionnelle',
     texte:
-      'Création d’une maison de santé pluridisciplinaire, combinant actes de téléconsultation et actes en présentiel ; création d’une spécialité de prévention.',
-    medecins: null,
+      'Création d’une maison de santé pluriprofessionnelle, combinant actes de téléconsultation et actes en présentiel ; création d’une spécialité de prévention.',
+    medecins: 30,
   },
   {
     annee: 2024,
     titre: 'Renforcement',
-    texte: 'Extension de la maison de santé pluridisciplinaire et développement de la plateforme de téléconsultation.',
+    texte: 'Extension de la maison de santé pluriprofessionnelle et développement de la plateforme de téléconsultation.',
     medecins: 50,
   },
   {

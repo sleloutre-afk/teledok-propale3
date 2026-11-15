@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PageShell } from '@/components/PageShell'
@@ -26,12 +26,24 @@ export const metadata: Metadata = pageMetadata(
 
 // Fonctions, parcours et liens LinkedIn repris de la page Gouvernance du site Doxamed (même groupe) ; portraits dans public/photos.
 // Sans photo, la carte affiche un emplacement « Portrait réel ».
-const DIRECTION: { nom: string; de: string; role: string; detail: string; photo: string | null; linkedin: string | null }[] = [
+// Liens vers les sites de Doxamed et de Capitello Group (nouvel onglet), comme dans la frise « Notre histoire ».
+const DOXAMED = (
+  <a href="https://www.doxamed.com" target="_blank" rel="noreferrer">
+    Doxamed
+  </a>
+)
+const CAPITELLO = (
+  <a href="https://capitello.fr" target="_blank" rel="noreferrer">
+    Capitello Group
+  </a>
+)
+
+const DIRECTION: { nom: string; de: string; role: string; detail: ReactNode; photo: string | null; linkedin: string | null }[] = [
   {
     nom: 'Arnaud Molinié',
     de: 'd’Arnaud Molinié',
     role: 'Président-directeur général',
-    detail: 'Fondateur et président de Capitello Group et de Doxamed.',
+    detail: <>Fondateur et président de {CAPITELLO} et de {DOXAMED}.</>,
     photo: '/photos/arnaud.webp',
     linkedin: 'https://www.linkedin.com/in/arnaud-molini%C3%A9-loxamed/',
   },
@@ -39,7 +51,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     nom: 'Matthieu Guillotin',
     de: 'de Matthieu Guillotin',
     role: 'Directeur général',
-    detail: 'Directeur général de Doxamed.',
+    detail: <>Directeur général de {DOXAMED}.</>,
     photo: '/photos/guillotin.webp',
     linkedin: 'https://www.linkedin.com/in/matthieu-guillotin-5755924/',
   },
@@ -54,9 +66,9 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
   {
     nom: 'Dr François Teboul',
     de: 'du Dr François Teboul',
-    role: 'Cofondateur – Directeur stratégie et technologie',
+    role: 'Cofondateur – Directeur Stratégie et Technologie',
     detail:
-      'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie Francophone de Télémédecine.',
+      'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie francophone de télémédecine.',
     photo: '/photos/teboul.webp',
     linkedin: 'https://www.linkedin.com/in/francois-teboul-b03a9599/',
   },
@@ -64,7 +76,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: string; photo:
     nom: 'Zoé Leycure',
     de: 'de Zoé Leycure',
     role: 'Directrice financière',
-    detail: 'Directrice finance et stratégie de Doxamed.',
+    detail: <>Directrice Finance &amp; Stratégie de {CAPITELLO}.</>,
     photo: '/photos/leycure.webp',
     linkedin: 'https://www.linkedin.com/in/zo%C3%A9-leycure-725056151/',
   },
@@ -213,7 +225,7 @@ export default async function Page() {
             </h2>
             <p className="indep-txt">
               Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique est
-              la condition de la confiance.
+              la condition de la confiance ainsi que de la qualité.
             </p>
             <Link className="btn btn-amber" href={ROUTES.medecins}>
               Conditions d’exercice des médecins

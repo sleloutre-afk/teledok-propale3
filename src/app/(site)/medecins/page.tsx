@@ -224,7 +224,7 @@ export default async function Page() {
             <blockquote>
               <p className="quote-p">
                 Teledok ne vend rien aux médecins et ne prélève aucune part sur leurs consultations. Son indépendance médicale et éthique
-                est la condition de la confiance.&nbsp;»
+                est la condition de la confiance ainsi que de la qualité.&nbsp;»
               </p>
             </blockquote>
             <figcaption className="quote-who">
@@ -265,7 +265,7 @@ export default async function Page() {
             <h2 id="cand-t" className="h2" style={{ marginBottom: 20 }}>
               Rejoindre Teledok
             </h2>
-            <p style={{ marginBottom: 28, lineHeight: '1.65' }}>Tous les champs sont obligatoires.</p>
+            <p style={{ marginBottom: 28, lineHeight: '1.65' }}>Les champs marqués d’un astérisque sont obligatoires.</p>
             <div className="rpps-note">
               <span className="rpps-ic">
                 <Icon name="carte-cps" size={28} width={1.7} stroke="var(--blue)" />

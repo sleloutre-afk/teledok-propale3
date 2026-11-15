@@ -9,6 +9,7 @@ export function CandidatureForm({ labelledBy }: { labelledBy: string }) {
       kind="candidature"
       prefix="b"
       labelledBy={labelledBy}
+      star
       consent="J’accepte que les informations saisies soient utilisées par Teledok pour traiter ma candidature."
       conservation="Si ma candidature n’est pas suivie d’une collaboration, elles sont supprimées au plus tard deux ans après le dernier contact."
       submitLabel="Envoyer ma candidature"

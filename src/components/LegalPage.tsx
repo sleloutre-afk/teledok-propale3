@@ -4,16 +4,16 @@ import { PageShell } from './PageShell'
 
 type Props = {
   title: string
-  /** Date d'établissement ou de dernière mise à jour du texte, en toutes lettres. */
-  updated: string
+  /** Date de la version du texte, en toutes lettres. */
+  version: string
   sommaire: { id: string; label: string }[]
-  /** Avertissement « Modèle à compléter », en tête de page. */
-  notice: ReactNode
+  /** Avertissement en tête de texte (facultatif). */
+  notice?: ReactNode
   children: ReactNode
 }
 
-/** Gabarit des pages légales : sommaire à gauche, texte à droite. */
-export function LegalPage({ title, updated, sommaire, notice, children }: Props) {
+/** Gabarit des pages légales (textes établis par l'avocat de Teledok) : sommaire à gauche, texte à droite. */
+export function LegalPage({ title, version, sommaire, notice, children }: Props) {
   return (
     <PageShell page="pg-legal">
       <section className="bg-cream" aria-labelledby="hero-t">
@@ -23,7 +23,7 @@ export function LegalPage({ title, updated, sommaire, notice, children }: Props)
             {title}
           </h1>
           <p className="muted" style={{ fontSize: 15 }}>
-            Dernière mise à jour : {updated}
+            Version du {version}
           </p>
         </div>
       </section>
@@ -38,11 +38,11 @@ export function LegalPage({ title, updated, sommaire, notice, children }: Props)
           ))}
         </nav>
         <article className="legal">
-          <div className="notice">
-            <p>
-              <strong>Modèle à compléter.</strong> {notice}
-            </p>
-          </div>
+          {notice && (
+            <div className="notice">
+              <p>{notice}</p>
+            </div>
+          )}
           {children}
         </article>
       </section>

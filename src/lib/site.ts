@@ -10,6 +10,8 @@ export const ROUTES = {
   contact: '/contact',
   mentions: '/mentions-legales',
   confidentialite: '/politique-de-confidentialite',
+  cgv: '/conditions-generales-de-vente',
+  charte: '/charte-ethique',
 } as const
 
 export type RouteKey = keyof typeof ROUTES

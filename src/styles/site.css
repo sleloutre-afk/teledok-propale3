@@ -1020,6 +1020,37 @@ select.fld {
 .legal li + li {
   margin-top: 6px;
 }
+/* Tableaux des textes juridiques (finalités, durées de conservation…) : défilement horizontal sur mobile. */
+.legal .tbl {
+  margin: 16px 0 20px;
+  overflow-x: auto;
+}
+.legal table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.legal th,
+.legal td {
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  text-align: left;
+  vertical-align: top;
+}
+.legal thead th {
+  background: var(--blue);
+  color: #fff;
+}
+.legal tbody th[colspan] {
+  background: var(--card);
+  color: var(--blue);
+}
+.legal .legal-sign {
+  margin-top: 32px;
+  font-weight: 700;
+}
 .legal address {
   margin: 0 0 12px;
   border-left: 3px solid var(--card);
@@ -3436,4 +3467,40 @@ select.fld {
   margin-bottom: 8px;
   font-weight: 700;
   color: var(--fg);
+}
+
+/* ==========================================================================
+   Page 404 (not-found.tsx), sur le modèle de celle du site Doxamed
+   ========================================================================== */
+
+.nf {
+  max-width: 680px;
+  text-align: center;
+}
+.nf-stamp {
+  width: 160px;
+  margin: 0 auto 28px;
+}
+.nf-stamp img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.nf .eyebrow {
+  margin-inline: auto;
+}
+.nf-t {
+  margin-bottom: 18px;
+  font-size: clamp(32px, 4.4vw, 48px);
+  text-wrap: balance;
+}
+.nf-p {
+  margin: 0 auto 36px;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+.nf-btns {
+  justify-content: center;
 }

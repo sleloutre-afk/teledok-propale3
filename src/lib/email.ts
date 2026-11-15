@@ -38,7 +38,9 @@ export async function sendFormNotification(kind: FormKind, data: Record<string, 
 
   const lines = Object.entries(data).map(([key, raw]) => {
     const value = key === 'type' ? (structures[raw as keyof typeof structures] ?? raw) : raw
-    return key === 'msg' ? `\n${LABELS[key]} :\n${value}` : `${LABELS[key] ?? key} : ${value}`
+    if (key === 'msg') return `\n${LABELS[key]} :\n${value}`
+    // Champ facultatif laissé vide (téléphone du formulaire de contact).
+    return `${LABELS[key] ?? key} : ${value || 'non renseigné'}`
   })
   const text = [
     kind === 'candidature' ? 'Nouvelle candidature reçue depuis le site.' : 'Nouvelle demande de contact reçue depuis le site.',

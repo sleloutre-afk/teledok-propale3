@@ -16,6 +16,9 @@ export function SiteBehaviors() {
   const pathname = usePathname()
 
   useEffect(() => {
+    // Classe « js » posée par le script du <head> (layout) ; sur la page 404, React réécrit la balise <html>
+    // après coup et l'efface (menu mobile alors déplié) : on la repose ici.
+    document.documentElement.classList.add('js')
     const cleanups: Array<() => void> = []
     const on = <T extends EventTarget>(target: T, type: string, handler: EventListener, options?: AddEventListenerOptions) => {
       target.addEventListener(type, handler, options)

@@ -20,6 +20,8 @@ type FieldProps = {
   maxLength?: number
   hint?: string
   className?: string
+  /** Champ facultatif : ni astérisque ni attribut required. */
+  optional?: boolean
   children?: ReactNode
 }
 
@@ -150,6 +152,7 @@ export function SiteForm({
     maxLength,
     hint,
     className,
+    optional = false,
     children: options,
   }: FieldProps) => {
     const id = `${prefix}-${name}`
@@ -159,7 +162,7 @@ export function SiteForm({
       className: 'fld',
       id,
       name,
-      required: true,
+      required: !optional,
       value: String(values[name] ?? ''),
       'aria-invalid': Boolean(errors[name]),
       'aria-describedby': [hintId, errors[name] ? errId : undefined].filter(Boolean).join(' ') || undefined,
@@ -169,7 +172,7 @@ export function SiteForm({
       <div className={className}>
         <label className="lbl" htmlFor={id}>
           {label}
-          {star && ' *'}
+          {star && !optional && ' *'}
         </label>
         {as === 'textarea' && <textarea {...common} maxLength={maxLength} />}
         {as === 'select' && <select {...common}>{options}</select>}

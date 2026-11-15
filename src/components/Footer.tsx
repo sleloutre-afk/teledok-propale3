@@ -82,8 +82,10 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
         <div className="ftr-bottom">
           <p>© {new Date().getFullYear()} Teledok</p>
           <p className="ftr-legal">
-            <Link href={ROUTES.mentions}>Mentions légales</Link>
-            <Link href={ROUTES.confidentialite}>Politique de confidentialité</Link>
+            <Link href={ROUTES.mentions}>Mentions légales et CGU</Link>
+            <Link href={ROUTES.confidentialite}>Données personnelles</Link>
+            <Link href={ROUTES.cgv}>CGV</Link>
+            <Link href={ROUTES.charte}>Charte éthique</Link>
             <Link href={ROUTES.contact}>Contact</Link>
           </p>
         </div>

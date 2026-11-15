@@ -40,7 +40,7 @@ export function ContactForm({ prefix, labelledBy }: { prefix: string; labelledBy
             {Field({ name: 'nom', label: 'Nom', autoComplete: 'name', maxLength: 200 })}
             {Field({ name: 'fonction', label: 'Fonction', autoComplete: 'organization-title', maxLength: 200 })}
             {Field({ name: 'email', label: 'E-mail', type: 'email', autoComplete: 'email', maxLength: 200 })}
-            {Field({ name: 'tel', label: 'Téléphone', type: 'tel', autoComplete: 'tel', inputMode: 'tel' })}
+            {Field({ name: 'tel', label: 'Téléphone', type: 'tel', autoComplete: 'tel', inputMode: 'tel', optional: true })}
           </div>
           {Field({ className: 'field--full', name: 'msg', label: 'Message', as: 'textarea', maxLength: 5000 })}
         </>

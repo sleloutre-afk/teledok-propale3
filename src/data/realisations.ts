@@ -71,7 +71,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Bpifrance',
-        image: { src: '/photos/logos/bpifrance.png', alt: 'Bpifrance', logo: true },
+        image: { src: '/photos/bpifrance.jpg', alt: 'Dans un espace de bilan, une infirmière en blouse Doxamed prend la température d’un collaborateur assis', position: '50% 35%' },
         contexte:
           'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, en partenariat avec Doxamed, des bilans de prévention santé complets, anonymes, basés sur le volontariat et entièrement pris en charge par l’entreprise. Ce dispositif, accessible à environ 850 collaborateurs chaque année, a été mis en place dans un espace spécifique au siège social de Bpifrance, à Maisons-Alfort.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
@@ -80,7 +80,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Deloitte',
-        image: { src: '/photos/logos/deloitte.png', alt: 'Deloitte', logo: true },
+        image: { src: '/photos/deloitte.jpg', alt: 'Dans un bureau de La Défense, une infirmière en blouse Doxamed accompagne un collaborateur pendant un examen de la vue', position: '50% 35%' },
         contexte:
           'Depuis 2026, Deloitte, en partenariat avec Doxamed, propose à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé par l’entreprise. Ce dispositif a été mis en place dans un espace dédié dans les locaux de Deloitte à La Défense. Une première pour un cabinet de conseil et d’audit en France.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
@@ -89,7 +89,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Colisée',
-        image: { src: '/photos/logos/colisee.webp', alt: 'Colisée', logo: true },
+        image: { src: '/photos/colisee.jpg', alt: 'Salle de bilan de prévention installée par Doxamed : table d’examen, poste de travail et tapis d’analyse posturale', position: '50% 60%' },
         contexte:
           'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit Ehpad d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
         role: 'Téléconsultation pour les collaborateurs, quelques jours après leur bilan, par un médecin qui leur remet un compte rendu complet et les oriente, si nécessaire, dans le parcours de soins.',
@@ -115,7 +115,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Pharmacies',
         image: { src: '/photos/pharmacie.jpg', alt: 'Dans l’espace de téléconsultation d’une pharmacie, une professionnelle de santé installe le brassard de tension d’une patiente' },
         contexte:
-          'Visiomed, société spécialisée dans la médecine connectée, a mis en place un programme de télécabines en pharmacies pour des téléconsultations assistées par un pharmacien.',
+          'Visiomed, société spécialisée dans la médecine connectée, a mis en place un programme de télécabines en pharmacie pour des téléconsultations assistées par un pharmacien.',
         role: 'Création des protocoles médicaux et mise à disposition de médecins pour des téléconsultations avec pharmaciens télérequérants.',
         resultat: [
           'Entre 2019 et 2023, plus de 200 téléconsultations en moyenne réalisées par mois par nos médecins',

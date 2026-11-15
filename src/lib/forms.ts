@@ -25,14 +25,16 @@ const MAX_MSG = 5000
 
 const str = (v: Values, k: string) => (typeof v[k] === 'string' ? (v[k] as string).trim() : '')
 
-function common(v: Values, e: Errors, telExemple: string) {
+/** E-mail et téléphone ; le téléphone peut être facultatif (formulaire de contact), son format est alors vérifié s'il est saisi. */
+function common(v: Values, e: Errors, telExemple: string, telRequis = true) {
   const email = str(v, 'email')
   if (!email) e.email = 'Veuillez indiquer votre adresse e-mail.'
   else if (!EMAIL.test(email)) e.email = 'Format attendu : nom@domaine.fr'
 
   const tel = str(v, 'tel').replace(/[\s.\-()]/g, '')
-  if (!tel) e.tel = 'Veuillez indiquer votre numéro de téléphone.'
-  else if (!TEL.test(tel)) e.tel = `Format attendu : ${telExemple}.`
+  if (!tel) {
+    if (telRequis) e.tel = 'Veuillez indiquer votre numéro de téléphone.'
+  } else if (!TEL.test(tel)) e.tel = `Format attendu : ${telExemple}.`
 }
 
 function tooLong(v: Values, e: Errors, keys: string[]) {
@@ -61,7 +63,7 @@ export function validateContact(v: Values): Errors {
   if (!Object.hasOwn(structures, str(v, 'type'))) e.type = 'Veuillez sélectionner un type de structure.'
   if (!str(v, 'nom')) e.nom = 'Veuillez indiquer votre nom.'
   if (!str(v, 'fonction')) e.fonction = 'Veuillez indiquer votre fonction.'
-  common(v, e, '01 23 45 67 89 ou +33 1 23 45 67 89')
+  common(v, e, '01 23 45 67 89 ou +33 1 23 45 67 89', false)
   if (!str(v, 'msg')) e.msg = 'Veuillez rédiger votre message.'
   if (v.rgpd !== true) e.rgpd = 'Votre accord est nécessaire pour traiter votre demande.'
   tooLong(v, e, ['org', 'nom', 'fonction', 'email', 'msg'])
