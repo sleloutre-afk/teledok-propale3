@@ -185,6 +185,7 @@ export default async function Page() {
               sizes="(min-width: 1000px) 560px, 100vw"
               style={{ width: '100%', height: 'auto' }}
             />
+            <p className="photo-credit">© Teledok</p>
           </div>
           <div className="rv" style={{ flex: '1 1 460px' }}>
             <p className="pill eyebrow">Qui sommes-nous</p>
@@ -212,14 +213,17 @@ export default async function Page() {
           style={{ right: -120, top: -120, width: 340, height: 340, border: '2px solid rgba(245,179,53,0.6)' }}
         ></div>
         <div className="wrap mission rel rv">
-          <Image
-            className="mission-photo"
-            src="/photos/arnaud.webp"
-            width={906}
-            height={1076}
-            alt="Portrait d’Arnaud Molinié."
-            sizes="(min-width: 900px) 340px, 200px"
-          />
+          <figure className="mission-media">
+            <Image
+              className="mission-photo"
+              src="/photos/arnaud.webp"
+              width={906}
+              height={1076}
+              alt="Portrait d’Arnaud Molinié."
+              sizes="(min-width: 900px) 340px, 200px"
+            />
+            <figcaption className="mission-credit">© Candice Nechitch / Capitello Group</figcaption>
+          </figure>
           <div className="mission-txt">
             <p className="pill eyebrow">Ce qui nous anime</p>
             <h2 id="mis-t" className="h2 mission-t">

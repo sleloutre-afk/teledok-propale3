@@ -71,7 +71,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Bpifrance',
-        image: { src: '/photos/bpifrance.jpg', alt: 'Dans un espace de bilan, une infirmière en blouse Doxamed prend la température d’un collaborateur assis', position: '50% 35%' },
+        image: { src: '/photos/bpifrance.jpg', alt: 'Dans un espace de bilan, une infirmière en blouse Doxamed prend la température d’un collaborateur assis', position: '50% 35%', credit: 'Florent Marion / Doxamed' },
         contexte:
           'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, en partenariat avec Doxamed, des bilans de prévention santé complets, anonymes, basés sur le volontariat et entièrement pris en charge par l’entreprise. Ce dispositif, accessible à environ 850 collaborateurs chaque année, a été mis en place dans un espace spécifique au siège social de Bpifrance, à Maisons-Alfort.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
@@ -80,7 +80,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Deloitte',
-        image: { src: '/photos/deloitte.jpg', alt: 'Dans un bureau de La Défense, une infirmière en blouse Doxamed accompagne un collaborateur pendant un examen de la vue', position: '50% 35%' },
+        image: { src: '/photos/deloitte.jpg', alt: 'Dans un bureau de La Défense, une infirmière en blouse Doxamed accompagne un collaborateur pendant un examen de la vue', position: '50% 35%', credit: 'Florent Marion / Doxamed' },
         contexte:
           'Depuis 2026, Deloitte, en partenariat avec Doxamed, propose à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé par l’entreprise. Ce dispositif a été mis en place dans un espace dédié dans les locaux de Deloitte à La Défense. Une première pour un cabinet de conseil et d’audit en France.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
@@ -89,7 +89,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Colisée',
-        image: { src: '/photos/colisee.jpg', alt: 'Salle de bilan de prévention installée par Doxamed : table d’examen, poste de travail et tapis d’analyse posturale', position: '50% 60%' },
+        image: { src: '/photos/colisee.jpg', alt: 'Salle de bilan de prévention installée par Doxamed : table d’examen, poste de travail et tapis d’analyse posturale', position: '50% 60%', credit: 'Doxamed' },
         contexte:
           'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit Ehpad d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
         role: 'Téléconsultation pour les collaborateurs, quelques jours après leur bilan, par un médecin qui leur remet un compte rendu complet et les oriente, si nécessaire, dans le parcours de soins.',
@@ -113,7 +113,7 @@ export const REALISATIONS: RealisationData[] = [
     volets: [
       {
         tag: 'Pharmacies',
-        image: { src: '/photos/pharmacie.jpg', alt: 'Dans l’espace de téléconsultation d’une pharmacie, une professionnelle de santé installe le brassard de tension d’une patiente' },
+        image: { src: '/photos/pharmacie.jpg', alt: 'Dans l’espace de téléconsultation d’une pharmacie, une professionnelle de santé installe le brassard de tension d’une patiente', credit: 'Teledok' },
         contexte:
           'Visiomed, société spécialisée dans la médecine connectée, a mis en place un programme de télécabines en pharmacie pour des téléconsultations assistées par un pharmacien.',
         role: 'Création des protocoles médicaux et mise à disposition de médecins pour des téléconsultations avec pharmaciens télérequérants.',
@@ -125,7 +125,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Unités mobiles (Médicobus)',
-        image: { src: '/photos/medicobus.jpg', alt: 'À bord d’un Médicobus, une infirmière prend la tension d’un patient' },
+        image: { src: '/photos/medicobus.jpg', alt: 'À bord d’un Médicobus, une infirmière prend la tension d’un patient', credit: 'Teledok' },
         contexte:
           'Déploiement par la société Hocoia, spécialisée dans la conception de bus connectés dédiés à la santé, en partenariat avec Numerisat, de bus médicaux connectés dans des déserts médicaux, avec des infirmiers télérequérants.',
         role: 'Formation des infirmiers et mise à disposition de médecins pour des téléconsultations depuis les Médicobus.',
@@ -136,7 +136,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Mairies',
-        image: { src: '/photos/mairie.jpg', alt: 'Cabine de téléconsultation connectée installée dans le hall d’une mairie' },
+        image: { src: '/photos/mairie.jpg', alt: 'Cabine de téléconsultation connectée installée dans le hall d’une mairie', credit: 'Teledok' },
         contexte:
           'Déploiement par la société H4D, spécialisée dans les cabines médicales connectées, de cabines au sein d’entreprises et de mairies.',
         role:
@@ -149,7 +149,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Ehpad',
-        image: { src: '/photos/ehpad.jpg', alt: 'Une infirmière examine l’oreille d’une résidente avec un otoscope relié à un smartphone' },
+        image: { src: '/photos/ehpad.jpg', alt: 'Une infirmière examine l’oreille d’une résidente avec un otoscope relié à un smartphone', credit: 'Teledok' },
         contexte:
           'Mise en place par la société Toktokdok, en Ehpad, d’une solution de téléexpertise ORL (audiométrie assistée par un infirmier, suivie par un médecin ORL).',
         role: 'Formation des infirmiers et mise à disposition de médecins ORL pour des téléconsultations sur rendez-vous.',
@@ -158,7 +158,7 @@ export const REALISATIONS: RealisationData[] = [
       },
       {
         tag: 'Gares',
-        image: { src: '/photos/gares.jpg', alt: 'Entrée d’un espace santé Doxamed dans le hall d’une gare' },
+        image: { src: '/photos/gares.jpg', alt: 'Entrée d’un espace santé Doxamed dans le hall d’une gare', credit: 'Teledok' },
         contexte:
           'Fin 2023, Doxamed a remporté l’appel d’offres de SNCF Gares &\u00a0Connexions pour déployer des espaces de santé permanents en gare.',
         role: 'Mise à disposition de médecins pour des téléconsultations sur rendez-vous, avec une prise en charge des patients par une infirmière.',
@@ -195,6 +195,7 @@ export const REALISATIONS: RealisationData[] = [
       src: '/photos/puericulture.jpg',
       alt: 'Dans une crèche, une professionnelle s’exerce sur une poupée à utiliser une chambre d’inhalation, guidée en visioconférence par un médecin',
       position: '100% 40%',
+      credit: 'Teledok',
     },
     imageBrief: 'Professionnels de crèche en séance de téléformation avec un médecin.',
     linkToRecherche: false,

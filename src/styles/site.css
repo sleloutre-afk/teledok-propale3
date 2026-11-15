@@ -1763,6 +1763,14 @@ select.fld {
   border-radius: 28px;
   object-fit: cover;
 }
+/* Crédit sous la photo, comme pour le portrait de la section Notre mission. */
+.pg-home .photo-credit {
+  position: relative;
+  margin-top: 8px;
+  color: rgba(60, 60, 60, 0.8);
+  font-size: 12px;
+  line-height: 1.4;
+}
 .pg-home .home-qui .sec {
   padding-block: clamp(80px, 10vw, 140px);
 }
@@ -1788,6 +1796,15 @@ select.fld {
   border-radius: 28px;
   object-fit: cover;
   object-position: 50% 0;
+}
+.pg-home .mission-media {
+  margin: 0;
+}
+.pg-home .mission-credit {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  line-height: 1.4;
 }
 .pg-home .mission-txt {
   position: relative;
