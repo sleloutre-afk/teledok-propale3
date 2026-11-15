@@ -39,15 +39,15 @@ const SPOKES = [
 const ETAPES = [
   {
     titre: 'Conception sur mesure du parcours',
-    texte: 'Analyse du contexte, rédaction des protocoles, formation des praticiens. Teledok adopte la technologie du client.',
+    texte: 'Analyse du contexte, rédaction des protocoles, formation des praticiens. Nos médecins s’adaptent aux technologies des clients.',
   },
   {
     titre: 'Mise en œuvre &\u00a0ressources humaines',
-    texte: 'Fourniture des médecins et paramédicaux nécessaires, au sein d’un premier pool d’environ 50 médecins.',
+    texte: 'Mise à disposition de paramédicaux et de plus de 50 médecins.',
   },
   {
     titre: 'Évaluation systématique',
-    texte: 'Évaluation médicale et économique, pensée dès la conception, déployée pendant et à la fin du parcours.',
+    texte: 'Évaluation médicale d’abord puis économique, pensée dès la conception, déployée pendant et à la fin du parcours.',
   },
   {
     titre: 'Amélioration itérative &\u00a0recherche',
@@ -122,8 +122,7 @@ export default async function Page() {
           <div className="kpi kpi--blue rv">
             <div className="kpi-dot" aria-hidden="true"></div>
             <p className="kpi-n">
-              +{'\u00a0'}
-              <span data-count data-to="50">
+              +<span data-count data-to="50">
                 50
               </span>
             </p>
@@ -193,7 +192,7 @@ export default async function Page() {
               Qui est Teledok
             </h2>
             <p style={{ marginBottom: 32, fontSize: 20, lineHeight: '1.7' }}>
-              Précurseur des plateformes de médecins destiné aux téléconsultations, Teledok a été créé en 2018 par les docteurs François
+              Précurseur des plateformes de médecins destinées aux téléconsultations, Teledok a été créé en 2018 par les docteurs François
               Teboul et Stéphane Illouz. Teledok a pour but de servir la santé dans le cadre de la modernisation de l’accès aux soins à
               travers la mise à disposition de ses médecins pour des opérateurs de télémédecine. Aujourd’hui, Teledok réunit des médecins
               généralistes et spécialistes, ainsi que des professionnels paramédicaux, dédiés à la construction, l’évaluation et la mise à

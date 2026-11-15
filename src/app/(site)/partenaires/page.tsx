@@ -136,7 +136,7 @@ export default function Page() {
               </li>
             ))}
           </ol>
-          <p className="rv agnostic">Agnosticisme technologique : Teledok adopte la technologie du client.</p>
+          <p className="rv agnostic">Agnosticisme technologique : nos médecins s’adaptent aux technologies des clients.</p>
         </div>
       </section>
 

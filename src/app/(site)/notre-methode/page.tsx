@@ -123,18 +123,18 @@ export default function Page() {
             </ul>
             <div className="agnostic">
               <p className="agnostic-t">Agnosticisme technologique</p>
-              <p className="agnostic-p">Teledok adopte la technologie du client.</p>
+              <p className="agnostic-p">Nos médecins s’adaptent aux technologies des clients.</p>
             </div>
           </li>
           <li className="step rv">
             <span className="step-n">2</span>
             <h3>Mise en œuvre &amp;&nbsp;ressources humaines</h3>
             <ul className="blist">
-              <li>Fourniture des médecins et paramédicaux nécessaires</li>
-              <li>Un premier pool d’environ 50 médecins collaborant quotidiennement avec Teledok</li>
+              <li>Mise à disposition de paramédicaux et de plus de 50 médecins</li>
+              <li>Un premier pool de médecins collaborant quotidiennement avec Teledok</li>
             </ul>
             <p className="pool">
-              <span className="pool-n">+&nbsp;50</span>
+              <span className="pool-n">+50</span>
               <span>médecins dans le premier pool</span>
             </p>
           </li>
@@ -142,7 +142,7 @@ export default function Page() {
             <span className="step-n">3</span>
             <h3>Évaluation systématique</h3>
             <ul className="blist">
-              <li>Évaluation à la fois médicale et économique (apport pour la collectivité)</li>
+              <li>Évaluation médicale d’abord puis économique (apport pour la collectivité)</li>
             </ul>
             <ol className="moments" aria-label="Moments de l’évaluation">
               <li>
