@@ -52,7 +52,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: ReactNode; pho
     de: 'de Matthieu Guillotin',
     role: 'Directeur général',
     detail: <>Directeur général de {DOXAMED}.</>,
-    photo: '/photos/guillotin.webp',
+    photo: '/photos/guillotin.jpg',
     linkedin: 'https://www.linkedin.com/in/matthieu-guillotin-5755924/',
   },
   {
