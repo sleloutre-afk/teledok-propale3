@@ -60,7 +60,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: ReactNode; pho
     de: 'du Dr Stéphane Illouz',
     role: 'Cofondateur – Directeur médical',
     detail: 'Urgentiste, médecin généraliste. Coordinateur MSP.',
-    photo: '/photos/illouz.webp',
+    photo: '/photos/illouz.jpg',
     linkedin: 'https://www.linkedin.com/in/stephane-illouz-0b3413270/',
   },
   {
@@ -69,7 +69,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: ReactNode; pho
     role: 'Cofondateur – Directeur Stratégie et Technologie',
     detail:
       'Urgentiste, médecin généraliste. Coordinateur MSP et bureau CPTS, président du groupe Téléconsultation de l’Académie francophone de télémédecine.',
-    photo: '/photos/teboul.webp',
+    photo: '/photos/teboul.jpg',
     linkedin: 'https://www.linkedin.com/in/francois-teboul-b03a9599/',
   },
   {
@@ -77,7 +77,7 @@ const DIRECTION: { nom: string; de: string; role: string; detail: ReactNode; pho
     de: 'de Zoé Leycure',
     role: 'Directrice financière',
     detail: <>Directrice Finance &amp; Stratégie de {CAPITELLO}.</>,
-    photo: '/photos/leycure.webp',
+    photo: '/photos/leycure.jpg',
     linkedin: 'https://www.linkedin.com/in/zo%C3%A9-leycure-725056151/',
   },
   {
