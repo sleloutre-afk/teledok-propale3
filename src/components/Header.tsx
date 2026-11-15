@@ -53,14 +53,27 @@ export function Header({ current, overlay = false }: Props) {
           </button>
           <nav id="nav-principale" className="hdr-nav" aria-label="Navigation principale">
             {NAV.map((item) => (
-              <Link
-                key={item.key}
-                className={cx('nav', { 'nav-on': item.key === current })}
-                href={ROUTES[item.key]}
-                aria-current={item.key === current ? 'page' : undefined}
-              >
-                {item.label}
-              </Link>
+              <div key={item.key} className={cx('nav-item', { 'has-sub': !!item.sections })} data-nav-item>
+                <Link
+                  className={cx('nav', { 'nav-on': item.key === current })}
+                  href={ROUTES[item.key]}
+                  aria-current={item.key === current ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+                {/* Sections de la page : menu déroulant au survol ou au clavier (écrans larges), liste en retrait dans le menu mobile. */}
+                {item.sections && (
+                  <ul className="nav-sub" aria-label={`${item.label.replace(/\s*\?$/, '')} : sections de la page`}>
+                    {item.sections.map((s) => (
+                      <li key={s.id}>
+                        <Link className="nav-sub-a" href={`${ROUTES[item.key]}#${s.id}`}>
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
             {/* Page Partenaires, présentée comme l'action principale pour les organisations. */}
             <Link

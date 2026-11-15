@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logoBlanc from '@/assets/logo-teledok-blanc.png'
 import { getCoordonnees } from '@/lib/content'
-import { ROUTES } from '@/lib/site'
+import { LINKEDIN_URL, ROUTES } from '@/lib/site'
+import { LinkedinIcon } from './LinkedinIcon'
 
 const LOGO_HEIGHT = 30
 const LOGO_WIDTH = Math.round((LOGO_HEIGHT * logoBlanc.width) / logoBlanc.height)
@@ -25,6 +26,9 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
               style={{ height: LOGO_HEIGHT, width: 'auto' }}
             />
             <p>Regroupement de médecins généralistes et spécialistes, associés à des professionnels paramédicaux.</p>
+            <a className="ftr-social" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="Teledok sur LinkedIn (nouvel onglet)">
+              <LinkedinIcon size={20} />
+            </a>
           </div>
           <nav aria-label="Plan du site">
             <p className="label ftr-t">Le site</p>

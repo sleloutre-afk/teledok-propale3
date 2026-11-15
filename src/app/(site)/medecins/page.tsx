@@ -140,7 +140,7 @@ export default async function Page() {
           <div className="kpi rv">
             <div className="kpi-dot" aria-hidden="true"></div>
             <p className="kpi-n">
-              ≈{' '}
+              +{'\u00a0'}
               <span data-count data-to="50">
                 50
               </span>
@@ -170,7 +170,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="clip on-blue formation" aria-labelledby="form-t">
+      <section id="formation" className="clip on-blue formation" aria-labelledby="form-t">
         <div
           className="blob"
           aria-hidden="true"
@@ -235,7 +235,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section aria-labelledby="etu-t">
+      <section id="travaux" aria-labelledby="etu-t">
         <div className="wrap travaux">
           <div className="rv" style={{ flex: '1 1 320px', minWidth: '0' }}>
             <p className="pill t-ink eyebrow">Recherche</p>

@@ -58,6 +58,27 @@ export function SiteBehaviors() {
       on(window.matchMedia('(min-width: 1100px)'), 'change', () => setOpen(false))
     }
 
+    // Menus déroulants des rubriques (ouverts en CSS au survol et au focus) : refermés après le choix
+    // d'une section ou par Échap ; ils se rouvrent une fois la souris et le focus sortis de la rubrique.
+    all<HTMLElement>('[data-nav-item]', header ?? document).forEach((item) => {
+      const reopen = () => item.removeAttribute('data-closed')
+      on(item, 'pointerleave', reopen)
+      on(item, 'focusout', (e) => {
+        if (!item.contains((e as FocusEvent).relatedTarget as Node | null)) reopen()
+      })
+      all<HTMLAnchorElement>('.nav-sub a', item).forEach((a) =>
+        on(a, 'click', () => {
+          a.blur()
+          item.setAttribute('data-closed', '')
+        }),
+      )
+      on(item, 'keydown', (e) => {
+        if ((e as KeyboardEvent).key !== 'Escape' || !item.matches(':focus-within')) return
+        item.setAttribute('data-closed', '')
+        item.querySelector<HTMLElement>('.nav')?.focus()
+      })
+    })
+
     // ---------- Apparition au défilement (.rv) et tracé des icônes (.trace) ----------
     const revealed = all<HTMLElement>('.rv')
     const traced = all<SVGElement>('.trace')

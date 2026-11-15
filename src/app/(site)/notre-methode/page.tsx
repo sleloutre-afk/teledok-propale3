@@ -134,7 +134,7 @@ export default function Page() {
               <li>Un premier pool d’environ 50 médecins collaborant quotidiennement avec Teledok</li>
             </ul>
             <p className="pool">
-              <span className="pool-n">≈ 50</span>
+              <span className="pool-n">+&nbsp;50</span>
               <span>médecins dans le premier pool</span>
             </p>
           </li>

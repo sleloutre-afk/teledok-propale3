@@ -122,7 +122,7 @@ export default async function Page() {
           <div className="kpi kpi--blue rv">
             <div className="kpi-dot" aria-hidden="true"></div>
             <p className="kpi-n">
-              ≈{' '}
+              +{'\u00a0'}
               <span data-count data-to="50">
                 50
               </span>
