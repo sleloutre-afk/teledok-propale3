@@ -35,7 +35,7 @@ export default function Page() {
     <LegalPage title="Mentions légales et conditions générales d’utilisation" version="5 novembre 2026" sommaire={sommaire}>
       <p style={{ marginTop: 32 }}>
         La société <strong>TELEDOK</strong> (société par actions simplifiée à associé unique au capital de 10 000 euros, ayant son siège
-        social 351 Les Bureaux de la Colline – 92210 Saint-Cloud, immatriculée au Registre du commerce et des sociétés de Nanterre sous le
+        social 351 Bureaux de la Colline – 92210 Saint-Cloud Cedex, immatriculée au Registre du commerce et des sociétés de Nanterre sous le
         numéro 843 204 678) est exploitante du site Internet qui est accessible via le lien URL suivant : www.teledok.fr (ci-après le
         « <strong>Site Internet</strong> »).
       </p>

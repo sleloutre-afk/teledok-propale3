@@ -199,7 +199,7 @@ export default function Page() {
     <LegalPage title="Politique de protection des données personnelles" version="5 novembre 2026" sommaire={sommaire}>
       <p style={{ marginTop: 32 }}>
         TELEDOK, Société par Actions Simplifiée à associé Unique (SASU), immatriculée au registre du commerce et des sociétés de NANTERRE
-        sous le numéro 843 204 678, sise 351 Les Bureaux de la Colline, 92210 SAINT-CLOUD, FRANCE (ci-après « <strong>TELEDOK</strong> »)
+        sous le numéro 843 204 678, sise 351 Bureaux de la Colline, 92210 SAINT-CLOUD CEDEX, FRANCE (ci-après « <strong>TELEDOK</strong> »)
         procède au Traitement de données à caractère personnel dans le cadre de son activité. Les termes commençant par une majuscule dans
         cette Politique sont définis à l’<a href="#definitions">article 15</a> « DEFINITIONS » ci-après.
       </p>
@@ -397,6 +397,12 @@ export default function Page() {
       <p>
         Cf. <a href="#cookies">article 14</a> ci-dessous « POLITIQUE D’UTILISATION DES COOKIES ».
       </p>
+      <p>
+        Les Données Personnelles saisies dans les formulaires du site Internet, à savoir pour une candidature de médecin : nom, prénom,
+        e-mail, téléphone et numéro RPPS, et pour une demande de contact : organisation, type de structure, nom, fonction, e-mail,
+        téléphone et message. Ces données ne sont pas enregistrées sur le site : elles sont transmises par e-mail à TELEDOK, par
+        l’intermédiaire du service d’envoi d’e-mails de la société RESEND, INC., Sous-Traitant de TELEDOK.
+      </p>
       <h3>Données Personnelles relatives aux personnes réservant un rendez-vous dans le cadre de nos services</h3>
       <p>
         Les données à caractère personnel que la personne enregistre sur le site Internet dédié (en pratique sur les systèmes DOCTOLIB de
@@ -486,7 +492,8 @@ export default function Page() {
       </ul>
       <p>
         Lorsque l’un de nos prestataires ou Sous-Traitants participe au Traitement de vos Données Personnelles (par exemple la société
-        DOCTOLIB SAS ou la société ANAMNESE SAS qui fournissent les systèmes de réservation, ou tout autre fournisseur), celui-ci est
+        DOCTOLIB SAS ou la société ANAMNESE SAS qui fournissent les systèmes de réservation, la société RESEND, INC. qui achemine les
+        e-mails transmettant les formulaires du site Internet, ou tout autre fournisseur), celui-ci est
         soumis à des obligations contractuelles lui imposant : (i) de Traiter uniquement les Données Personnelles conformément à nos
         instructions préalables écrites, (ii) d’utiliser des mesures de protection de la confidentialité et de la sécurité des Données
         Personnelles, ainsi que (iii) de respecter toute autre obligation supplémentaire imposée par la réglementation applicable.
@@ -536,7 +543,7 @@ export default function Page() {
       <h2 id="transfert">9. Transfert des données personnelles en dehors de l’Union européenne</h2>
       <p>
         Nous ne transférons pas de Données Personnelles en dehors de l’Union Européenne (sous réserve des USA pour ce qui concerne Google
-        Analytics, dans le cadre fixé par la réglementation).
+        Analytics et le service d’envoi d’e-mails RESEND, dans le cadre fixé par la réglementation).
       </p>
 
       <h2 id="droits">10. Vos droits concernant vos données personnelles</h2>
@@ -746,7 +753,7 @@ export default function Page() {
       </p>
       <ul>
         <li>
-          <strong>Par courrier à l’adresse suivante : TELEDOK, Direction générale - 351 Les Bureaux de la Colline – 92210 Saint-Cloud (France), ou</strong>
+          <strong>Par courrier à l’adresse suivante : TELEDOK, Direction générale - 351 Bureaux de la Colline – 92210 Saint-Cloud Cedex (France), ou</strong>
         </li>
         <li>
           <strong>

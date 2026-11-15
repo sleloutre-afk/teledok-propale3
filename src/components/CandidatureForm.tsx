@@ -11,7 +11,7 @@ export function CandidatureForm({ labelledBy }: { labelledBy: string }) {
       labelledBy={labelledBy}
       star
       consent="J’accepte que les informations saisies soient utilisées par Teledok pour traiter ma candidature."
-      conservation="Si ma candidature n’est pas suivie d’une collaboration, elles sont supprimées au plus tard deux ans après le dernier contact."
+      conservation="Si ma candidature n’est pas suivie d’une collaboration, elles sont conservées jusqu’à deux ans après le dernier contact."
       submitLabel="Envoyer ma candidature"
       doneTitle="Votre candidature a bien été transmise."
       doneText={(nom) => <>Merci, Dr {nom}. L’équipe Teledok vous recontactera sous 2 jours ouvrés.</>}

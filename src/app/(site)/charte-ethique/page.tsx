@@ -71,7 +71,7 @@ export default function Page() {
         d’entreprise. De fait ces exemples sont donnés à titre illustratif et n’ont pas vocation à être exhaustifs.
       </p>
       <p className="muted" style={{ fontSize: 15 }}>
-        TELEDOK – S.A.S.U. au capital de 10 000 € – Siège social : 351 Les Bureaux de la Colline – 92210 Saint-Cloud – R.C.S. Nanterre 843
+        TELEDOK – S.A.S.U. au capital de 10 000 € – Siège social : 351 Bureaux de la Colline – 92210 Saint-Cloud Cedex – R.C.S. Nanterre 843
         204 678
       </p>
 

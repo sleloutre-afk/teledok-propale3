@@ -41,8 +41,8 @@ export default function Page() {
       <p style={{ marginTop: 32 }}>Les présentes Conditions Générales de Vente entrent en vigueur le 5 novembre 2026.</p>
       <p>
         <strong>TELEDOK</strong> est une société par actions simplifiée au capital de 10 000 euros, immatriculée au Registre du commerce et
-        des sociétés de Nanterre – France, sous le numéro 843 204 678, dont le siège social est situé 351 Les Bureaux de la Colline – 92210
-        Saint-Cloud - France (« <strong>TELEDOK</strong> »).
+        des sociétés de Nanterre – France, sous le numéro 843 204 678, dont le siège social est situé 351 Bureaux de la Colline – 92210
+        Saint-Cloud Cedex - France (« <strong>TELEDOK</strong> »).
       </p>
       <p>
         TELEDOK et le Client sont ci-après dénommés individuellement une « <strong>Partie</strong> » et ensemble les «{' '}
