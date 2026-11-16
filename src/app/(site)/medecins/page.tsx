@@ -144,7 +144,7 @@ export default async function Page() {
                 50
               </span>
             </p>
-            <p className="kpi-l">médecins travaillant quotidiennement avec Teledok</p>
+            <p className="kpi-l">médecins travaillent quotidiennement avec Teledok</p>
           </div>
         </div>
       </section>

@@ -43,7 +43,7 @@ const ETAPES = [
   },
   {
     titre: 'Mise en œuvre &\u00a0ressources humaines',
-    texte: 'Mise à disposition de paramédicaux et de plus de 50 médecins.',
+    texte: 'Mise à disposition de médecins et de paramédicaux.',
   },
   {
     titre: 'Évaluation systématique',
@@ -126,7 +126,7 @@ export default async function Page() {
                 50
               </span>
             </p>
-            <p className="kpi-l">médecins travaillant quotidiennement avec Teledok</p>
+            <p className="kpi-l">médecins travaillent quotidiennement avec Teledok</p>
           </div>
           <div className="kpi kpi--plain rv">
             <div className="kpi-dot" aria-hidden="true"></div>
@@ -185,6 +185,7 @@ export default async function Page() {
               sizes="(min-width: 1000px) 560px, 100vw"
               style={{ width: '100%', height: 'auto' }}
             />
+            <p className="photo-caption">Élaboration par le Dr Stéphane Illouz (à gauche) d’un parcours de soins</p>
             <p className="photo-credit">© Teledok</p>
           </div>
           <div className="rv" style={{ flex: '1 1 460px' }}>

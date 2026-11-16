@@ -59,13 +59,14 @@ export const REALISATIONS: RealisationData[] = [
         contexte:
           'Depuis avril 2025, en partenariat avec Doxamed, le Groupe ADP propose à tous ses collaborateurs un bilan de prévention santé complet, anonyme, basé sur le volontariat et pris en charge par l’entreprise : près de 1 000 bilans par an, dans des espaces dédiés à Paris-Charles-de-Gaulle et Paris-Orly. Une première en France à l’échelle de toute une entreprise.',
         role: [
+          'Réalisation d’un audit de toutes les solutions existantes pour construire un protocole adapté, non invasif et utile',
           'Mise à disposition de médecins qui interviennent à distance, par téléconsultation, en appui de l’infirmier présent tout au long du bilan',
           'Restitution des résultats et prescription d’examens complémentaires si nécessaire, notamment pour les salariés sans médecin traitant',
         ],
         resultat: [
           'Rapport épidémiologique sur les risques silencieux',
-          'Trophée Or — Bilan et prévention santé, Groupe RH&M (2025)',
-          'Médaille d’or — Projet RH d’envergure, Républik RH (2025)',
+          'Trophée Or pour le Groupe ADP — Bilan et prévention santé, Groupe RH&M (2025)',
+          'Médaille d’or pour le Groupe ADP — Projet RH d’envergure, Républik RH (2025)',
         ],
         linkToRecherche: true,
       },
@@ -73,7 +74,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Bpifrance',
         image: { src: '/photos/bpifrance.jpg', alt: 'Dans un espace de bilan, une infirmière en blouse Doxamed prend la température d’un collaborateur assis', position: '50% 35%', credit: 'Florent Marion / Doxamed' },
         contexte:
-          'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, en partenariat avec Doxamed, des bilans de prévention santé complets, anonymes, basés sur le volontariat et entièrement pris en charge par l’entreprise. Ce dispositif, accessible à environ 850 collaborateurs chaque année, a été mis en place dans un espace spécifique au siège social de Bpifrance, à Maisons-Alfort.',
+          'Dans le cadre de son Plan de Santé, Bpifrance propose depuis janvier 2026, en partenariat avec Doxamed, des bilans de prévention santé complets, anonymes, basés sur le volontariat et entièrement pris en charge par l’entreprise. Ce dispositif, accessible à environ 1 000 collaborateurs chaque année, a été mis en place dans un espace spécifique au siège social de Bpifrance, à Maisons-Alfort.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,
@@ -82,7 +83,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Deloitte',
         image: { src: '/photos/deloitte.jpg', alt: 'Dans un bureau de La Défense, une infirmière en blouse Doxamed accompagne un collaborateur pendant un examen de la vue', position: '50% 35%', credit: 'Florent Marion / Doxamed' },
         contexte:
-          'Depuis 2026, Deloitte, en partenariat avec Doxamed, propose à ses collaborateurs de 50 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé par l’entreprise. Ce dispositif a été mis en place dans un espace dédié dans les locaux de Deloitte à La Défense. Une première pour un cabinet de conseil et d’audit en France.',
+          'Depuis 2026, Deloitte, en partenariat avec Doxamed, propose à ses collaborateurs de 45 ans et plus un bilan de prévention santé complet, anonyme, basé sur le volontariat et intégralement financé par l’entreprise. Ce dispositif a été mis en place dans un espace dédié dans les locaux de Deloitte à La Défense. Une première pour un cabinet de conseil et d’audit en France.',
         role: 'Mise à disposition de médecins qui, par téléconsultation, restituent à chaque collaborateur les résultats de son bilan et, si nécessaire, l’orientent dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,
@@ -91,7 +92,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Colisée',
         image: { src: '/photos/colisee.jpg', alt: 'Salle de bilan de prévention installée par Doxamed : table d’examen, poste de travail et tapis d’analyse posturale', position: '50% 60%', credit: 'Doxamed' },
         contexte:
-          'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans. Phase pilote de septembre à novembre 2026 dans huit Ehpad d’Île-de-France, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
+          'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans pour traiter près de 1 000 collaborateurs, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
         role: 'Téléconsultation pour les collaborateurs, quelques jours après leur bilan, par un médecin qui leur remet un compte rendu complet et les oriente, si nécessaire, dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,

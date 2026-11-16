@@ -1880,6 +1880,17 @@ select.fld {
   border-radius: 28px;
   object-fit: cover;
 }
+/* Légende sous la photo de la section « Qui est Teledok », suivie du crédit. */
+.pg-home .photo-caption {
+  position: relative;
+  margin-top: 14px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.pg-home .photo-caption + .photo-credit {
+  margin-top: 2px;
+}
 /* Crédit sous la photo, comme pour le portrait de la section Notre mission. */
 .pg-home .photo-credit {
   position: relative;

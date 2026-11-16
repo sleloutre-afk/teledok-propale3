@@ -130,8 +130,8 @@ export default function Page() {
             <span className="step-n">2</span>
             <h3>Mise en œuvre &amp;&nbsp;ressources humaines</h3>
             <ul className="blist">
-              <li>Mise à disposition de paramédicaux et de plus de 50 médecins</li>
-              <li>Un premier pool de médecins collaborant quotidiennement avec Teledok</li>
+              <li>Mise à disposition de médecins et de paramédicaux</li>
+              <li>Un pool de médecins collaborant quotidiennement avec Teledok</li>
             </ul>
             <p className="pool">
               <span className="pool-n">+50</span>
