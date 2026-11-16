@@ -492,8 +492,9 @@ export default function Page() {
       </ul>
       <p>
         Lorsque l’un de nos prestataires ou Sous-Traitants participe au Traitement de vos Données Personnelles (par exemple la société
-        DOCTOLIB SAS ou la société ANAMNESE SAS qui fournissent les systèmes de réservation, la société RESEND, INC. qui achemine les
-        e-mails transmettant les formulaires du site Internet, ou tout autre fournisseur), celui-ci est
+        DOCTOLIB SAS ou la société ANAMNESE SAS qui fournissent les systèmes de réservation, la société CLOUDFLARE, INC., dont le service
+        Turnstile protège les formulaires et l’accès au back-office du site Internet contre les robots, la société RESEND, INC. qui
+        achemine les e-mails transmettant les formulaires du site Internet, ou tout autre fournisseur), celui-ci est
         soumis à des obligations contractuelles lui imposant : (i) de Traiter uniquement les Données Personnelles conformément à nos
         instructions préalables écrites, (ii) d’utiliser des mesures de protection de la confidentialité et de la sécurité des Données
         Personnelles, ainsi que (iii) de respecter toute autre obligation supplémentaire imposée par la réglementation applicable.
