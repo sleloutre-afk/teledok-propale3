@@ -952,6 +952,11 @@ select.fld {
   height: 1px;
   overflow: hidden;
 }
+/* Captcha Cloudflare Turnstile (widget de 300 × 65 px), entre le consentement et le bouton d'envoi. */
+.form-captcha {
+  margin-top: 24px;
+  min-height: 65px;
+}
 .form-actions {
   margin-top: 28px;
   display: flex;

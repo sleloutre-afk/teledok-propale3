@@ -2,12 +2,18 @@
 
 import { useRef, useState, type ReactNode } from 'react'
 import Link from 'next/link'
+import Script from 'next/script'
 import { fields, validators, type Errors, type FormKind, type Values } from '@/lib/forms'
 import { ROUTES } from '@/lib/site'
 import { Icon } from './Icon'
+import Turnstile from './Turnstile'
+
+/** Clé publique du captcha Cloudflare Turnstile ; sans elle (en local), pas de widget. */
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''
 
 const SEND_ERROR = 'L’envoi n’a pas abouti. Veuillez réessayer ultérieurement.'
 const RATE_ERROR = 'Trop de demandes ont été envoyées. Veuillez patienter quelques minutes avant un nouvel envoi.'
+const CAPTCHA_ERROR = 'Le contrôle anti-robot n’a pas été validé. Cochez la case de vérification, puis envoyez à nouveau le formulaire.'
 const countError = (n: number) => (n > 1 ? `Le formulaire comporte ${n} champs à corriger.` : 'Le formulaire comporte 1 champ à corriger.')
 
 type FieldProps = {
@@ -48,7 +54,8 @@ export type SiteFormProps = {
 
 /**
  * Formulaire du site : validation dans le navigateur (mêmes règles que le
- * serveur, src/lib/forms.ts), champ piège anti-spam, envoi à /api/<kind> et
+ * serveur, src/lib/forms.ts), champ piège anti-spam, captcha Cloudflare
+ * Turnstile (si la clé publique est configurée), envoi à /api/<kind> et
  * message de confirmation. Sans JavaScript, le formulaire est envoyé tel
  * quel au même point d'entrée, qui répond par une page simple.
  */
@@ -77,6 +84,8 @@ export function SiteForm({
   const [sending, setSending] = useState(false)
   const [failure, setFailure] = useState<string | null>(null)
   const [sent, setSent] = useState(false)
+  // Un jeton Turnstile ne sert qu'une fois : après chaque réponse du serveur, le widget est recréé.
+  const [captchaKey, setCaptchaKey] = useState(0)
 
   const formRef = useRef<HTMLFormElement>(null)
   const alertRef = useRef<HTMLDivElement>(null)
@@ -107,21 +116,27 @@ export function SiteForm({
     }
     setSending(true)
     try {
-      const site = (formRef.current?.elements.namedItem('site') as HTMLInputElement | null)?.value ?? ''
+      const form = formRef.current
+      const site = (form?.elements.namedItem('site') as HTMLInputElement | null)?.value ?? ''
+      // Champ caché ajouté par le widget Turnstile.
+      const captcha = form ? String(new FormData(form).get('cf-turnstile-response') ?? '') : ''
       const res = await fetch(`/api/${kind}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...values, site }),
+        body: JSON.stringify({ ...values, site, 'cf-turnstile-response': captcha }),
       })
       const body = await res.json().catch(() => null)
       if (res.ok && body?.ok) {
         setSent(true)
         setTimeout(() => doneRef.current?.focus(), 30)
-      } else if (res.status === 422 && body?.errors) {
-        setErrors(body.errors)
-        focusField(keys.find((k) => body.errors[k]) ?? keys[0])
       } else {
-        fail(res.status === 429 ? RATE_ERROR : SEND_ERROR)
+        setCaptchaKey((k) => k + 1)
+        if (res.status === 422 && body?.errors) {
+          setErrors(body.errors)
+          focusField(keys.find((k) => body.errors[k]) ?? keys[0])
+        } else {
+          fail(res.status === 429 ? RATE_ERROR : res.status === 403 && body?.error === 'captcha' ? CAPTCHA_ERROR : SEND_ERROR)
+        }
       }
     } catch {
       fail(SEND_ERROR)
@@ -136,6 +151,7 @@ export function SiteForm({
     setTried(false)
     setFailure(null)
     setSent(false)
+    setCaptchaKey((k) => k + 1)
     focusField(keys[0])
   }
 
@@ -243,6 +259,13 @@ export function SiteForm({
           </p>
         )}
       </div>
+      {TURNSTILE_SITE_KEY && (
+        <div className="form-captcha">
+          <Turnstile key={captchaKey} siteKey={TURNSTILE_SITE_KEY} />
+          {/* Script Cloudflare chargé une seule fois, même avec plusieurs formulaires sur la page. */}
+          <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" />
+        </div>
+      )}
       <div className="form-actions">
         <button type="submit" className="btn btn-primary btn--lg" disabled={sending}>
           {submitLabel}

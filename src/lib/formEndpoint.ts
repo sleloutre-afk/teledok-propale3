@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { sendFormNotification } from './email'
 import { normalize, validators, type FormKind, type Values } from './forms'
 import { ROUTES } from './site'
+import { verifyFormTurnstile } from './turnstile'
 
 const NO_STORE = { 'Cache-Control': 'no-store' }
 const json = (body: unknown, status = 200) => NextResponse.json(body, { status, headers: NO_STORE })
@@ -35,7 +36,8 @@ function page(title: string, lines: string[], back: string, status: number) {
 /**
  * Réception d'un formulaire du site (candidature médecin ou contact) :
  * champ piège, limite d'envois, validation — mêmes règles que dans le
- * navigateur, voir forms.ts — puis notification interne par e-mail.
+ * navigateur, voir forms.ts —, captcha Cloudflare Turnstile, puis
+ * notification interne par e-mail.
  */
 export async function handleForm(kind: FormKind, request: NextRequest) {
   const isJson = (request.headers.get('content-type') ?? '').includes('application/json')
@@ -70,6 +72,14 @@ export async function handleForm(kind: FormKind, request: NextRequest) {
   const errors = validators[kind](values)
   if (Object.keys(errors).length) {
     return reply(422, { ok: false, errors }, 'Le formulaire comporte des champs à corriger', Object.values(errors))
+  }
+
+  // Captcha Cloudflare Turnstile : le widget du formulaire ajoute le jeton au champ cf-turnstile-response.
+  const token = typeof raw['cf-turnstile-response'] === 'string' ? raw['cf-turnstile-response'] : undefined
+  if (!(await verifyFormTurnstile(token))) {
+    return reply(403, { ok: false, error: 'captcha' }, 'Vérification anti-robot non validée', [
+      'Le contrôle anti-robot n’a pas pu être validé. Revenez au formulaire et cochez la case de vérification avant l’envoi (JavaScript doit être activé).',
+    ])
   }
 
   const result = await sendFormNotification(kind, normalize(kind, values))
