@@ -3,6 +3,20 @@ import type { CollectionConfig } from 'payload'
 
 const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3087'
 
+const ACCESS_EMAIL_SUBJECT = 'Accès au back-office Teledok'
+
+/** E-mail d'accès au BO : invitation d'un nouveau compte et « mot de passe oublié ». */
+function accessEmailHTML(token?: string) {
+  const url = `${SITE_ORIGIN}/BO/reset/${token}`
+  return `
+    <p>Bonjour,</p>
+    <p>Vous êtes invité(e) à vous connecter au back-office du site Teledok. Cliquez sur le lien ci-dessous pour définir votre mot de passe&nbsp;:</p>
+    <p><a href="${url}">${url}</a></p>
+    <p>Le mot de passe doit compter au moins 10 caractères, dont une majuscule, un chiffre et un caractère spécial.</p>
+    <p>Ce lien est valable 1 heure. Passé ce délai, utilisez «&nbsp;Mot de passe oublié&nbsp;» sur la page de connexion pour en recevoir un nouveau. Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail.</p>
+  `
+}
+
 /**
  * Comptes du back-office (email + mot de passe, géré par Payload).
  * - `super-admin` : tout, y compris la gestion des comptes.
@@ -24,17 +38,8 @@ export const Users: CollectionConfig = {
     // Même e-mail pour l'invitation d'un nouveau compte et pour un vrai
     // « mot de passe oublié » : un lien sécurisé, à usage unique.
     forgotPassword: {
-      generateEmailSubject: () => 'Accès au back-office Teledok',
-      generateEmailHTML: ({ token } = {}) => {
-        const url = `${SITE_ORIGIN}/BO/reset/${token}`
-        return `
-          <p>Bonjour,</p>
-          <p>Vous êtes invité(e) à vous connecter au back-office du site Teledok. Cliquez sur le lien ci-dessous pour définir votre mot de passe&nbsp;:</p>
-          <p><a href="${url}">${url}</a></p>
-          <p>Le mot de passe doit compter au moins 10 caractères, dont une majuscule, un chiffre et un caractère spécial.</p>
-          <p>Ce lien est valable 1 heure. Passé ce délai, utilisez «&nbsp;Mot de passe oublié&nbsp;» sur la page de connexion pour en recevoir un nouveau. Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail.</p>
-        `
-      },
+      generateEmailSubject: () => ACCESS_EMAIL_SUBJECT,
+      generateEmailHTML: ({ token } = {}) => accessEmailHTML(token),
     },
   },
   admin: {
@@ -111,11 +116,26 @@ export const Users: CollectionConfig = {
     ],
     afterChange: [
       // Envoie l'e-mail d'invitation dès qu'un super-admin crée un compte.
+      // Le jeton est créé par forgotPassword avec `disableEmail`, puis l'e-mail est envoyé ici :
+      // envoyé par forgotPassword lui-même, il passe par l'anti-abus de Payload (une demande
+      // toutes les 15 s), qui cherche le compte hors de la transaction en cours. Le compte
+      // n'étant pas encore enregistré en base (PostgreSQL), il n'était pas trouvé et l'invitation
+      // était abandonnée sans erreur. L'anti-abus reste actif pour « Mot de passe oublié ».
       async ({ operation, doc, req }) => {
         if (operation !== 'create') return
-        const { totalDocs } = await req.payload.count({ collection: 'users' })
+        const { totalDocs } = await req.payload.count({ collection: 'users', req })
         if (totalDocs <= 1) return
-        await req.payload.forgotPassword({ collection: 'users', data: { email: doc.email }, req })
+        const token = await req.payload.forgotPassword({
+          collection: 'users',
+          data: { email: doc.email },
+          disableEmail: true,
+          req,
+        })
+        if (!token) {
+          req.payload.logger.error(`[invitation] Jeton non créé pour ${doc.email} — e-mail non envoyé.`)
+          return
+        }
+        await req.payload.sendEmail({ to: doc.email, subject: ACCESS_EMAIL_SUBJECT, html: accessEmailHTML(token) })
       },
     ],
   },
