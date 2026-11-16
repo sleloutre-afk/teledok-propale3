@@ -4,6 +4,8 @@ import { Signika } from 'next/font/google'
 import { SITE_URL } from '@/lib/site'
 import { organizationJsonLd, websiteJsonLd } from '@/lib/seo'
 import { JsonLd } from '@/components/JsonLd'
+import { CookieBanner } from '@/components/CookieBanner'
+import { AnalyticsScripts } from '@/components/AnalyticsScripts'
 import '@/styles/site.css'
 
 // Police unique de la charte Teledok (300 à 700). Téléchargée à la
@@ -29,6 +31,9 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: '#0D628F' }
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
+  // Identifiant de mesure Google Analytics 4 (G-…). Sans lui : ni bandeau, ni lien « Gestion des
+  // cookies », ni Google Analytics — le site ne dépose alors aucun cookie facultatif.
+  const gaId = process.env.GA_MEASUREMENT_ID
   return (
     // La classe « js » est posée avant l'hydratation (script ci-dessous) : React doit l'ignorer.
     <html lang="fr" className={signika.variable} suppressHydrationWarning>
@@ -47,6 +52,12 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         {/* Données structurées de l'entreprise et du site (src/lib/seo.ts). */}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
+        {gaId && (
+          <>
+            <CookieBanner />
+            <AnalyticsScripts gaId={gaId} />
+          </>
+        )}
       </body>
     </html>
   )

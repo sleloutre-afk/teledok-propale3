@@ -1556,6 +1556,118 @@ select.fld {
   flex-wrap: wrap;
   gap: 8px 24px;
 }
+/* « Gestion des cookies » : un bouton (il rouvre le bandeau), présenté comme les liens voisins. */
+.ftr-cookies {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.ftr-cookies:hover {
+  color: var(--amber);
+}
+
+/* Bandeau de consentement à la mesure d'audience (src/components/CookieBanner.tsx). */
+.cookie-banner {
+  position: fixed;
+  z-index: 60;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 22px 24px;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow:
+    0 2px 10px rgba(13, 60, 90, 0.12),
+    0 28px 64px -12px rgba(13, 60, 90, 0.4);
+  /* Liseré ambre, l'accent de la charte. */
+  border-top: 4px solid var(--amber);
+}
+@media (min-width: 640px) {
+  .cookie-banner {
+    right: auto;
+    left: 28px;
+    bottom: 28px;
+    width: 460px;
+    padding: 24px 26px;
+  }
+}
+.cookie-banner-in {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+/* Deux biscuits superposés, inclinés, comme sur le bandeau de Doxamed. */
+.cookie-banner-pics {
+  position: relative;
+  flex: none;
+  width: 84px;
+  height: 84px;
+}
+.cookie-banner-pics img {
+  position: absolute;
+  display: block;
+}
+.cookie-banner-pic1 {
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  transform: rotate(-12deg);
+}
+.cookie-banner-pic2 {
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  transform: rotate(18deg);
+}
+@media (min-width: 640px) {
+  .cookie-banner-pics {
+    width: 100px;
+    height: 100px;
+  }
+  .cookie-banner-pic1 {
+    width: 76px;
+    height: 76px;
+  }
+  .cookie-banner-pic2 {
+    width: 36px;
+    height: 36px;
+  }
+}
+.cookie-banner-t {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.cookie-banner-d {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.cookie-banner-d a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.cookie-banner-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+/* Refuser et Accepter : même taille, même style (exigence de la CNIL). */
+.cookie-banner-actions .btn {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 15px;
+}
 
 /* Numéro RPPS : chiffres espacés. */
 .rpps .fld {

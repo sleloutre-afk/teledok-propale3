@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { fields, validators, type Errors, type FormKind, type Values } from '@/lib/forms'
 import { ROUTES } from '@/lib/site'
+import { trackEvent } from '@/lib/analytics'
 import { Icon } from './Icon'
 import Turnstile from './Turnstile'
 
@@ -127,6 +128,10 @@ export function SiteForm({
       })
       const body = await res.json().catch(() => null)
       if (res.ok && body?.ok) {
+        // Événement GA4 « generate_lead » (à marquer comme événement clé dans GA), envoyé seulement si
+        // le visiteur a accepté la mesure d'audience, et seulement quand le serveur a accepté l'envoi.
+        // Aucune donnée saisie n'est transmise, seulement le type de formulaire.
+        trackEvent('generate_lead', { form_name: kind })
         setSent(true)
         setTimeout(() => doneRef.current?.focus(), 30)
       } else {

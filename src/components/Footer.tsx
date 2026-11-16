@@ -4,6 +4,7 @@ import logoBlanc from '@/assets/logo-teledok-blanc.png'
 import { getCoordonnees } from '@/lib/content'
 import { LINKEDIN_URL, ROUTES } from '@/lib/site'
 import { LinkedinIcon } from './LinkedinIcon'
+import { CookieSettingsButton } from './CookieBanner'
 
 const LOGO_HEIGHT = 30
 const LOGO_WIDTH = Math.round((LOGO_HEIGHT * logoBlanc.width) / logoBlanc.height)
@@ -87,6 +88,8 @@ export async function Footer({ cta = 'medecins' }: { cta?: 'medecins' | 'partena
             <Link href={ROUTES.cgv}>CGV</Link>
             <Link href={ROUTES.charte}>Charte éthique</Link>
             <Link href={ROUTES.contact}>Contact</Link>
+            {/* Seulement si la mesure d'audience est configurée (voir le gabarit du site). */}
+            {process.env.GA_MEASUREMENT_ID && <CookieSettingsButton />}
           </p>
         </div>
       </div>

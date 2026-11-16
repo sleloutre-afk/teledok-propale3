@@ -59,8 +59,12 @@ const nextConfig: NextConfig = {
       },
       {
         // Politique de sécurité du contenu, sur le site public uniquement (le
-        // BO de Payload demande des règles plus permissives). Seul tiers
-        // autorisé : le captcha Cloudflare Turnstile de /bo-verify.
+        // BO de Payload demande des règles plus permissives). Tiers autorisés :
+        // le captcha Cloudflare Turnstile (formulaires, /bo-verify) et Google
+        // Analytics 4, selon le guide CSP de Google (script de
+        // *.googletagmanager.com, envois vers *.google-analytics.com et
+        // *.analytics.google.com). Google Analytics n'est chargé qu'après
+        // accord du visiteur (src/components/AnalyticsScripts.tsx).
         source: '/((?!BO|api).*)',
         headers: [
           {
@@ -68,13 +72,13 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               // 'unsafe-eval' en développement seulement : le rechargement à chaud de Next en a besoin.
-              `script-src 'self' 'unsafe-inline' ${process.env.NODE_ENV === 'development' ? "'unsafe-eval' " : ''}https://challenges.cloudflare.com`,
+              `script-src 'self' 'unsafe-inline' ${process.env.NODE_ENV === 'development' ? "'unsafe-eval' " : ''}https://challenges.cloudflare.com https://*.googletagmanager.com`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self' data:",
               "media-src 'self' https:",
               "frame-src 'self' https://challenges.cloudflare.com",
-              "connect-src 'self' https://challenges.cloudflare.com",
+              "connect-src 'self' https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
