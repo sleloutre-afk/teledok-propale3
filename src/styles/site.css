@@ -2307,6 +2307,30 @@ select.fld {
 .pg-teledok .valeur .ic {
   width: 88px;
   height: 88px;
+  border: 2px solid transparent;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.35s,
+    box-shadow 0.45s;
+}
+/* Encerclement ambre du picto survolé, comme sur l'araignée de l'accueil. */
+.pg-teledok .valeur:hover .ic {
+  transform: scale(1.12);
+  border-color: var(--amber);
+  box-shadow:
+    0 0 0 7px rgba(245, 179, 53, 0.22),
+    0 14px 30px rgba(13, 60, 90, 0.16);
+}
+/* Même tracé que les pictos de l'araignée de l'accueil, rejoué au survol de la carte. */
+.pg-teledok .valeur .ic svg :not(g, .d) {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.pg-teledok .valeur:hover .ic svg :not(g, .d) {
+  animation: redraw 1.2s ease both;
+}
+.pg-teledok .valeur:hover .ic svg .d {
+  animation: picfade 0.8s 0.4s ease both;
 }
 .pg-teledok .valeur h3 {
   font-size: 21px;
