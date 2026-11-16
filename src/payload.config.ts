@@ -35,6 +35,8 @@ export default buildConfig({
         Icon: '/src/components/admin/AdminIcon#AdminIcon',
         Logo: '/src/components/admin/AdminLogo#AdminLogo',
       },
+      // Bandeau « Environnement local » en haut du BO, jamais affiché en production.
+      header: ['/src/components/admin/LocalEnvBanner#LocalEnvBanner'],
       beforeNavLinks: [
         // Lien de retour au tableau de bord, en haut de la nav latérale.
         '/src/components/admin/DashboardLink#DashboardLink',

@@ -233,6 +233,27 @@
   }
 }
 
+// Bandeau « Environnement local » (src/components/admin/LocalEnvBanner.tsx), en ambre comme
+// l'accent du site, pour ne pas confondre le BO local avec celui de teledok.fr.
+@layer payload-default {
+  .teledok-local-banner {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.6rem 1.25rem;
+    background: #f5b335;
+    color: #3c3c3c;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+
+    strong {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+}
+
 // Menu latéral teinté, repère de la page active aux couleurs du site.
 @layer payload-default {
   .nav {
