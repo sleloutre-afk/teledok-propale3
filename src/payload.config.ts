@@ -42,6 +42,19 @@ export default buildConfig({
         '/src/components/admin/DefaultOpenNav#DefaultOpenNav',
       ],
     },
+    // Tableau de bord (comme Capitello) : un seul bloc pleine largeur qui dispose lui-même
+    // ses cartes — Recherche & publications à gauche, Bibliothèque à droite.
+    // (Utilisateurs reste accessible via la nav, groupe « Admin ».)
+    dashboard: {
+      widgets: [
+        {
+          slug: 'teledok-dashboard',
+          Component: '/src/components/admin/DashboardWidget#DashboardWidget',
+          minWidth: 'full',
+        },
+      ],
+      defaultLayout: [{ widgetSlug: 'teledok-dashboard', width: 'full' }],
+    },
   },
   i18n: {
     supportedLanguages: { fr },

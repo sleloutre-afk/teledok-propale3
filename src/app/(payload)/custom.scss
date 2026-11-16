@@ -51,6 +51,188 @@
   }
 }
 
+// Tableau de bord (src/components/admin/DashboardWidget.tsx), sur le modèle de
+// Capitello : Recherche & publications à gauche, bibliothèque à droite.
+@layer payload-default {
+  .teledok-dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas: 'publications media';
+    gap: 1.25rem;
+  }
+
+  .teledok-widget--publications {
+    grid-area: publications;
+  }
+
+  // Spécificité (0,0,2,0) volontairement au-dessus du .card de Payload.
+  .teledok-dashboard .teledok-widget {
+    box-sizing: border-box;
+    border-radius: var(--style-radius-l, 12px);
+    border: 1px solid var(--theme-success-250);
+    background: linear-gradient(135deg, var(--theme-success-50), var(--theme-elevation-0) 70%);
+  }
+
+  .teledok-widget--hero {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+  }
+
+  .teledok-widget__badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 14px;
+    border-radius: 50%;
+    background: var(--theme-success-150);
+    color: var(--theme-success-650);
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .teledok-widget__badge--sm {
+    width: 44px;
+    height: 44px;
+    padding: 11px;
+  }
+
+  .teledok-widget__body {
+    flex: 1 1 300px;
+    min-width: 200px;
+  }
+
+  .teledok-widget__title {
+    margin: 0 0 0.35rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: var(--theme-elevation-900);
+  }
+
+  .teledok-widget__text {
+    margin: 0 0 1rem;
+    max-width: 46em;
+    color: var(--theme-elevation-600);
+  }
+
+  .teledok-widget__stats {
+    display: flex;
+    gap: 1.75rem;
+  }
+
+  .teledok-widget__stat {
+    display: flex;
+    flex-direction: column;
+
+    strong {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: var(--theme-success-550);
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: var(--theme-elevation-500);
+    }
+  }
+
+  .teledok-widget__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    min-width: 13.5rem;
+
+    .btn {
+      margin: 0;
+      justify-content: center;
+    }
+  }
+
+  // Bibliothèque : repart du .card de Payload (bouton « + », zone
+  // cliquable plein cadre), reteintée comme le bloc principal.
+  .teledok-dashboard .teledok-widget--card {
+    grid-area: media;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    height: 100%;
+    padding: 1.5rem 1.5rem 1.75rem;
+
+    &:hover {
+      border-color: var(--theme-success-400);
+    }
+
+    .card__title {
+      margin: 0;
+      font-size: 1.15rem;
+      color: var(--theme-elevation-900);
+    }
+
+    .card__click {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .teledok-widget--card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    .teledok-dashboard {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        'publications'
+        'media';
+    }
+  }
+
+  // Structure du tableau de bord figée côté config : pas de réagencement
+  // ni de suppression de blocs depuis l'interface.
+  .dashboard-breadcrumb-select {
+    pointer-events: none;
+
+    .rs__indicators,
+    .rs__dropdown-indicator,
+    .rs__menu {
+      display: none !important;
+    }
+
+    .rs__control {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      min-height: 0;
+      cursor: default;
+    }
+  }
+
+  .dashboard-breadcrumb-dropdown__editing,
+  .widget-wrapper__controls,
+  .widget-wrapper__size-btn,
+  .widget-wrapper__delete-btn {
+    display: none !important;
+  }
+}
+
 // Menu latéral teinté, repère de la page active aux couleurs du site.
 @layer payload-default {
   .nav {
