@@ -6,6 +6,8 @@ import { ROUTES } from '@/lib/site'
 
 // Texte des conditions générales d'utilisation établi par l'avocat de Teledok (version du 5 novembre 2026),
 // article 1 « Mentions légales » compris. Reprise fidèle ; seules la typographie et les liens sont propres au site.
+// Sous-partie « Activité de TELEDOK » (article 1) : texte fourni par le juriste de Teledok le 16 novembre 2026, repris tel quel.
+// L'article 10.4 des CGV en donne une version plus courte, à harmoniser selon sa réponse.
 
 export const metadata: Metadata = pageMetadata(
   '/mentions-legales',
@@ -52,6 +54,24 @@ export default function Page() {
         associé unique au capital de 500 euros, dont le siège social est sis 122, avenue Charles de Gaulle – 92200 Neuilly-sur-Seine,
         immatriculée au Registre du commerce et des sociétés de Nanterre sous le numéro 793 498 684, représentée par son Président,
         Monsieur Arnaud Molinié.
+      </p>
+      <h3 id="activite">Activité de TELEDOK</h3>
+      <p>
+        TELEDOK n’est pas une structure d’exercice de la médecine ni d’aucune autre profession de santé, et n’exerce aucune activité de
+        soin. TELEDOK fournit à ses clients une prestation d’organisation logistique et de mise en relation avec des professionnels de
+        santé.
+      </p>
+      <p>
+        Les professionnels de santé intervenant dans le cadre des dispositifs exercent en toute indépendance, conformément à leurs règles
+        déontologiques, et sous leur propre responsabilité professionnelle, couverte par leur propre assurance. Ils ne sont ni salariés, ni
+        préposés, ni sous-traitants de TELEDOK, ni au sens contractuel, ni au sens de l’article 28 du RGPD. Le contrat médical ou de soin se
+        forme directement entre le professionnel de santé et la personne qui bénéficie de l’acte.
+      </p>
+      <p>
+        En conséquence, TELEDOK ne saurait être tenue responsable des actes de prévention, de diagnostic ou de soin réalisés par ces
+        professionnels, ni des choix et prescriptions qu’ils font. La responsabilité de TELEDOK reste limitée à l’exécution de ses propres
+        obligations, notamment l’organisation logistique des dispositifs et la vérification préalable des qualifications des professionnels
+        (diplôme, inscription à l’Ordre ou au répertoire RPPS, assurance de responsabilité civile professionnelle).
       </p>
       <h3>Hébergement</h3>
       <p>
