@@ -9,7 +9,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   if (host !== new URL(SITE_URL).host || host?.endsWith('.cleverapps.io')) return { rules: [{ userAgent: '*', disallow: '/' }] }
 
   return {
-    rules: [{ userAgent: '*', disallow: ['/BO', '/api'] }],
+    // Les fichiers de la bibliothèque (/api/media/file/…, dont les synthèses de recherche en PDF) restent
+    // indexables : la règle la plus précise (allow) l'emporte sur « disallow: /api ».
+    rules: [{ userAgent: '*', allow: ['/api/media/file/'], disallow: ['/BO', '/api'] }],
     sitemap: `${SITE_URL}/sitemap.xml`,
   }
 }

@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Signika } from 'next/font/google'
 import { SITE_URL } from '@/lib/site'
+import { organizationJsonLd, websiteJsonLd } from '@/lib/seo'
+import { JsonLd } from '@/components/JsonLd'
 import '@/styles/site.css'
 
 // Police unique de la charte Teledok (300 à 700). Téléchargée à la
@@ -42,6 +44,9 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           Aller au contenu
         </a>
         {children}
+        {/* Données structurées de l'entreprise et du site (src/lib/seo.ts). */}
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
       </body>
     </html>
   )

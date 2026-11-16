@@ -13,7 +13,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/recherche',
   'Recherche & publications | Teledok',
-  'Rapports épidémiologiques, publications scientifiques et thèses : chaque opération de Teledok contribue, par ses retours d’expérience et ses données agrégées, à la connaissance scientifique.',
+  'Rapports épidémiologiques, publications scientifiques et thèses : les opérations de Teledok contribuent à la connaissance scientifique en télémédecine.',
 )
 
 export default async function Page() {

@@ -15,7 +15,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/partenaires',
   'Partenaires | Teledok',
-  'Déployer des parcours de téléconsultation rigoureux et évalués, au service de vos publics : mutuelles, grands groupes, professionnels de santé, collectivités et institutionnels.',
+  'Des parcours de téléconsultation rigoureux et évalués pour vos publics : mutuelles, grands groupes, professionnels de santé, collectivités et institutionnels.',
 )
 
 const ETAPES = [

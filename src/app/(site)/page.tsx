@@ -23,7 +23,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/',
   'Teledok : téléconsultation médicale et parcours de soins',
-  'Teledok réunit des médecins et des paramédicaux autour de parcours de soins conçus, mis en œuvre et évalués avec rigueur, pour les patients comme pour les praticiens.',
+  'Teledok réunit médecins et paramédicaux autour de parcours de soins et de téléconsultation conçus, mis en œuvre et évalués avec rigueur.',
 )
 
 // Rayons de l'araignée des valeurs, du logo central vers chaque picto (repère 740 × 700).

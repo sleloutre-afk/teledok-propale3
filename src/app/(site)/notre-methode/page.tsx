@@ -17,7 +17,7 @@ export const revalidate = 60
 export const metadata: Metadata = pageMetadata(
   '/notre-methode',
   'Notre méthode | Teledok',
-  'De la conception à l’évaluation, chaque parcours est documenté, mesuré et amélioré : conception sur mesure, mise en œuvre, évaluation systématique, amélioration itérative.',
+  'De la conception à l’évaluation, chaque parcours de soins est documenté, mesuré et amélioré : conception sur mesure, mise en œuvre, évaluation, amélioration.',
 )
 
 const CHIPS = ['Conception', 'Mise en œuvre', 'Évaluation', 'Amélioration']

@@ -12,7 +12,7 @@ import { ROUTES } from '@/lib/site'
 export const metadata: Metadata = pageMetadata(
   '/mentions-legales',
   'Mentions légales et CGU | Teledok',
-  'Mentions légales et conditions générales d’utilisation du site Teledok : éditeur, directeur de la publication, hébergement, propriété intellectuelle, responsabilité.',
+  'Mentions légales et conditions générales d’utilisation du site Teledok : éditeur, directeur de la publication, hébergement, responsabilité.',
 )
 
 const sommaire = [

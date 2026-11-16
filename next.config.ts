@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
   // Nombre de processus de pré-rendu à la compilation : à limiter (BUILD_WORKERS=1) quand la base
   // n'accepte que quelques connexions, chaque processus en ouvrant jusqu'à 3.
   ...(process.env.BUILD_WORKERS ? { experimental: { cpus: Number(process.env.BUILD_WORKERS) } } : {}),
+  // Adresses de l'ancien site (hébergé chez OVH jusqu'au 16 novembre 2026), relevées sur archive.org :
+  // redirigées vers la page qui leur correspond, pour les liens existants et les moteurs de recherche.
+  // (Avec un « / » final, Next le retire d'abord par une première redirection, puis applique celle-ci.)
+  async redirects() {
+    return [
+      { source: '/mentionlegales', destination: '/mentions-legales', permanent: true },
+      { source: '/rejoignez-nous', destination: '/medecins', permanent: true },
+      { source: '/on-parle-de-nous', destination: '/recherche', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {
@@ -33,12 +43,18 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Le back-office, son contrôle anti-robots et l'API ne doivent jamais être indexés.
-        source: '/:path(BO|bo-verify|api)/:rest*',
+        // Le back-office, son contrôle anti-robots et l'API ne doivent jamais être indexés…
+        source: '/:path(BO|bo-verify)/:rest*',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
       {
         source: '/:path(BO|bo-verify|api)',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        // … sauf les fichiers de la bibliothèque (/api/media/file/…) : les synthèses de recherche en PDF
+        // doivent pouvoir apparaître dans Google (voir aussi src/app/robots.ts).
+        source: '/api/:rest((?!media/file/).*)',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
       {
