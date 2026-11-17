@@ -92,7 +92,7 @@ export const REALISATIONS: RealisationData[] = [
         tag: 'Colisée',
         image: { src: '/photos/colisee.jpg', alt: 'Salle de bilan de prévention installée par Doxamed : table d’examen, poste de travail et tapis d’analyse posturale', position: '50% 60%', credit: 'Doxamed' },
         contexte:
-          'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet sur trois ans pour traiter près de 1 000 collaborateurs, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
+          'Colisée France, premier groupe du secteur du grand âge à proposer des bilans de prévention santé pour ses équipes, a lancé avec Doxamed un projet pluriannuel pour traiter près de 1 000 collaborateurs, avec des bilans axés notamment sur les troubles musculo-squelettiques.',
         role: 'Téléconsultation pour les collaborateurs, quelques jours après leur bilan, par un médecin qui leur remet un compte rendu complet et les oriente, si nécessaire, dans le parcours de soins.',
         resultat: 'En cours.',
         linkToRecherche: false,

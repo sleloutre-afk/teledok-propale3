@@ -135,7 +135,7 @@ export default function Page() {
             </ul>
             <p className="pool">
               <span className="pool-n">+50</span>
-              <span>médecins dans le premier pool</span>
+              <span>médecins dans le pool</span>
             </p>
           </li>
           <li className="step step--3 rv">
